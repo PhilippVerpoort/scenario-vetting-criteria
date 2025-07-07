@@ -72,3 +72,9 @@ text = load_criteria('criteria-metadata')['sustainable_bioenergy']['justificatio
 text_inserted = insert_citations(text, reference_srcs_formatted)
 
 print(text[:30], '...   →  ', text_inserted[:30], '...')
+
+# %% [markdown]
+# ## Apply vetting criteria to scenarios
+
+# %% [markdown]
+# A tutorial on how to apply the vetting criteria to a list of scenarios based on the [IAMC Nomenclature](https://nomenclature-iamc.readthedocs.io/en/stable/user_guide.html) package will be made available later.

@@ -34,3 +34,12 @@ for (component_id in names(file_paths)) {
 # Instead of loading the data from these files manually, it is recommended to use the built-in load functions from the package via `load_criteria`. For instance, the following will load the definition of the thresholds values.
 
 load_criteria('criteria-thresholds')
+
+# Multiple files can be loaded in one go.
+
+criteria <- load_criteria(c('criteria-thresholds', 'operations'))
+criteria$operations
+
+# ## Apply vetting criteria to scenarios
+
+# A tutorial on how to apply the vetting criteria to a list of scenarios based on [piamValidation](https://pik-piam.github.io/piamValidation/) will be made available later.
