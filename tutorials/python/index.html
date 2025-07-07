@@ -1316,7 +1316,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2cf63171">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6d0bba2c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1327,7 +1327,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bf94b619">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c52e13fb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1344,7 +1344,7 @@ pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=74d2285e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=03554226">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1355,7 +1355,7 @@ pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=de198ce0">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e8210588">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1366,7 +1366,7 @@ pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=688e3e3e">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=498ae267">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1417,7 +1417,7 @@ criteria-metadata:  ...ing_criteria/data/criteria-metadata.yaml
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4a3f4138">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8efee4ad">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1428,7 +1428,7 @@ criteria-metadata:  ...ing_criteria/data/criteria-metadata.yaml
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=86301e88">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c0afab57">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1439,7 +1439,7 @@ criteria-metadata:  ...ing_criteria/data/criteria-metadata.yaml
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7cc1a5eb">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=77a1dc57">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1501,10 +1501,9 @@ load_criteria('criteria-thresholds')</div>
 <th></th>
 <th></th>
 <th></th>
-<th>threshold_severity</th>
-<th colspan="2" halign="left">very_strong</th>
-<th colspan="2" halign="left">strong</th>
-<th colspan="2" halign="left">medium</th>
+<th>threshold_type</th>
+<th colspan="3" halign="left">lower</th>
+<th colspan="3" halign="left">upper</th>
 </tr>
 <tr>
 <th></th>
@@ -1512,13 +1511,13 @@ load_criteria('criteria-thresholds')</div>
 <th></th>
 <th></th>
 <th></th>
-<th>threshold_type</th>
-<th>lower</th>
-<th>upper</th>
-<th>lower</th>
-<th>upper</th>
-<th>lower</th>
-<th>upper</th>
+<th>threshold_severity</th>
+<th>very_strong</th>
+<th>strong</th>
+<th>medium</th>
+<th>medium</th>
+<th>strong</th>
+<th>very_strong</th>
 </tr>
 <tr>
 <th>criterion</th>
@@ -1541,66 +1540,66 @@ load_criteria('criteria-thresholds')</div>
 <th>Model Native Regions</th>
 <th>2010, 2015, 2020</th>
 <th>Population</th>
-<th>WDI24</th>
+<th>WDI-2024</th>
 <th>dimensionless</th>
 <td>0.65</td>
-<td>1.35</td>
 <td>0.75</td>
+<td>NaN</td>
+<td>NaN</td>
 <td>1.25</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1.35</td>
 </tr>
 <tr>
 <th>World</th>
 <th>2010, 2015, 2020</th>
 <th>Population</th>
-<th>WDI24</th>
+<th>WDI-2024</th>
 <th>dimensionless</th>
 <td>0.75</td>
-<td>1.25</td>
 <td>0.85</td>
+<td>NaN</td>
+<td>NaN</td>
 <td>1.15</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1.25</td>
 </tr>
 <tr>
 <th rowspan="3" valign="top">hist_gdp</th>
 <th rowspan="2" valign="top">Model Native Regions</th>
 <th>2010, 2015</th>
 <th>GDP|PPP</th>
-<th>WDI24</th>
+<th>WDI-2024</th>
 <th>dimensionless</th>
 <td>0.65</td>
-<td>1.35</td>
 <td>0.75</td>
+<td>NaN</td>
+<td>NaN</td>
 <td>1.25</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1.35</td>
 </tr>
 <tr>
 <th>2020</th>
 <th>GDP|PPP</th>
-<th>WDI24</th>
+<th>WDI-2024</th>
 <th>dimensionless</th>
 <td>0.50</td>
-<td>1.50</td>
 <td>0.60</td>
+<td>NaN</td>
+<td>NaN</td>
 <td>1.40</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1.50</td>
 </tr>
 <tr>
 <th>World</th>
 <th>2010, 2015</th>
 <th>GDP|PPP</th>
-<th>WDI24</th>
+<th>WDI-2024</th>
 <th>dimensionless</th>
 <td>0.75</td>
-<td>1.25</td>
 <td>0.85</td>
+<td>NaN</td>
+<td>NaN</td>
 <td>1.15</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1.25</td>
 </tr>
 <tr>
 <th>...</th>
@@ -1617,20 +1616,8 @@ load_criteria('criteria-thresholds')</div>
 <td>...</td>
 </tr>
 <tr>
-<th rowspan="2" valign="top">longterm_ccus</th>
-<th rowspan="2" valign="top">World</th>
-<th>2035</th>
-<th>Carbon Capture</th>
-<th>NaN</th>
-<th>Mt CO2/yr</th>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1300.00</td>
-</tr>
-<tr>
+<th>longterm_ccus</th>
+<th>World</th>
 <th>2040</th>
 <th>Carbon Capture</th>
 <th>NaN</th>
@@ -1638,9 +1625,9 @@ load_criteria('criteria-thresholds')</div>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
 <td>4300.00</td>
+<td>NaN</td>
+<td>NaN</td>
 </tr>
 <tr>
 <th>longterm_daccs</th>
@@ -1652,9 +1639,9 @@ load_criteria('criteria-thresholds')</div>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
 <td>4.89</td>
+<td>NaN</td>
+<td>NaN</td>
 </tr>
 <tr>
 <th>sustainable_bioenergy</th>
@@ -1666,8 +1653,8 @@ load_criteria('criteria-thresholds')</div>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
-<td>100.00</td>
 <td>NaN</td>
+<td>100.00</td>
 <td>NaN</td>
 </tr>
 <tr>
@@ -1680,13 +1667,27 @@ load_criteria('criteria-thresholds')</div>
 <td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
+<td>NaN</td>
 <td>1500.00</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>NaN</th>
+<th>NaN</th>
+<th>NaN</th>
+<th>NaN</th>
+<th>NaN</th>
+<th>NaN</th>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
 <td>NaN</td>
 <td>NaN</td>
 </tr>
 </tbody>
 </table>
-<p>74 rows × 6 columns</p>
+<p>75 rows × 6 columns</p>
 </div>
 </div>
 </div>
@@ -1694,7 +1695,7 @@ load_criteria('criteria-thresholds')</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7ef19f31">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c1f4a310">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1705,7 +1706,7 @@ load_criteria('criteria-thresholds')</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=674bb990">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fd1394f4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1784,7 +1785,7 @@ display(criteria['operations'])</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e6ebe4a8">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bccee09a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1795,7 +1796,7 @@ display(criteria['operations'])</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0d74844b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eff478a2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1806,7 +1807,7 @@ display(criteria['operations'])</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=12d51f62">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b6bf8f12">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1833,7 +1834,7 @@ display(criteria['operations'])</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=301e2173">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=73978a57">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1844,7 +1845,7 @@ display(criteria['operations'])</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=40b8fe1b">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4e4fbf7e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1879,21 +1880,23 @@ display(reference_srcs_formatted['Creutzig14'])</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'cite_auth': 'Creutzig',
- 'cite_year': '2014',
- 'cite': 'Creutzig (2014)',
- 'citep': '(Creutzig, 2014)',
- 'bib': 'Felix Creutzig, N. H. Ravindranath, Göran Berndes, Simon Bolwig, Ryan Bright, Francesco Cherubini, Helena Chum, Esteve Corbera, Mark Delucchi, Andre Faaij, Joseph Fargione, Helmut Haberl, Garvin Heath, Oswaldo Lucon, Richard Plevin, Alexander Popp, Carmenza Robledo?Abad, Steven Rose, Pete Smith, Anders Stromman, Sangwon Suh, and Omar Masera. Bioenergy and climate change mitigation: an assessment. GCB Bioenergy, 7(5):916–944, July 2014. doi:10.1111/gcbb.12205.',
- 'doi': '10.1111/gcbb.12205',
- 'link': 'https://doi.org/10.1111/gcbb.12205'}</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[5]</span><span class="ansi-green-fg">, line 3</span>
+<span class="ansi-green-fg">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-blue-intense-fg ansi-bold">scenario_vetting_criteria</span><span class="ansi-blue-intense-fg ansi-bold">.</span><span class="ansi-blue-intense-fg ansi-bold">formatting</span><span style="color: rgb(188,188,188)"> </span><span class="ansi-bold" style="color: rgb(0,135,0)">import</span> format_sources
+<span class="ansi-green-fg">      2</span> reference_srcs_formatted = format_sources(reference_srcs)
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">3</span> display(<span class="ansi-yellow-bg">reference_srcs_formatted</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-fg ansi-yellow-bg">Creutzig14</span><span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-bg">]</span>)
+
+<span class="ansi-red-fg">KeyError</span>: 'Creutzig14'</pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=abb047be">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0e5a4fb2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1904,7 +1907,7 @@ display(reference_srcs_formatted['Creutzig14'])</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=be8f7e00">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ebc8d35f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1946,7 +1949,7 @@ print(text[:30], '...   →  ', text_inserted[:30], '...')</div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{{cite:Creutzig14}} have deriv ...   →   Creutzig (2014) have derived a ...
+<pre>{{cite:Creutzig-2014}} have de ...   →   Creutzig (2014) have derived a ...
 </pre>
 </div>
 </div>
@@ -1954,7 +1957,7 @@ print(text[:30], '...   →  ', text_inserted[:30], '...')</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=526ffa46">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d28f3593">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1965,7 +1968,7 @@ print(text[:30], '...   →  ', text_inserted[:30], '...')</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8d5a77af">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=13b5d630">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
