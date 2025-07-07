@@ -1,0 +1,45 @@
+historical:
+    name: Historical vetting
+    description: >-
+        Historical vetting criteria check for the alignment of scenarios with historic
+        trends. Specifically, this means that the data provided by scenarios for time
+        periods in the past (e.g. year 2020) should closely match data reported in the 
+        real world. Misalignment of a scenario means that the scenario is or has 
+        become impossible. Misalignment can often be an outcome of outdatedness: as the 
+        world evolves, pathways that were set out by older scenarios are no longer 
+        possible.
+near_term_feasibility:
+    name: Near-term feasibility vetting
+    description: >-
+        Near-term feasibility vetting criteria check for the alignment of scenarios with 
+        near-term trends in certain sectors. Specifically, this means that the data 
+        provided by scenarios for time periods in the near future (i.e., in the next 5–10 
+        years) should not substantially deviate from what can be expected based on project 
+        announcements (e.g. for hydropower, nuclear power, or carbon capture and storage). 
+        While going above or below those trajectories is not strictly impossible, those 
+        developments are deemed infeasible.
+long_term_feasibility:
+    name: Long-term feasibility vetting
+    description: >-
+        Long-term feasibility vetting criteria check for the alignment of scenarios with
+        expected long-term growth rates of technologies. Specifically, this means that 
+        the data provided by scenarios for time periods in the long-term future (i.e., 
+        beyond 2040) should not grow much faster than what can be expected for this 
+        specific type of technology. The growth rates of those technologies (e.g. carbon 
+        capture and storage) are inferred from growth rates of comparable technologies 
+        in the past (e.g., solar and wind in the 2000s) or from the most ambitious growth 
+        scenarios of industry associations. Misalignment of a scenario does not mean that 
+        the scenario is outright infeasible, but that a strong technology push would be 
+        required to see unconventional growth rates beyond was can be otherwise be 
+        expected.
+sustainability:
+    name: Sustainability vetting
+    description: >-
+        Sustainability vetting criteria check for the alignment of scenarios with 
+        sustainability targets other than climate-change mitigation. Specifically, 
+        this means that data provided by scenarios for certain technologies, activities, 
+        or practices should not go beyond what would be sustainable in those other 
+        non-climate ecosystem dimensions. The thresholds for sustainability criteria 
+        are derived from literature focussing on the respective sustainability targets. 
+        Misalignment of a scenario does not mean that the scenario is infeasible, but 
+        rather that it is indesirable from non-climate sustainability perspectives.

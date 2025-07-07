@@ -1,0 +1,498 @@
+hist_pop:
+    name: Historical population
+    type: historical
+    justification_criterion: >-
+        This scenario reports population values that are inconsistent with
+        historical values. This is a concern because the underlying modelling
+        likely makes false assumptions on the the mitigation effort required to
+        reach net-zero emissions.
+    justification_threshold: >-
+        Historical values are provided by the World Development Indicators 
+        {{citep:WDI-2024}}. The thresholds are set as follows.
+        
+
+        For years 2010, 2015, and 2020:
+
+        • Single region: ±35% deviation will lead to exclusion, ±25% will lead
+        to a red flag.
+
+        • Whole world: ±25% deviation will lead to exclusion, ±15% will lead
+        to a red flag.
+
+
+        Note that these thresholds not only give models some leeway in being 
+        compatible with historical values, but also account for uncertainty 
+        in the underlying data sources.
+hist_gdp:
+    name: Historical GDP
+    type: historical
+    justification_criterion: >-
+        This scenario reports gross domestic production values that are
+        inconsistent with historical values. This is a concern because the
+        underlying modelling likely makes false assumptions on the the
+        mitigation effort required to reach net-zero emissions.
+    justification_threshold: >-
+        Historical values are provided by the World Development Indicators
+        {{citep:WDI-2024}}. The thresholds are set as follows.
+
+
+        For years 2010 and 2015:
+
+        • Single region: ±35% deviation will lead to exclusion, ±25% will lead
+        to a red flag.
+
+        • Whole world: ±25% deviation will lead to exclusion, ±15% will lead
+        to a red flag.
+
+
+        For 2020 due to the COVID shock:
+
+        • Single region: ±50% deviation will lead to exclusion, ±40% will lead
+        to a red flag.
+
+        • Whole world: ±40% deviation will lead to exclusion, ±30% will lead
+        to a red flag.
+
+
+        Note that these thresholds not only give models some leeway in being 
+        compatible with historical values, but also account for uncertainty 
+        in the underlying data sources.
+hist_emi:
+    name: Historical emissions
+    type: historical
+    justification_criterion: >-
+        This scenario reports CO2 emissions in the energy and industry sector
+        that are inconsistent with historical values. This is a concern
+        because the underlying modelling likely makes false assumptions on the
+        remaining GHG emissions budget and the mitigation effort required to
+        reach net-zero emissions.
+    justification_threshold: >-
+        Historical values are provided by the Community Emissions Data System 
+        {{citep:CEDS-2024}}. The thresholds are set as follows.
+        
+
+        For years 2010 and 2015:
+
+        • Single region: ±35% deviation will lead to exclusion, ±25% will lead 
+        to a red flag.
+
+        • Whole world: ±25% deviation will lead to exclusion, ±15% will lead 
+        to a red flag.
+
+
+        For 2020 due to the COVID shock:
+
+        • Single region: ±50% deviation will lead to exclusion, ±40% will lead 
+        to a red flag.
+
+        • Whole world: ±40% deviation will lead to exclusion, ±30% will lead 
+        to a red flag.
+
+
+        Note that these thresholds not only give models some leeway in being 
+        compatible with historical values, but also account for uncertainty 
+        in the underlying data sources.
+hist_fe:
+    name: Historical energy demand
+    type: historical
+    justification_criterion: >-
+        This scenario reports final energy demand that is inconsistent with
+        historical values. This is a concern because the underlying modelling
+        likely makes false assumptions on the mitigation effort required to
+        reach net-zero emissions.
+
+        Note that final energy includes non-energy use.
+    justification_threshold: >-
+        Historical values are provided by the International Energy Agency 
+        {{citep:IEA-EB-23}}. The thresholds are set as follows.
+        
+
+        For years 2010 and 2015:
+
+        • Single region: ±35% deviation will lead to exclusion, ±25% will lead
+        to a red flag.
+
+        • Whole world: ±25% deviation will lead to exclusion, ±15% will lead
+        to a red flag.
+
+
+        For 2020 due to the COVID shock:
+
+        • Single region: ±50% deviation will lead to exclusion, ±40% will lead
+        to a red flag.
+
+        • Whole world: ±40% deviation will lead to exclusion, ±30% will lead
+        to a red flag.
+
+
+        Note that these thresholds not only give models some leeway in being 
+        compatible with historical values, but also account for uncertainty 
+        in the underlying data sources.
+hist_pe_fossil:
+    name: Historical fossil primary energy production
+    type: historical
+    justification_criterion: >-
+        This scenario reports fossil primary energy production (coal, oil, and
+        gas) that is inconsistent with historical values. This is a concern
+        because the underlying modelling likely makes false assumptions on the
+        mitigation effort required to reach net-zero emissions.
+    justification_threshold: >-
+        Historical values are provided by the International Energy Agency 
+        {{citep:IEA-EB-2023}}. The thresholds are set as follows.
+        
+
+        For years 2010 and 2015:
+
+        • Single region: ±35% deviation will lead to exclusion, ±25% will lead
+        to a red flag.
+
+        • Whole world: ±25% deviation will lead to exclusion, ±15% will lead
+        to a red flag.
+
+
+        For 2020 due to the COVID shock:
+
+        • Single region: ±50% deviation will lead to exclusion, ±40% will lead
+        to a red flag.
+
+        • Whole world: ±40% deviation will lead to exclusion, ±30% will lead
+        to a red flag.
+
+
+        Note that these thresholds not only give models some leeway in being 
+        compatible with historical values, but also account for uncertainty 
+        in the underlying data sources.
+nearterm_hydro:
+    name: Future near-term expansion of hydropower
+    type: near_term_feasibility
+    justification_criterion: >-
+        This scenario assumes a deployment of hydropower plants that is
+        inconsistent with near-term projections.
+
+
+        Near-term upper and lower capacity projections can be derived from
+        existing capacities and from current project announcements and known
+        project lead times. Robust upper projections can be made because
+        projects take at least 5 years to plan and construct and therefore
+        will not be operational by 2030 if not yet announced by today. Robust
+        lower projections can be made based on exisiting capacities and
+        because retirement rates can reasonably be assumed to be low.
+
+
+        Specifically, hydropower plants take 4–7 years to construct (for
+        medium-sized projects) and up to 15 years (for large-sized projects)
+        to plan and construct. Small projects that can be completed within
+        less than 4 years make up less than 3% of all projects planned
+        globally in 2021.
+
+
+        For details on hydropower projects, see the Hydropower Special Market
+        Report {{citep:IEA-Hydropow-2021}}.
+    justification_threshold: >-
+        Data on hydro power plant projects was published by the IEA in 2021. 
+        Details can be found here:
+        https://www.iea.org/data-and-statistics/data-tools/hydropower-data-explorer
+        
+
+        The IEA publishes capacities in three categories:
+
+        • Operational: in operation in 2021
+
+        • Expected: expected to come online by 2030
+
+        • Accelerated: capacity that could come online by 2030 given an
+        acceleration in efforts.
+        
+
+        We assume the following thresholds for 2030 based on data provided by 
+        the IEA:
+
+        • Lower, red:  10% (globally) less than currently operational capacities.
+
+        • Lower, yellow: 5% (globally) or 40% (regionally) less than what is
+        expected to come online according to the IEA by 2030.
+
+        • Upper, yellow: 5% (globally) or 80% (regionally) more than what is
+        expected to come online assuming accelerated efforts according to the 
+        IEA by 2030.
+
+        • Upper, red: 45% (globally) more than what is expected to come online
+        assuming accelerated efforts according to the IEA by 2030.
+nearterm_nuclear:
+    name: Future near-term expansion of nuclear power
+    type: near_term_feasibility
+    justification_criterion: >-
+        This scenario assumes a deployment of nuclear power plants that is
+        inconsistent with near-term projections.
+
+
+        Near-term upper and lower capacity projections can be derived from
+        existing capacities and from current project announcements and known
+        project lead times. Robust upper projections can be made because
+        projects take at least 5 years to plan and construct and therefore
+        will not be operational by 2030 if not yet announced by today. Robust
+        lower projections can be made based on exisiting capacities and
+        because retirement rates can reasonably be assumed to be low.
+    justification_threshold: >-
+        Data on nuclear power plant projects was published by the 
+        International Atomic Energy Agency (IAEA) in 2021. Details can be 
+        found here:
+
+
+        Country statistics today:
+
+        https://pris.iaea.org/PRIS/CountryStatistics/CountryStatisticsLandingPage.aspx
+        
+
+        IAEA's own estimates:
+
+        https://www-pub.iaea.org/MTCD/Publications/PDF/RDS-1-44_web.pdf
+        
+
+        The IAEA publishes capacities in three categories:
+
+        • Operational: in operation in 2024
+
+        • Construction: currently under construction
+
+        • Retired: inactive capacity that has been retired
+        
+
+        We assume the following thresholds for 2030 based on data provided by 
+        the IAEA:
+
+        • Lower, red:  30% (globally) less than currently operational
+        capacities.
+
+        • Lower, yellow:  15% (globally) or 50% (regionally) less than
+        currently operational capacities.
+
+        • Upper, yellow:  5% (globally) or 40% (regionally) more than plants
+        operational today plus bringing retired plants in Japan back online 
+        plus 75% of plants under construction.
+
+        • Upper, red:  10% (globally) more than the highest estimate published
+        by the IAEA (461 GW).
+nearterm_ccus:
+    name: Future near-term expansion of carbon capture
+    type: near_term_feasibility
+    justification_criterion: >-
+        This scenario assumes a deployment of CCU/S technologies that is
+        inconsistent with near-term projections.
+
+
+        Near-term upper and lower capacity projections can be derived from
+        existing capacities and from current project announcements and known
+        project lead times. Robust upper projections can be made because
+        projects take at least 5 years to plan and construct and therefore
+        will not be operational by 2030 if not yet announced by today. Robust
+        lower projections can be made based on exisiting capacities and
+        because retirement rates can reasonably be assumed to be low.
+    justification_threshold: >-
+        CCU/S projects are tracked by the IEA and published annually in its 
+        CCUS Database. Details can be found here:
+        https://www.iea.org/data-and-statistics/data-product/ccus-projects-database
+        
+
+        Projects in the CCUS database have one of the following statuses:
+
+        • Operational: in operation in 2024
+
+        • Construction: currently under construction
+
+        • Planned: announced but without final investment decision in 2024.
+        Projects that were decommissioned or suspended are not 
+        
+
+        We assume the following thresholds for 2030 based on data provided by 
+        the IEA CCUS database:
+
+        • Lower, red:  10% (globally) less than currently operational
+        capacities.
+
+        • Lower, yellow:  5% (globally) or 40% (regionally) less than
+        currently operational capacities and 50% of projects under construction.
+
+        • Upper, yellow:  5% (globally) or 40% (regionally) more than plants
+        operational today plus all projects under construction plus 20% of 
+        projects planned without FID.
+
+        • Upper, red:  10% (globally) more than all projects operational,
+        under construction, and announced.
+nearterm_solar:
+    name: Future near-term expansion of solar photovoltaics capacity
+    type: near_term_feasibility
+    justification_criterion: >-
+        This scenario assumes a deployment of solar photovoltaics that is
+        inconsistent with near-term market outlooks.
+
+
+        This technology is available at scale and has short project lead
+        times, meaning that there are no fundamental obstacles to fast
+        deployment. Yet, it's near-term growth can be estimated based on
+        today's market dynamics. While these estimates have their limitations,
+        they can be used to set broad ranges of near-term feasibility.
+    justification_threshold: >-
+        Existing capacities in 2023 are reported by {{cite:Ember-2024}}. Yearly 
+        additions for 2024–2030 are estimated in a market outlook by 
+        {{cite:BNEF-2024}}.
+
+
+        We assume the following thresholds for 2025 and 2030:
+
+        • Lower, red: 10% (globally) less than existing capacities plus
+        37.5% of market outlook.
+
+        • Lower, yellow: 5% (globally) or 40% (regionally) less than
+        existing capacities plus 75% (globally) or 37.5% (regionally) of 
+        market outlook.
+
+        • Upper, yellow: 5% (globally) or 40% (regionally) more than
+        existing capacities plus 150% (globally) or 200% (regionally) of 
+        market outlook.
+
+        • Upper, red: 10% (globally) more than existing capacities plus
+        200% of market outlook.
+nearterm_wind_onshore:
+    name: Future near-term expansion of on-shore wind capacity
+    type: near_term_feasibility
+    justification_criterion: >-
+        This scenario assumes a deployment of on-shore wind that is
+        inconsistent with near-term market outlooks.
+
+
+        This technology is available at scale and has short project lead
+        times, meaning that there are no fundamental obstacles to fast
+        deployment. Yet, it's near-term growth can be estimated based on
+        today's market dynamics. While these estimates have their limitations,
+        they can be used to set broad ranges of near-term feasibility.
+    justification_threshold: >-
+        Existing capacities in 2022 are reported by {{cite:Ember-2024}}. Yearly 
+        additions for 2023–2028 are estimated in a market outlook by the 
+        {{cite:GWEC-2024}}.
+
+
+        This outlook is based on input from regional wind associations, 
+        government targets, tender results, announced auction plans, available 
+        project pipeline, and input from industry experts.
+
+
+        We assume the following thresholds for 2025 and 2030:
+
+        • Lower, red: 10% (globally) less than existing capacities plus
+        37.5% of market outlook.
+
+        • Lower, yellow: 5% (globally) or 40% (regionally) less than
+        existing capacities plus 75% (globally) or 37.5% (regionally) of 
+        market outlook.
+
+        • Upper, yellow: 5% (globally) or 40% (regionally) more than
+        existing capacities plus 150% (globally) or 200% (regionally) of 
+        market outlook.
+
+        • Upper, red: 10% (globally) more than existing capacities plus
+        200% of market outlook.
+longterm_nuclear:
+    name: Future long-term expansion of nuclear power
+    type: long_term_feasibility
+    justification_criterion: >-
+        This scenario assumes a high long-term deployment of nuclear power
+        plants.
+
+
+        Nuclear power is a technology that is known to exhibit low growth
+        rates. While governmental programmes to speed up development could
+        results in a increased growth rates, such developments seem unlikely
+        given recent trends and the required public funding. This is
+        reflected by the fact that even the industry's own association (the
+        International Atomic Energy Agency) estimates a maximum increase
+        of today's capacity by 150% {{citep:IAEA-2024}}.
+    justification_threshold: >-
+        The International Atomic Energy Agency publishes its own long-term 
+        estimates for nuclear power-plant capacity {{citep:IAEA-2024}}. The
+        highest estimates are at 694 GWe in 2040 and 950 GWe in 2050.
+longterm_ccus:
+    name: Future long-term expansion of carbon capture
+    type: long_term_feasibility
+    justification_criterion: >-
+        This scenario assumes a high deployment of CCU/S beyond 2035. CCU/S
+        involves capturing CO₂ from flue gases and storing it geologically or
+        in products. The required technologies for these activities are highly
+        non-modular and application-specific. Additionally, CCS depends on
+        infrastructure like CO₂ pipeline networks, which still have to be
+        built. Therefore it will likely grow more slowly than modular
+        technologies with some degree of existing infrastructure, such as
+        solar, wind, and batteries.
+    justification_threshold: >-
+        This scenario assumes capacity deployment of CCS in 2035 and 2040 that 
+        would require unlikely growth rates (compare {{cite:Kazlou-2024}}).
+longterm_daccs:
+    name: Future long-term expansion of DACCS
+    type: long_term_feasibility
+    justification_criterion: >-
+        This scenario assumes a high deployment of Direct Air Capture with
+        Carbon Storage (DACCS).
+
+
+        DACCS is a technology that is very immature today. Moreover, CO₂ is
+        captured  directly from the atmosphere, which has a much lower CO₂
+        concentration than flue gases from points sources (e.g. a cement
+        or waste-incineration plant), the purification of CO₂ is much
+        harder and cannot be achieved with established carbon capture
+        technologies.
+
+
+        In summary, this causes DACCS to be a technology that will likely take
+        a long time to develop and scale up.
+    justification_threshold: >-
+        An upper limit of 4.89 Gt CO2eq/yr of DACCS is derived by 
+        {{cite:Edwards-2024}}.
+sustainable_bioenergy:
+    name: Sustainability concerns due to excessive biomass use
+    type: sustainability
+    justification_criterion: >-
+        This scenario assumes a high usage of bioenergy. Specifically, we
+        here refer to 2nd generation bioenergy crops, crop and forestry
+        residues, municipal solid waste bioenergy and traditional biomass.
+
+
+        Bioenergy can be a drop-in replacement to currently used fossil fuels.
+        When grown in a sustainable fashion, their life-cycle of production
+        and use is GHG neutral. Bio-based energy crops can be grown at low
+        cost and with readily available technologies.
+
+
+        Some decarbonisation scenarios therefore tend to assume a high use of
+        bioenergy. Meanwhile, such a high use of bioenergy can result in (a)
+        growth practices that are no longer GHG neutral in their life cycle
+        (e.g. through deforestation to create more arable land for energy
+        crops) or result in (b) a loss of natural habitats, which creates
+        other sustainability concerns, for instance linked to a loss of
+        biodiversity.
+    justification_threshold: >-
+        {{cite:Creutzig-2014}} have derived an upper limit for sustainable 
+        biomass use of 100–300 EJ/yr. In the 6th Assessment Report of Working 
+        Group 3 of the Intergovernmental Panel on Climate Change (IPCC), a value of
+        100 EJ/yr is defined as the threshold for the onset of medium concern and 
+        245 EJ/yr a threshold for the onset of high concern 
+        {{citep:IPCC-AR6-WG3-ANX3-2022}}. Another study by {{cite:Deprez-2024}} 
+        suggests that medium sustainablity risks arise at 50 EJ/yr and high 
+        risks at 120 EJ/yr. Based on those studies the threshold for this 
+        sustainablity concern flag is set at 100 EJ/yr.
+sustainable_hydropower:
+    name: Sustainability concerns due to excessive hydropower deployment
+    type: sustainability
+    justification_criterion: >-
+        Hydropower can negatively impact nature by altering river ecosystems,
+        disrupting fish migration, and affecting water quality. Dams can
+        change natural water flow, leading to habitat loss for aquatic and
+        terrestrial species. They can also trap sediment, which is essential
+        for maintaining downstream ecosystems. {{cite:Thieme-2021}} found that
+        if all planned hydropower dams would complete construction, this
+        would result in the loss of 260,000 kilometers of free-flowing rivers
+        globally.
+    justification_threshold: >-
+        {{cite:Opperman-2019}} show that a low level of hydropower expansion of 
+        no more than 1500 GW hydropower globally combined with strategic 
+        planning of the siting of new hydropower could reduce impacts on 
+        free-flowing rivers by 90%.

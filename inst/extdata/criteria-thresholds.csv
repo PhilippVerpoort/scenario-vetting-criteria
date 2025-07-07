@@ -1,0 +1,78 @@
+threshold_type,,,,,,lower,lower,lower,upper,upper,upper
+threshold_severity,,,,,,very_strong,strong,medium,medium,strong,very_strong
+criterion,region,period,variable,reference_source,unit,,,,,,
+hist_pop,Model Native Regions,"2010, 2015, 2020",Population,WDI-2024,dimensionless,0.65,0.75,,,1.25,1.35
+hist_pop,World,"2010, 2015, 2020",Population,WDI-2024,dimensionless,0.75,0.85,,,1.15,1.25
+hist_gdp,Model Native Regions,"2010, 2015",GDP|PPP,WDI-2024,dimensionless,0.65,0.75,,,1.25,1.35
+hist_gdp,Model Native Regions,2020,GDP|PPP,WDI-2024,dimensionless,0.5,0.6,,,1.4,1.5
+hist_gdp,World,"2010, 2015",GDP|PPP,WDI-2024,dimensionless,0.75,0.85,,,1.15,1.25
+hist_gdp,World,2020,GDP|PPP,WDI-2024,dimensionless,0.6,0.7,,,1.3,1.4
+hist_emi,Model Native Regions,"2010, 2015",Emissions|CO2|Energy and Industrial Processes,CEDS-2024,dimensionless,0.65,0.75,,,1.25,1.35
+hist_emi,Model Native Regions,2020,Emissions|CO2|Energy and Industrial Processes,CEDS-2024,dimensionless,0.5,0.6,,,1.4,1.5
+hist_emi,World,"2010, 2015",Emissions|CO2|Energy and Industrial Processes,CEDS-2024,dimensionless,0.75,0.85,,,1.15,1.25
+hist_emi,World,"2020, 2025",Emissions|CO2|Energy and Industrial Processes,CEDS-2024,dimensionless,0.6,0.7,,,1.3,1.4
+hist_fe,Model Native Regions,"2010, 2015",Final Energy,IEA-EB-2023,dimensionless,0.65,0.75,,,1.25,1.35
+hist_fe,Model Native Regions,2020,Final Energy,IEA-EB-2023,dimensionless,0.5,0.6,,,1.4,1.5
+hist_fe,World,"2010, 2015",Final Energy,IEA-EB-2023,dimensionless,0.75,0.85,,,1.15,1.25
+hist_fe,World,2020,Final Energy,IEA-EB-2023,dimensionless,0.6,0.7,,,1.3,1.4
+hist_pe_fossil,Model Native Regions,"2010, 2015","Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas",IEA-EB-2023,dimensionless,0.65,0.75,,,1.25,1.35
+hist_pe_fossil,Model Native Regions,2020,"Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas",IEA-EB-2023,dimensionless,0.5,0.6,,,1.4,1.5
+hist_pe_fossil,World,"2010, 2015","Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas",IEA-EB-2023,dimensionless,0.75,0.85,,,1.15,1.25
+hist_pe_fossil,World,2020,"Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas",IEA-EB-2023,dimensionless,0.6,0.7,,,1.3,1.4
+nearterm_hydro,Africa (R10),2030,Capacity|Electricity|Hydro,,GW,,,15.3,96.39,,
+nearterm_hydro,China+ (R10),2030,Capacity|Electricity|Hydro,,GW,,,201.24,832.12,,
+nearterm_hydro,Europe (R10),2030,Capacity|Electricity|Hydro,,GW,,,106.16,436.09,,
+nearterm_hydro,India+ (R10),2030,Capacity|Electricity|Hydro,,GW,,,27.06,149.56,,
+nearterm_hydro,Latin America (R10),2030,Capacity|Electricity|Hydro,,GW,,,110.94,376.29,,
+nearterm_hydro,Middle East (R10),2030,Capacity|Electricity|Hydro,,GW,,,6.85,31.76,,
+nearterm_hydro,North America (R10),2030,Capacity|Electricity|Hydro,,GW,,,48.84,187.67,,
+nearterm_hydro,Pacific OECD (R10),2030,Capacity|Electricity|Hydro,,GW,,,65.94,259.67,,
+nearterm_hydro,Reforming Economies (R10),2030,Capacity|Electricity|Hydro,,GW,,,37.74,135.95,,
+nearterm_hydro,Rest of Asia (R10),2030,Capacity|Electricity|Hydro,,GW,,,32.88,189.6,,
+nearterm_hydro,World,2030,Capacity|Electricity|Hydro,,GW,,979.43,1175.37,1606.66,2117.58,
+nearterm_nuclear,Africa (R10),2030,Capacity|Electricity|Nuclear,,GW,,,0.89,8.75,,
+nearterm_nuclear,China+ (R10),2030,Capacity|Electricity|Nuclear,,GW,,,26.89,115.25,,
+nearterm_nuclear,Europe (R10),2030,Capacity|Electricity|Nuclear,,GW,,,50.51,161.01,,
+nearterm_nuclear,India+ (R10),2030,Capacity|Electricity|Nuclear,,GW,,,3.32,17.25,,
+nearterm_nuclear,Latin America (R10),2030,Capacity|Electricity|Nuclear,,GW,,,2.43,9.01,,
+nearterm_nuclear,Middle East (R10),2030,Capacity|Electricity|Nuclear,,GW,,,3,10.09,,
+nearterm_nuclear,North America (R10),2030,Capacity|Electricity|Nuclear,,GW,,,46.54,135.73,,
+nearterm_nuclear,Pacific OECD (R10),2030,Capacity|Electricity|Nuclear,,GW,,,11.88,38.36,,
+nearterm_nuclear,Reforming Economies (R10),2030,Capacity|Electricity|Nuclear,,GW,,,20.42,67.86,,
+nearterm_nuclear,Rest of Asia (R10),2030,Capacity|Electricity|Nuclear,,GW,,,13.96,47.49,,
+nearterm_nuclear,World,2030,Capacity|Electricity|Nuclear,,GW,,269.75,320.33,441.92,479.92,
+nearterm_ccus,Africa (R10),2030,Carbon Capture,,Mt CO2/yr,,,0,2.24,,
+nearterm_ccus,China+ (R10),2030,Carbon Capture,,Mt CO2/yr,,,2.01,12.95,,
+nearterm_ccus,Europe (R10),2030,Carbon Capture,,Mt CO2/yr,,,1.12,110.6,,
+nearterm_ccus,India+ (R10),2030,Carbon Capture,,Mt CO2/yr,,,0,0.98,,
+nearterm_ccus,Latin America (R10),2030,Carbon Capture,,Mt CO2/yr,,,6.36,28.84,,
+nearterm_ccus,Middle East (R10),2030,Carbon Capture,,Mt CO2/yr,,,2.22,30.32,,
+nearterm_ccus,North America (R10),2030,Carbon Capture,,Mt CO2/yr,,,12.12,283.84,,
+nearterm_ccus,Pacific OECD (R10),2030,Carbon Capture,,Mt CO2/yr,,,5.52,92.09,,
+nearterm_ccus,Reforming Economies (R10),2030,Carbon Capture,,Mt CO2/yr,,,0,0,,
+nearterm_ccus,Rest of Asia (R10),2030,Carbon Capture,,Mt CO2/yr,,,0,20.91,,
+nearterm_ccus,World,2030,Carbon Capture,,Mt CO2/yr,,0,44.02,152.47,457.89,
+nearterm_solar,World,2025,Capacity|Electricity|Solar,,GW,,1609.2,2083,3152,3895.6,
+nearterm_solar,China+ (R10),2025,Capacity|Electricity|Solar,,GW,,,518.1,2671.7,,
+nearterm_solar,Europe (R10),2025,Capacity|Electricity|Solar,,GW,,,194.2,764.7,,
+nearterm_solar,India+ (R10),2025,Capacity|Electricity|Solar,,GW,,,56.2,256.4,,
+nearterm_solar,World,2030,Capacity|Electricity|Solar,,GW,,2683.2,4350.2,8163.7,10896,
+nearterm_solar,China+ (R10),2030,Capacity|Electricity|Solar,,GW,,,936.1,7874.1,,
+nearterm_solar,Europe (R10),2030,Capacity|Electricity|Solar,,GW,,,280.6,1839.9,,
+nearterm_solar,India+ (R10),2030,Capacity|Electricity|Solar,,GW,,,104.4,855.6,,
+nearterm_wind_onshore,World,2025,Capacity|Electricity|Wind|Onshore,,GW,,945,1138,1570,1862,
+nearterm_wind_onshore,Europe (R10),2025,Capacity|Electricity|Wind|Onshore,,GW,,1220,154,505,3655,
+nearterm_wind_onshore,China+ (R10),2025,Capacity|Electricity|Wind|Onshore,,GW,,,268,1101,,
+nearterm_wind_onshore,India+ (R10),2025,Capacity|Electricity|Wind|Onshore,,GW,,,28,91,,
+nearterm_wind_onshore,World,2030,Capacity|Electricity|Wind|Onshore,,GW,,,1719,2853,,
+nearterm_wind_onshore,Europe (R10),2030,Capacity|Electricity|Wind|Onshore,,GW,,,191,969,,
+nearterm_wind_onshore,China+ (R10),2030,Capacity|Electricity|Wind|Onshore,,GW,,,349,2117,,
+nearterm_wind_onshore,India+ (R10),2030,Capacity|Electricity|Wind|Onshore,,GW,,,33,154,,
+longterm_nuclear,World,2040,Capacity|Electricity|Nuclear,,GW,,,,694,,
+longterm_nuclear,World,2050,Capacity|Electricity|Nuclear,,GW,,,,950,,
+longterm_ccus,World,2035,Carbon Capture,,Mt CO2/yr,,,,1300,,
+longterm_ccus,World,2040,Carbon Capture,,Mt CO2/yr,,,,4300,,
+longterm_daccs,World,2050,Carbon Capture|Geological Storage|Direct Air Capture,,Gt CO2/yr,,,,4.89,,
+sustainable_bioenergy,World,"2025, 2030, 2035, 2040, 2045, 2050",Primary Energy|Biomass,,EJ/yr,,,,,100,
+sustainable_hydropower,World,2050,Capacity|Electricity|Hydro,,GW,,,,,1500,
+,,,,,,,,,,,

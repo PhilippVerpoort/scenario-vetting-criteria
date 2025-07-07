@@ -1,0 +1,64 @@
+site_name: Definitions of vetting criteria for integrated assessment modelling scenarios
+site_url: https://PhilippVerpoort.github.io/scenario-vetting-criteria/
+repo_name: scenario-vetting-criteria
+repo_url: https://github.com/PhilippVerpoort/scenario-vetting-criteria/
+copyright: © 2025 Integrated Assessment Modelling Consortium (IAMC)
+nav:
+  - Criteria definitions:
+    - Index: index.md
+    - Criteria types: criteria_types.md
+    - Criteria metadata: criteria_meta.md
+    - Criteria thresholds: criteria_thrsh.md
+    - Operations: operations.md
+    - Reference data: reference_data.md
+    - Reference sources: reference_srcs.md
+  - Tutorials:
+    - Basic usage: tutorials/basic.md
+    - R: tutorials/R.py
+    - Python: tutorials/python.py
+  - Code documentation:
+    - R: code/R.md
+    - Python: code/python.md
+theme:
+  features:
+  - content.tabs.link
+  - navigation.tabs
+  - navigation.tabs.sticky
+  - navigation.path
+  - navigation.indexes
+  - toc.integrate
+  logo: assets/logo_white.svg
+  favicon: assets/favicon.ico
+  name: material
+  palette:
+  - scheme: default
+    toggle:
+      icon: material/weather-night
+      name: Switch to dark mode
+  - scheme: slate
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to light mode
+plugins:
+  - search
+  - include-markdown
+  - markdown-exec
+  - mkdocs-jupyter:
+      execute: True
+      include_requirejs: True
+      include_source: True
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_root_heading: True
+            show_source: True
+            members_order: source
+            merge_init_into_class: True
+            separate_signature: True
+            docstring_style: numpy
+            follow_imports: True
+            filters: ["!^_"]
+          paths: [python]
+markdown_extensions:
+  - pymdownx.superfences

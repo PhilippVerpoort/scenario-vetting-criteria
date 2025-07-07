@@ -1,0 +1,55 @@
+- criterion_type: historical
+  threshold_severity: very_strong
+  threshold_type:
+      - upper
+      - lower
+  operation: drop
+- criterion_type: historical
+  threshold_severity: strong
+  threshold_type:
+      - upper
+      - lower
+  operation: flag
+  colour: red
+- criterion_type: historical
+  threshold_severity: strong
+  threshold_type:
+      - upper
+      - lower
+  operation: flag
+  colour: red
+- criterion_type: near_term_feasibility
+  threshold_severity: strong
+  threshold_type:
+      - upper
+      - lower
+  operation: flag
+  colour: red
+- criterion_type: near_term_feasibility
+  threshold_severity: medium
+  threshold_type:
+      - upper
+      - lower
+  operation: flag
+  colour: yellow
+- criterion_type: long_term_feasibility
+  threshold_severity: strong
+  threshold_type:
+      - upper
+      - lower
+  operation: flag
+  colour: red
+- criterion_type: long_term_feasibility
+  threshold_severity: medium
+  threshold_type:
+      - upper
+      - lower
+  operation: flag
+  colour: yellow
+- criterion_type: sustainability
+  threshold_severity: strong
+  threshold_type:
+      - upper
+      - lower
+  operation: flag
+  colour: purple
