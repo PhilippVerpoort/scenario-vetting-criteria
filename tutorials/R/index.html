@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#raw-file-paths" class="md-skip">
+        <a href="#installation" class="md-skip">
           Skip to content
         </a>
       
@@ -673,6 +673,15 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#raw-file-paths" class="md-nav__link">
@@ -1298,8 +1307,18 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=898efb05">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=087cc148">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>This has to be run in order to compile this notebook while the R package is still under development.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9e47505e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1317,7 +1336,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">devtools</span><span class="p">::</span><span class="n">load_all</span><span class="p">()</span>
+<div class="highlight-ipynb hl-R"><pre><span></span><span class="n">devtools</span><span class="o">::</span><span class="nf">load_all</span><span class="p">()</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-1">devtools::load_all()</div>
 </div>
@@ -1348,7 +1367,31 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=30131b9f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=29a07351">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="installation">Installation<a class="anchor-link" href="#installation">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9c117b89">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>While the R package has not been released yet, you have to install it from GitHub source using:</p>
+<div class="highlight"><pre><span></span><span class="nf">install_github</span><span class="p">(</span><span class="s">'PhilippVerpoort/scenario_vetting_criteria'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=00f6636f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1359,7 +1402,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=81a14657">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3379e079">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1370,7 +1413,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d949405b">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9dd5025f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1388,11 +1431,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">library</span><span class="p">(</span><span class="n">scenariovettingcriteria</span><span class="p">)</span>
+<div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">scenariovettingcriteria</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="n">component_id</span> <span class="ow">in</span> <span class="n">names</span><span class="p">(</span><span class="n">file_paths</span><span class="p">))</span> <span class="p">{</span>
-  <span class="n">component_path</span> <span class="o">&lt;-</span> <span class="n">file_paths</span><span class="p">[[</span><span class="n">component_id</span><span class="p">]]</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">paste0</span><span class="p">(</span><span class="n">component_id</span><span class="p">,</span> <span class="s2">":  ..."</span><span class="p">,</span> <span class="n">substr</span><span class="p">(</span><span class="k">as</span><span class="o">.</span><span class="n">character</span><span class="p">(</span><span class="n">component_path</span><span class="p">),</span> <span class="n">nchar</span><span class="p">(</span><span class="k">as</span><span class="o">.</span><span class="n">character</span><span class="p">(</span><span class="n">component_path</span><span class="p">))</span> <span class="o">-</span> <span class="mi">39</span><span class="p">,</span> <span class="n">nchar</span><span class="p">(</span><span class="k">as</span><span class="o">.</span><span class="n">character</span><span class="p">(</span><span class="n">component_path</span><span class="p">)))))</span>
+<span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">component_id</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nf">names</span><span class="p">(</span><span class="n">file_paths</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">component_path</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">file_paths</span><span class="p">[[</span><span class="n">component_id</span><span class="p">]]</span>
+<span class="w">  </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="n">component_id</span><span class="p">,</span><span class="w"> </span><span class="s">":  ..."</span><span class="p">,</span><span class="w"> </span><span class="nf">substr</span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">component_path</span><span class="p">),</span><span class="w"> </span><span class="nf">nchar</span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">component_path</span><span class="p">))</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">39</span><span class="p">,</span><span class="w"> </span><span class="nf">nchar</span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">component_path</span><span class="p">)))))</span>
 <span class="p">}</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-2">library(scenariovettingcriteria)
@@ -1425,7 +1468,7 @@ for (component_id in names(file_paths)) {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f55db3e1">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2800625e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1436,7 +1479,7 @@ for (component_id in names(file_paths)) {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=50cea9d4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ca14f238">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1447,7 +1490,7 @@ for (component_id in names(file_paths)) {
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=176f4ab3">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=bdfccbe3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1465,7 +1508,7 @@ for (component_id in names(file_paths)) {
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">load_criteria</span><span class="p">(</span><span class="s1">'criteria-thresholds'</span><span class="p">)</span>
+<div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">load_criteria</span><span class="p">(</span><span class="s">'criteria-thresholds'</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-3">load_criteria('criteria-thresholds')</div>
 </div>
@@ -1555,7 +1598,7 @@ for (component_id in names(file_paths)) {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=584e8ef3">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6f0547e2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1566,7 +1609,7 @@ for (component_id in names(file_paths)) {
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e6fee21c">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e5afe8a5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1584,8 +1627,8 @@ for (component_id in names(file_paths)) {
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">criteria</span> <span class="o">&lt;-</span> <span class="n">load_criteria</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s1">'criteria-thresholds'</span><span class="p">,</span> <span class="s1">'operations'</span><span class="p">))</span>
-<span class="n">criteria</span><span class="err">$</span><span class="n">operations</span>
+<div class="highlight-ipynb hl-R"><pre><span></span><span class="n">criteria</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">load_criteria</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">'criteria-thresholds'</span><span class="p">,</span><span class="w"> </span><span class="s">'operations'</span><span class="p">))</span>
+<span class="n">criteria</span><span class="o">$</span><span class="n">operations</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-4">criteria &lt;- load_criteria(c('criteria-thresholds', 'operations'))
 criteria$operations</div>
@@ -1758,7 +1801,7 @@ criteria$operations</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=be86b225">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=361ee0b1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1769,7 +1812,7 @@ criteria$operations</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=393c4302">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2765de32">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>

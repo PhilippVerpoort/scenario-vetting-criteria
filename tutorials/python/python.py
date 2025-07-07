@@ -16,6 +16,20 @@
 # ---
 
 # %% [markdown]
+# ## Installation
+
+# %% [markdown]
+# While the Python package has not been released yet, you have to install it from GitHub source using:
+#
+# ```bash
+# # when using poetry
+# poetry add git+https://github.com:PhilippVerpoort/scenario-vetting-criteria.git
+#
+# # when using pip
+# pip install git+https://github.com:PhilippVerpoort/scenario-vetting-criteria.git
+# ```
+
+# %% [markdown]
 # ## Raw file paths
 
 # %% [markdown]

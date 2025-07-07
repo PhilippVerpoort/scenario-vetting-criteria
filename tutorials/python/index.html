@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#raw-file-paths" class="md-skip">
+        <a href="#installation" class="md-skip">
           Skip to content
         </a>
       
@@ -698,6 +698,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#raw-file-paths" class="md-nav__link">
     <span class="md-ellipsis">
       Raw file paths
@@ -1307,7 +1316,35 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d9eb472f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=de37c3c8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="installation">Installation<a class="anchor-link" href="#installation">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b5c0c721">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>While the Python package has not been released yet, you have to install it from GitHub source using:</p>
+<div class="highlight"><pre><span></span><span class="c1"># when using poetry</span>
+poetry<span class="w"> </span>add<span class="w"> </span>git+https://github.com:PhilippVerpoort/scenario-vetting-criteria.git
+
+<span class="c1"># when using pip</span>
+pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com:PhilippVerpoort/scenario-vetting-criteria.git
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=66758898">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1318,7 +1355,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3682bb16">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=166da0ab">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1329,7 +1366,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e9a18f46">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a5f703d8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1347,10 +1384,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scenario_vetting_criteria</span><span class="w"> </span><span class="kn">import</span> <span class="n">file_paths</span>
+<div class="highlight-ipynb hl-R"><pre><span></span><span class="n">from</span><span class="w"> </span><span class="n">scenario_vetting_criteria</span><span class="w"> </span><span class="n">import</span><span class="w"> </span><span class="n">file_paths</span>
 
-<span class="k">for</span> <span class="n">component_id</span><span class="p">,</span> <span class="n">component_path</span> <span class="ow">in</span> <span class="n">file_paths</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">component_id</span><span class="si">}</span><span class="s2">:  ...</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">component_path</span><span class="p">)[</span><span class="o">-</span><span class="mi">40</span><span class="p">:]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="kr">for</span><span class="w"> </span><span class="n">component_id</span><span class="p">,</span><span class="w"> </span><span class="n">component_path</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nf">file_paths.items</span><span class="p">()</span><span class="o">:</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">f</span><span class="s">"{component_id}:  ...{str(component_path)[-40:]}"</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-1">from scenario_vetting_criteria import file_paths
 
@@ -1380,7 +1417,7 @@ criteria-metadata:  ...ing_criteria/data/criteria-metadata.yaml
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0d893346">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=09e11a57">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1391,7 +1428,7 @@ criteria-metadata:  ...ing_criteria/data/criteria-metadata.yaml
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dd68b7b4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ed985375">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1402,7 +1439,7 @@ criteria-metadata:  ...ing_criteria/data/criteria-metadata.yaml
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=107a1115">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=568efacb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1420,9 +1457,9 @@ criteria-metadata:  ...ing_criteria/data/criteria-metadata.yaml
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scenario_vetting_criteria</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_criteria</span>
+<div class="highlight-ipynb hl-R"><pre><span></span><span class="n">from</span><span class="w"> </span><span class="n">scenario_vetting_criteria</span><span class="w"> </span><span class="n">import</span><span class="w"> </span><span class="n">load_criteria</span>
 
-<span class="n">load_criteria</span><span class="p">(</span><span class="s1">'criteria-thresholds'</span><span class="p">)</span>
+<span class="nf">load_criteria</span><span class="p">(</span><span class="s">'criteria-thresholds'</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-2">from scenario_vetting_criteria import load_criteria
 
@@ -1657,7 +1694,7 @@ load_criteria('criteria-thresholds')</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=93f66720">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=96592376">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1668,7 +1705,7 @@ load_criteria('criteria-thresholds')</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1c3acda5">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=04c7335b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1686,8 +1723,8 @@ load_criteria('criteria-thresholds')</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">criteria</span> <span class="o">=</span> <span class="n">load_criteria</span><span class="p">([</span><span class="s1">'criteria-thresholds'</span><span class="p">,</span> <span class="s1">'operations'</span><span class="p">])</span>
-<span class="n">display</span><span class="p">(</span><span class="n">criteria</span><span class="p">[</span><span class="s1">'operations'</span><span class="p">])</span>
+<div class="highlight-ipynb hl-R"><pre><span></span><span class="n">criteria</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">load_criteria</span><span class="p">([</span><span class="s">'criteria-thresholds'</span><span class="p">,</span><span class="w"> </span><span class="s">'operations'</span><span class="p">])</span>
+<span class="nf">display</span><span class="p">(</span><span class="n">criteria</span><span class="p">[</span><span class="s">'operations'</span><span class="p">])</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-3">criteria = load_criteria(['criteria-thresholds', 'operations'])
 display(criteria['operations'])</div>
@@ -1747,7 +1784,7 @@ display(criteria['operations'])</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5b288c33">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=55c63440">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1758,7 +1795,7 @@ display(criteria['operations'])</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b3ad5a51">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bcb5212c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1769,7 +1806,7 @@ display(criteria['operations'])</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9ab91f60">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f3f9bdac">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1787,7 +1824,7 @@ display(criteria['operations'])</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">reference_srcs</span> <span class="o">=</span> <span class="n">load_criteria</span><span class="p">(</span><span class="s1">'reference-sources'</span><span class="p">)</span>
+<div class="highlight-ipynb hl-R"><pre><span></span><span class="n">reference_srcs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">load_criteria</span><span class="p">(</span><span class="s">'reference-sources'</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-4">reference_srcs = load_criteria('reference-sources')</div>
 </div>
@@ -1796,7 +1833,7 @@ display(criteria['operations'])</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1b54ff1e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e6b71ddd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1807,7 +1844,7 @@ display(criteria['operations'])</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7b07f70c">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=12c3338e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1825,9 +1862,9 @@ display(criteria['operations'])</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scenario_vetting_criteria.formatting</span><span class="w"> </span><span class="kn">import</span> <span class="n">format_sources</span>
-<span class="n">reference_srcs_formatted</span> <span class="o">=</span> <span class="n">format_sources</span><span class="p">(</span><span class="n">reference_srcs</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">reference_srcs_formatted</span><span class="p">[</span><span class="s1">'Creutzig14'</span><span class="p">])</span>
+<div class="highlight-ipynb hl-R"><pre><span></span><span class="n">from</span><span class="w"> </span><span class="n">scenario_vetting_criteria.formatting</span><span class="w"> </span><span class="n">import</span><span class="w"> </span><span class="n">format_sources</span>
+<span class="n">reference_srcs_formatted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">format_sources</span><span class="p">(</span><span class="n">reference_srcs</span><span class="p">)</span>
+<span class="nf">display</span><span class="p">(</span><span class="n">reference_srcs_formatted</span><span class="p">[</span><span class="s">'Creutzig14'</span><span class="p">])</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-5">from scenario_vetting_criteria.formatting import format_sources
 reference_srcs_formatted = format_sources(reference_srcs)
@@ -1856,7 +1893,7 @@ display(reference_srcs_formatted['Creutzig14'])</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3b26e293">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=34056b0d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1867,7 +1904,7 @@ display(reference_srcs_formatted['Creutzig14'])</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=81abab49">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6aa6e9b9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1885,12 +1922,12 @@ display(reference_srcs_formatted['Creutzig14'])</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scenario_vetting_criteria.formatting</span><span class="w"> </span><span class="kn">import</span> <span class="n">insert_citations</span>
+<div class="highlight-ipynb hl-R"><pre><span></span><span class="n">from</span><span class="w"> </span><span class="n">scenario_vetting_criteria.formatting</span><span class="w"> </span><span class="n">import</span><span class="w"> </span><span class="n">insert_citations</span>
 
-<span class="n">text</span> <span class="o">=</span> <span class="n">load_criteria</span><span class="p">(</span><span class="s1">'criteria-metadata'</span><span class="p">)[</span><span class="s1">'sustainable_bioenergy'</span><span class="p">][</span><span class="s1">'justification_threshold'</span><span class="p">]</span>
-<span class="n">text_inserted</span> <span class="o">=</span> <span class="n">insert_citations</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">reference_srcs_formatted</span><span class="p">)</span>
+<span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">load_criteria</span><span class="p">(</span><span class="s">'criteria-metadata'</span><span class="p">)[</span><span class="s">'sustainable_bioenergy'</span><span class="p">][</span><span class="s">'justification_threshold'</span><span class="p">]</span>
+<span class="n">text_inserted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">insert_citations</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">reference_srcs_formatted</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[:</span><span class="mi">30</span><span class="p">],</span> <span class="s1">'...   →  '</span><span class="p">,</span> <span class="n">text_inserted</span><span class="p">[:</span><span class="mi">30</span><span class="p">],</span> <span class="s1">'...'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="o">:</span><span class="m">30</span><span class="p">],</span><span class="w"> </span><span class="s">'...   →  '</span><span class="p">,</span><span class="w"> </span><span class="n">text_inserted</span><span class="p">[</span><span class="o">:</span><span class="m">30</span><span class="p">],</span><span class="w"> </span><span class="s">'...'</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-6">from scenario_vetting_criteria.formatting import insert_citations
 
@@ -1917,7 +1954,7 @@ print(text[:30], '...   →  ', text_inserted[:30], '...')</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ddd7b53e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c8a67ef2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1928,7 +1965,7 @@ print(text[:30], '...   →  ', text_inserted[:30], '...')</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8883b06b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f1d824cc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>

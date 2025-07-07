@@ -14,7 +14,17 @@
 #     name: ir
 # ---
 
+# This has to be run in order to compile this notebook while the R package is still under development.
+
 devtools::load_all()
+
+# ## Installation
+
+# While the R package has not been released yet, you have to install it from GitHub source using:
+#
+# ```R
+# install_github('PhilippVerpoort/scenario_vetting_criteria')
+# ```
 
 # ## Raw file paths
 
