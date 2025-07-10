@@ -800,52 +800,156 @@
   <h1>Criteria metadata</h1>
 
 <p>The criteria metadata contain contextual information about why certain criteria are necessary/relevant, and how threshold values are set. Moreover, each criterion has a <a href="../criteria_type">criteria type</a> assigned to it.</p>
-<p>````````python showcode="false"
-Traceback (most recent call last):
-  File "/home/philippv/Documents/4-projects/17-SCI/02-SCI-thresholds/scenario-vetting-criteria/.venv/lib/python3.12/site-packages/markdown_exec/_internal/formatters/python.py", line 71, in _run_python
-    exec_python(code, code_block_id, exec_globals)
-  File "/home/philippv/Documents/4-projects/17-SCI/02-SCI-thresholds/scenario-vetting-criteria/.venv/lib/python3.12/site-packages/markdown_exec/_internal/formatters/_exec_python.py", line 8, in exec_python
-    exec(compiled, exec_globals)  # noqa: S102
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<code block: session index; n1>", line 12, in <module>
-    .assign(
-      ^^^^^^^
-  File "/home/philippv/Documents/4-projects/17-SCI/02-SCI-thresholds/scenario-vetting-criteria/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 5246, in assign
-    data[k] = com.apply_if_callable(v, data)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/philippv/Documents/4-projects/17-SCI/02-SCI-thresholds/scenario-vetting-criteria/.venv/lib/python3.12/site-packages/pandas/core/common.py", line 384, in apply_if_callable
-    return maybe_callable(obj, <strong>kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<code block: session index; n1>", line 15, in <lambda>
-    justification_criterion=lambda df: df['justification_criterion'].apply(insert_citations, args=(reference_srcs_formatted, '../reference_srcs/')),
-                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/philippv/Documents/4-projects/17-SCI/02-SCI-thresholds/scenario-vetting-criteria/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 4935, in apply
-    ).apply()
-      ^^^^^^^
-  File "/home/philippv/Documents/4-projects/17-SCI/02-SCI-thresholds/scenario-vetting-criteria/.venv/lib/python3.12/site-packages/pandas/core/apply.py", line 1422, in apply
-    return self.apply_standard()
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/philippv/Documents/4-projects/17-SCI/02-SCI-thresholds/scenario-vetting-criteria/.venv/lib/python3.12/site-packages/pandas/core/apply.py", line 1502, in apply_standard
-    mapped = obj._map_values(
-             ^^^^^^^^^^^^^^^^
-  File "/home/philippv/Documents/4-projects/17-SCI/02-SCI-thresholds/scenario-vetting-criteria/.venv/lib/python3.12/site-packages/pandas/core/base.py", line 925, in _map_values
-    return algorithms.map_array(arr, mapper, na_action=na_action, convert=convert)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/philippv/Documents/4-projects/17-SCI/02-SCI-thresholds/scenario-vetting-criteria/.venv/lib/python3.12/site-packages/pandas/core/algorithms.py", line 1743, in map_array
-    return lib.map_infer(values, mapper, convert=convert)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "pandas/_libs/lib.pyx", line 2999, in pandas._libs.lib.map_infer
-  File "/home/philippv/Documents/4-projects/17-SCI/02-SCI-thresholds/scenario-vetting-criteria/.venv/lib/python3.12/site-packages/pandas/core/apply.py", line 1491, in curried
-    return func(x, *self.args, </strong>self.kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/philippv/Documents/4-projects/17-SCI/02-SCI-thresholds/scenario-vetting-criteria/python/scenario_vetting_criteria/formatting.py", line 98, in insert_citations
-    return re.sub(
-           ^^^^^^^
-  File "/usr/lib/python3.12/re/<strong>init</strong>.py", line 186, in sub
-    return _compile(pattern, flags).sub(repl, string, count)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: expected string or bytes-like object, got 'float'</p>
-<p>````````</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">NAME</th>
+<th style="text-align: left;">TYPE</th>
+<th style="text-align: left;">JUSTIFICATION OF THE CRITERION<br>(Why this criterion?)</th>
+<th style="text-align: left;">JUSTIFICATION OF THE THRESHOLD<br>(Why this threshold?)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Historical population</td>
+<td style="text-align: left;">Historical vetting</td>
+<td style="text-align: left;">This scenario reports population values that are inconsistent with historical values. This is a concern because the underlying modelling likely makes false assumptions on the the mitigation effort required to reach net-zero emissions.</td>
+<td style="text-align: left;">Historical values are provided by the World Development Indicators  <a href="../reference_srcs/#WDI-2024">(World Bank, 2024)</a>. The thresholds are set as follows.<br><br>For years 2010, 2015, and 2020:<br>• Single region: ±35% deviation will lead to exclusion, ±25% will lead to a red flag.<br>• Whole world: ±25% deviation will lead to exclusion, ±15% will lead to a red flag.<br><br>Note that these thresholds not only give models some leeway in being  compatible with historical values, but also account for uncertainty  in the underlying data sources.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Historical GDP</td>
+<td style="text-align: left;">Historical vetting</td>
+<td style="text-align: left;">This scenario reports gross domestic production values that are inconsistent with historical values. This is a concern because the underlying modelling likely makes false assumptions on the the mitigation effort required to reach net-zero emissions.</td>
+<td style="text-align: left;">Historical values are provided by the World Development Indicators <a href="../reference_srcs/#WDI-2024">(World Bank, 2024)</a>. The thresholds are set as follows.<br><br>For years 2010 and 2015:<br>• Single region: ±35% deviation will lead to exclusion, ±25% will lead to a red flag.<br>• Whole world: ±25% deviation will lead to exclusion, ±15% will lead to a red flag.<br><br>For 2020 due to the COVID shock:<br>• Single region: ±50% deviation will lead to exclusion, ±40% will lead to a red flag.<br>• Whole world: ±40% deviation will lead to exclusion, ±30% will lead to a red flag.<br><br>Note that these thresholds not only give models some leeway in being  compatible with historical values, but also account for uncertainty  in the underlying data sources.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Historical emissions</td>
+<td style="text-align: left;">Historical vetting</td>
+<td style="text-align: left;">This scenario reports CO2 emissions in the energy and industry sector that are inconsistent with historical values. This is a concern because the underlying modelling likely makes false assumptions on the remaining GHG emissions budget and the mitigation effort required to reach net-zero emissions.</td>
+<td style="text-align: left;">Historical values are provided by the Community Emissions Data System  <a href="../reference_srcs/#CEDS-2024">(Hoesly, 2024)</a>. The thresholds are set as follows.<br><br>For years 2010 and 2015:<br>• Single region: ±35% deviation will lead to exclusion, ±25% will lead  to a red flag.<br>• Whole world: ±25% deviation will lead to exclusion, ±15% will lead  to a red flag.<br><br>For 2020 due to the COVID shock:<br>• Single region: ±50% deviation will lead to exclusion, ±40% will lead  to a red flag.<br>• Whole world: ±40% deviation will lead to exclusion, ±30% will lead  to a red flag.<br><br>Note that these thresholds not only give models some leeway in being  compatible with historical values, but also account for uncertainty  in the underlying data sources.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Historical energy demand</td>
+<td style="text-align: left;">Historical vetting</td>
+<td style="text-align: left;">This scenario reports final energy demand that is inconsistent with historical values. This is a concern because the underlying modelling likely makes false assumptions on the mitigation effort required to reach net-zero emissions.<br>Note that final energy includes non-energy use.</td>
+<td style="text-align: left;">Historical values are provided by the International Energy Agency  <a href="../reference_srcs/#IEA-EB-23">{{citep:IEA-EB-23}}</a>. The thresholds are set as follows.<br><br>For years 2010 and 2015:<br>• Single region: ±35% deviation will lead to exclusion, ±25% will lead to a red flag.<br>• Whole world: ±25% deviation will lead to exclusion, ±15% will lead to a red flag.<br><br>For 2020 due to the COVID shock:<br>• Single region: ±50% deviation will lead to exclusion, ±40% will lead to a red flag.<br>• Whole world: ±40% deviation will lead to exclusion, ±30% will lead to a red flag.<br><br>Note that these thresholds not only give models some leeway in being  compatible with historical values, but also account for uncertainty  in the underlying data sources.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Historical fossil primary energy production</td>
+<td style="text-align: left;">Historical vetting</td>
+<td style="text-align: left;">This scenario reports fossil primary energy production (coal, oil, and gas) that is inconsistent with historical values. This is a concern because the underlying modelling likely makes false assumptions on the mitigation effort required to reach net-zero emissions.</td>
+<td style="text-align: left;">Historical values are provided by the International Energy Agency  <a href="../reference_srcs/#IEA-EB-2023">(IEA, 2023)</a>. The thresholds are set as follows.<br><br>For years 2010 and 2015:<br>• Single region: ±35% deviation will lead to exclusion, ±25% will lead to a red flag.<br>• Whole world: ±25% deviation will lead to exclusion, ±15% will lead to a red flag.<br><br>For 2020 due to the COVID shock:<br>• Single region: ±50% deviation will lead to exclusion, ±40% will lead to a red flag.<br>• Whole world: ±40% deviation will lead to exclusion, ±30% will lead to a red flag.<br><br>Note that these thresholds not only give models some leeway in being  compatible with historical values, but also account for uncertainty  in the underlying data sources.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Near-term annual gross loss of primary and secondary forest area</td>
+<td style="text-align: left;">Near-term feasibility vetting</td>
+<td style="text-align: left;">This scenario exceeds the historical highest deforestation rate in near future.<br><br>This is a concern because it would be unprecedented and would go beyond what has  been experienced historically.</td>
+<td style="text-align: left;">The highest annual rate of deforestation in the last four decades (1990–2020) was  estimated at 16 million ha per year for 1990-2000 <a href="../reference_srcs/#FRA-2020">(FAO, 2020)</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Near-term annual gross loss of primary forest area</td>
+<td style="text-align: left;">Near-term feasibility vetting</td>
+<td style="text-align: left;">This scenario exceeds the historical highest primary deforestation rate in near future.<br><br>This is a concern because it would be unprecedented and would go beyond what has  been experienced historically.</td>
+<td style="text-align: left;">The highest annual rate of primary deforestation in the last four decades (1990–2020) was  estimated at 12 million ha per year for 1990-2000 <a href="../reference_srcs/#FRA-2020">(FAO, 2020)</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Near-term annual gross expansion of forest area planted and unplanted in total</td>
+<td style="text-align: left;">Near-term feasibility vetting</td>
+<td style="text-align: left;">This scenario exceeds the historical highest forest expansion rate in the near future.<br><br>This is a concern because it would be unprecedented and would go beyond what has  been experienced historically.</td>
+<td style="text-align: left;">The highest annual rate of forest expansion in the last four decades (1990–2020) was  estimated at 10 million ha/year for 2000-2010 <a href="../reference_srcs/#FRA-2020">(FAO, 2020)</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Near-term annual gross expansion of planted forest area</td>
+<td style="text-align: left;">Near-term feasibility vetting</td>
+<td style="text-align: left;">This scenario exceeds the historical highest rate of plantation in the near future.<br><br>This is a concern because it would be unprecedented and would go beyond what has  been experienced historically.</td>
+<td style="text-align: left;">The highest annual net change in planted forest area in the last four decades  (1990–2020) was estimated at 5 million ha/year for 1990-2000 <a href="../reference_srcs/#FRA-2020">(FAO, 2020)</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Near-term biodiversity intactness</td>
+<td style="text-align: left;">Near-term feasibility vetting</td>
+<td style="text-align: left;">The Global Biodiversity Framework (GBF) target halting human-induced species  extinction by 2030 is interpreted as halting reducing biodiversity intactness by  2030 for systematic scneario check on biodiversity loss. Biodiversity intactness  is only what is available variable in scenario data.</td>
+<td style="text-align: left;">This scenario exceeds the historical change rate of biodiversity intactness  <a href="../reference_srcs/#Pereia-2024">{{citep:Pereia-2024}}</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Near-term expansion of hydropower</td>
+<td style="text-align: left;">Near-term feasibility vetting</td>
+<td style="text-align: left;">This scenario assumes a deployment of hydropower plants that is inconsistent with near-term projections.<br><br>Near-term upper and lower capacity projections can be derived from existing capacities and from current project announcements and known project lead times. Robust upper projections can be made because projects take at least 5 years to plan and construct and therefore will not be operational by 2030 if not yet announced by today. Robust lower projections can be made based on exisiting capacities and because retirement rates can reasonably be assumed to be low.<br><br>Specifically, hydropower plants take 4–7 years to construct (for medium-sized projects) and up to 15 years (for large-sized projects) to plan and construct. Small projects that can be completed within less than 4 years make up less than 3% of all projects planned globally in 2021.<br><br>For details on hydropower projects, see the Hydropower Special Market Report <a href="../reference_srcs/#IEA-Hydropow-2021">(IEA, 2021)</a>.</td>
+<td style="text-align: left;">Data on hydro power plant projects was published by the IEA in 2021.  Details can be found here: https://www.iea.org/data-and-statistics/data-tools/hydropower-data-explorer<br><br>The IEA publishes capacities in three categories:<br>• Operational: in operation in 2021<br>• Expected: expected to come online by 2030<br>• Accelerated: capacity that could come online by 2030 given an acceleration in efforts.<br><br>We assume the following thresholds for 2030 based on data provided by  the IEA:<br>• Lower, red:  10% (globally) less than currently operational capacities.<br>• Lower, yellow: 5% (globally) or 40% (regionally) less than what is expected to come online according to the IEA by 2030.<br>• Upper, yellow: 5% (globally) or 80% (regionally) more than what is expected to come online assuming accelerated efforts according to the  IEA by 2030.<br>• Upper, red: 45% (globally) more than what is expected to come online assuming accelerated efforts according to the IEA by 2030.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Near-term expansion of nuclear power</td>
+<td style="text-align: left;">Near-term feasibility vetting</td>
+<td style="text-align: left;">This scenario assumes a deployment of nuclear power plants that is inconsistent with near-term projections.<br><br>Near-term upper and lower capacity projections can be derived from existing capacities and from current project announcements and known project lead times. Robust upper projections can be made because projects take at least 5 years to plan and construct and therefore will not be operational by 2030 if not yet announced by today. Robust lower projections can be made based on exisiting capacities and because retirement rates can reasonably be assumed to be low.</td>
+<td style="text-align: left;">Data on nuclear power plant projects was published by the  International Atomic Energy Agency (IAEA) in 2021. Details can be  found here:<br><br>Country statistics today:<br>https://pris.iaea.org/PRIS/CountryStatistics/CountryStatisticsLandingPage.aspx<br><br>IAEA's own estimates:<br>https://www-pub.iaea.org/MTCD/Publications/PDF/RDS-1-44_web.pdf<br><br>The IAEA publishes capacities in three categories:<br>• Operational: in operation in 2024<br>• Construction: currently under construction<br>• Retired: inactive capacity that has been retired<br><br>We assume the following thresholds for 2030 based on data provided by  the IAEA:<br>• Lower, red:  30% (globally) less than currently operational capacities.<br>• Lower, yellow:  15% (globally) or 50% (regionally) less than currently operational capacities.<br>• Upper, yellow:  5% (globally) or 40% (regionally) more than plants operational today plus bringing retired plants in Japan back online  plus 75% of plants under construction.<br>• Upper, red:  10% (globally) more than the highest estimate published by the IAEA (461 GW).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Near-term expansion of carbon capture</td>
+<td style="text-align: left;">Near-term feasibility vetting</td>
+<td style="text-align: left;">This scenario assumes a deployment of CCU/S technologies that is inconsistent with near-term projections.<br><br>Near-term upper and lower capacity projections can be derived from existing capacities and from current project announcements and known project lead times. Robust upper projections can be made because projects take at least 5 years to plan and construct and therefore will not be operational by 2030 if not yet announced by today. Robust lower projections can be made based on exisiting capacities and because retirement rates can reasonably be assumed to be low.</td>
+<td style="text-align: left;">CCU/S projects are tracked by the IEA and published annually in its  CCUS Database. Details can be found here: https://www.iea.org/data-and-statistics/data-product/ccus-projects-database<br><br>Projects in the CCUS database have one of the following statuses:<br>• Operational: in operation in 2024<br>• Construction: currently under construction<br>• Planned: announced but without final investment decision in 2024. Projects that were decommissioned or suspended are not <br><br>We assume the following thresholds for 2030 based on data provided by  the IEA CCUS database:<br>• Lower, red:  10% (globally) less than currently operational capacities.<br>• Lower, yellow:  5% (globally) or 40% (regionally) less than currently operational capacities and 50% of projects under construction.<br>• Upper, yellow:  5% (globally) or 40% (regionally) more than plants operational today plus all projects under construction plus 20% of  projects planned without FID.<br>• Upper, red:  10% (globally) more than all projects operational, under construction, and announced.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Near-term expansion of solar photovoltaics capacity</td>
+<td style="text-align: left;">Near-term feasibility vetting</td>
+<td style="text-align: left;">This scenario assumes a deployment of solar photovoltaics that is inconsistent with near-term market outlooks.<br><br>This technology is available at scale and has short project lead times, meaning that there are no fundamental obstacles to fast deployment. Yet, it's near-term growth can be estimated based on today's market dynamics. While these estimates have their limitations, they can be used to set broad ranges of near-term feasibility.</td>
+<td style="text-align: left;">Existing capacities in 2023 are reported by <a href="../reference_srcs/#Ember-2024">Ember (2024)</a>. Yearly  additions for 2024–2030 are estimated in a market outlook by  <a href="../reference_srcs/#BNEF-2024">BNEF (2024)</a>.<br><br>We assume the following thresholds for 2025 and 2030:<br>• Lower, red: 10% (globally) less than existing capacities plus 37.5% of market outlook.<br>• Lower, yellow: 5% (globally) or 40% (regionally) less than existing capacities plus 75% (globally) or 37.5% (regionally) of  market outlook.<br>• Upper, yellow: 5% (globally) or 40% (regionally) more than existing capacities plus 150% (globally) or 200% (regionally) of  market outlook.<br>• Upper, red: 10% (globally) more than existing capacities plus 200% of market outlook.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Future near-term expansion of on-shore wind capacity</td>
+<td style="text-align: left;">Near-term feasibility vetting</td>
+<td style="text-align: left;">This scenario assumes a deployment of on-shore wind that is inconsistent with near-term market outlooks.<br><br>This technology is available at scale and has short project lead times, meaning that there are no fundamental obstacles to fast deployment. Yet, it's near-term growth can be estimated based on today's market dynamics. While these estimates have their limitations, they can be used to set broad ranges of near-term feasibility.</td>
+<td style="text-align: left;">Existing capacities in 2022 are reported by <a href="../reference_srcs/#Ember-2024">Ember (2024)</a>. Yearly  additions for 2023–2028 are estimated in a market outlook by the  <a href="../reference_srcs/#GWEC-2024">GWEC (2024)</a>.<br><br>This outlook is based on input from regional wind associations,  government targets, tender results, announced auction plans, available  project pipeline, and input from industry experts.<br><br>We assume the following thresholds for 2025 and 2030:<br>• Lower, red: 10% (globally) less than existing capacities plus 37.5% of market outlook.<br>• Lower, yellow: 5% (globally) or 40% (regionally) less than existing capacities plus 75% (globally) or 37.5% (regionally) of  market outlook.<br>• Upper, yellow: 5% (globally) or 40% (regionally) more than existing capacities plus 150% (globally) or 200% (regionally) of  market outlook.<br>• Upper, red: 10% (globally) more than existing capacities plus 200% of market outlook.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Future long-term expansion of nuclear power</td>
+<td style="text-align: left;">Long-term feasibility vetting</td>
+<td style="text-align: left;">This scenario assumes a high long-term deployment of nuclear power plants.<br><br>Nuclear power is a technology that is known to exhibit low growth rates. While governmental programmes to speed up development could results in a increased growth rates, such developments seem unlikely given recent trends and the required public funding. This is reflected by the fact that even the industry's own association (the International Atomic Energy Agency) estimates a maximum increase of today's capacity by 150% <a href="../reference_srcs/#IAEA-2024">(IAEA, 2024)</a>.</td>
+<td style="text-align: left;">The International Atomic Energy Agency publishes its own long-term  estimates for nuclear power-plant capacity <a href="../reference_srcs/#IAEA-2024">(IAEA, 2024)</a>. The highest estimates are at 694 GWe in 2040 and 950 GWe in 2050.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Future long-term expansion of carbon capture</td>
+<td style="text-align: left;">Long-term feasibility vetting</td>
+<td style="text-align: left;">This scenario assumes a high deployment of CCU/S beyond 2035. CCU/S involves capturing CO₂ from flue gases and storing it geologically or in products. The required technologies for these activities are highly non-modular and application-specific. Additionally, CCS depends on infrastructure like CO₂ pipeline networks, which still have to be built. Therefore it will likely grow more slowly than modular technologies with some degree of existing infrastructure, such as solar, wind, and batteries.</td>
+<td style="text-align: left;">This scenario assumes capacity deployment of CCS in 2035 and 2040 that  would require unlikely growth rates (compare <a href="../reference_srcs/#Kazlou-2024">Kazlou (2024)</a>).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Future long-term expansion of DACCS</td>
+<td style="text-align: left;">Long-term feasibility vetting</td>
+<td style="text-align: left;">This scenario assumes a high deployment of Direct Air Capture with Carbon Storage (DACCS).<br><br>DACCS is a technology that is very immature today. Moreover, CO₂ is captured  directly from the atmosphere, which has a much lower CO₂ concentration than flue gases from points sources (e.g. a cement or waste-incineration plant), the purification of CO₂ is much harder and cannot be achieved with established carbon capture technologies.<br><br>In summary, this causes DACCS to be a technology that will likely take a long time to develop and scale up.</td>
+<td style="text-align: left;">An upper limit of 4.89 Gt CO2eq/yr of DACCS is derived by  <a href="../reference_srcs/#Edwards-2024">Edwards (2024)</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sustainability concerns due to annual gross loss of primary and secondary forest area</td>
+<td style="text-align: left;">Sustainability vetting</td>
+<td style="text-align: left;">The Global Biodiversity Framework (GBF) Target 1 impling close to zero deforestation  by 2030 was simply interpreted as 0 Mha/year of deforestation in 2030 for systematic  scneario check on forest sustainability.</td>
+<td style="text-align: left;">This scenario is not comparable with the Global Biodiversity Framework (GBF) Target 1  implying close to zero deforestation by 2030.<br>GBF aims to halt deforestation by 2030 (Target 1), https://www.cbd.int/gbf/targets.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sustainability concerns due to annual gross loss of primary and secondary forest area</td>
+<td style="text-align: left;">Sustainability vetting</td>
+<td style="text-align: left;">The Global Biodiversity Framework (GBF) Target 1 impling close to zero deforestation  by 2030 was simply interpreted as 0 Mha/year of deforestation in 2030 for systematic  scneario check on forest sustainability.</td>
+<td style="text-align: left;">This scenario is not comparable with the Global Biodiversity Framework (GBF) Target 1  implying close to zero deforestation by 2030.<br>GBF aims to halt deforestation of natural forests by 2030 (Target5), https://www.cbd.int/gbf/targets.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sustainability concerns due to declining biodiversity intactness</td>
+<td style="text-align: left;">Sustainability vetting</td>
+<td style="text-align: left;">The Global Biodiversity Framework (GBF) target halting human-induced species extinction by 2030 is interpreted as halting reducing biodiversity intactness by 2030 for systematic scneario check on biodiversity loss. Biodiversity intactness is only what is available variable in scenario data.</td>
+<td style="text-align: left;">This scenario is not comparaboe with the Global Biodiversity Framework (GBF) target  aiming to halt species extinctions by 2030.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sustainability concerns due to excessive biomass use</td>
+<td style="text-align: left;">Sustainability vetting</td>
+<td style="text-align: left;">This scenario assumes a high usage of bioenergy. Specifically, we here refer to 2nd generation bioenergy crops, crop and forestry residues, municipal solid waste bioenergy and traditional biomass.<br><br>Bioenergy can be a drop-in replacement to currently used fossil fuels. When grown in a sustainable fashion, their life-cycle of production and use is GHG neutral. Bio-based energy crops can be grown at low cost and with readily available technologies.<br><br>Some decarbonisation scenarios therefore tend to assume a high use of bioenergy. Meanwhile, such a high use of bioenergy can result in (a) growth practices that are no longer GHG neutral in their life cycle (e.g. through deforestation to create more arable land for energy crops) or result in (b) a loss of natural habitats, which creates other sustainability concerns, for instance linked to a loss of biodiversity.</td>
+<td style="text-align: left;"><a href="../reference_srcs/#Creutzig-2014">Creutzig (2014)</a> have derived an upper limit for sustainable  biomass use of 100–300 EJ/yr. In the 6th Assessment Report of Working  Group 3 of the Intergovernmental Panel on Climate Change (IPCC), a value of 100 EJ/yr is defined as the threshold for the onset of medium concern and  245 EJ/yr a threshold for the onset of high concern  <a href="../reference_srcs/#IPCC-AR6-WG3-ANX3-2022">(IPCC, 2022)</a>. Another study by <a href="../reference_srcs/#Deprez-2024">Deprez (2024)</a>  suggests that medium sustainablity risks arise at 50 EJ/yr and high  risks at 120 EJ/yr. Based on those studies the threshold for this  sustainablity concern flag is set at 100 EJ/yr.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sustainability concerns due to excessive hydropower deployment</td>
+<td style="text-align: left;">Sustainability vetting</td>
+<td style="text-align: left;">Hydropower can negatively impact nature by altering river ecosystems, disrupting fish migration, and affecting water quality. Dams can change natural water flow, leading to habitat loss for aquatic and terrestrial species. They can also trap sediment, which is essential for maintaining downstream ecosystems. <a href="../reference_srcs/#Thieme-2021">Thieme (2021)</a> found that if all planned hydropower dams would complete construction, this would result in the loss of 260,000 kilometers of free-flowing rivers globally.</td>
+<td style="text-align: left;"><a href="../reference_srcs/#Opperman-2019">Opperman (2019)</a> show that a low level of hydropower expansion of  no more than 1500 GW hydropower globally combined with strategic  planning of the siting of new hydropower could reduce impacts on  free-flowing rivers by 90%.</td>
+</tr>
+</tbody>
+</table>
 
 
 
