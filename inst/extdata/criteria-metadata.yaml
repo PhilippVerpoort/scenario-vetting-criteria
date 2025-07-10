@@ -162,8 +162,67 @@ hist_pe_fossil:
         Note that these thresholds not only give models some leeway in being 
         compatible with historical values, but also account for uncertainty 
         in the underlying data sources.
+nearterm_deforestation:
+    name: Near-term annual gross loss of primary and secondary forest area
+    type: near_term_feasibility
+    justification_criterion: >-
+        This scenario exceeds the historical highest deforestation rate in near future.
+  
+        
+        This is a concern because it would be unprecedented and would go beyond what has 
+        been experienced historically.
+    justification_threshold: >-
+        The highest annual rate of deforestation in the last four decades (1990–2020) was 
+        estimated at 16 million ha per year for 1990-2000 {{citep:FRA-2020}}.
+nearterm_primary_deforestation:
+    name: Near-term annual gross loss of primary forest area
+    type: near_term_feasibility
+    justification_criterion: >-
+        This scenario exceeds the historical highest primary deforestation rate in near future.
+  
+        
+        This is a concern because it would be unprecedented and would go beyond what has 
+        been experienced historically.
+    justification_threshold: >-
+        The highest annual rate of primary deforestation in the last four decades (1990–2020) was 
+        estimated at 12 million ha per year for 1990-2000 {{citep:FRA-2020}}.
+nearterm_forest_expansion:
+    name: Near-term annual gross expansion of forest area planted and unplanted in total
+    type: near_term_feasibility
+    justification_criterion: >-
+        This scenario exceeds the historical highest forest expansion rate in the near future.
+  
+        
+        This is a concern because it would be unprecedented and would go beyond what has 
+        been experienced historically.
+    justification_threshold: >-
+        The highest annual rate of forest expansion in the last four decades (1990–2020) was 
+        estimated at 10 million ha/year for 2000-2010 {{citep:FRA-2020}}.
+nearterm_planted_forest_expansion:
+    name: Near-term annual gross expansion of planted forest area
+    type: near_term_feasibility
+    justification_criterion: >-
+        This scenario exceeds the historical highest rate of plantation in the near future.
+  
+        
+        This is a concern because it would be unprecedented and would go beyond what has 
+        been experienced historically.
+    justification_threshold: >-
+        The highest annual net change in planted forest area in the last four decades 
+        (1990–2020) was estimated at 5 million ha/year for 1990-2000 {{citep:FRA-2020}}.
+nearterm_biodiversity_intactness:
+    name: Near-term biodiversity intactness
+    type: near_term_feasibility
+    justification_criterion: >-
+        The Global Biodiversity Framework (GBF) target halting human-induced species 
+        extinction by 2030 is interpreted as halting reducing biodiversity intactness by 
+        2030 for systematic scneario check on biodiversity loss. Biodiversity intactness 
+        is only what is available variable in scenario data.
+    justification_threshold: >-
+        This scenario exceeds the historical change rate of biodiversity intactness 
+        {{citep:Pereira-2024}}.
 nearterm_hydro:
-    name: Future near-term expansion of hydropower
+    name: Near-term expansion of hydropower
     type: near_term_feasibility
     justification_criterion: >-
         This scenario assumes a deployment of hydropower plants that is
@@ -219,7 +278,7 @@ nearterm_hydro:
         • Upper, red: 45% (globally) more than what is expected to come online
         assuming accelerated efforts according to the IEA by 2030.
 nearterm_nuclear:
-    name: Future near-term expansion of nuclear power
+    name: Near-term expansion of nuclear power
     type: near_term_feasibility
     justification_criterion: >-
         This scenario assumes a deployment of nuclear power plants that is
@@ -274,7 +333,7 @@ nearterm_nuclear:
         • Upper, red:  10% (globally) more than the highest estimate published
         by the IAEA (461 GW).
 nearterm_ccus:
-    name: Future near-term expansion of carbon capture
+    name: Near-term expansion of carbon capture
     type: near_term_feasibility
     justification_criterion: >-
         This scenario assumes a deployment of CCU/S technologies that is
@@ -320,7 +379,7 @@ nearterm_ccus:
         • Upper, red:  10% (globally) more than all projects operational,
         under construction, and announced.
 nearterm_solar:
-    name: Future near-term expansion of solar photovoltaics capacity
+    name: Near-term expansion of solar photovoltaics capacity
     type: near_term_feasibility
     justification_criterion: >-
         This scenario assumes a deployment of solar photovoltaics that is
@@ -447,6 +506,38 @@ longterm_daccs:
     justification_threshold: >-
         An upper limit of 4.89 Gt CO2eq/yr of DACCS is derived by 
         {{cite:Edwards-2024}}.
+sustainable_deforestation:
+    name: Sustainability concerns due to annual gross loss of primary and secondary forest area
+    type: sustainability
+    justification_criterion: >-
+      The Global Biodiversity Framework (GBF) Target 1 impling close to zero deforestation 
+      by 2030 was simply interpreted as 0 Mha/year of deforestation in 2030 for systematic 
+      scneario check on forest sustainability.
+    justification_threshold: >-
+      This scenario is not comparable with the Global Biodiversity Framework (GBF) Target 1 
+      implying close to zero deforestation by 2030.
+
+      GBF aims to halt deforestation by 2030 (Target 1), https://www.cbd.int/gbf/targets.
+sustainable_primary_deforestation:
+    name: Sustainability concerns due to annual gross loss of primary and secondary forest area
+    type: sustainability
+    justification_criterion: >-
+      The Global Biodiversity Framework (GBF) Target 1 impling close to zero deforestation 
+      by 2030 was simply interpreted as 0 Mha/year of deforestation in 2030 for systematic 
+      scneario check on forest sustainability.
+    justification_threshold: >-
+      This scenario is not comparable with the Global Biodiversity Framework (GBF) Target 1 
+      implying close to zero deforestation by 2030.
+
+      GBF aims to halt deforestation of natural forests by 2030 (Target5), https://www.cbd.int/gbf/targets.
+sustainable_biodiversity_intactness:
+    name: Sustainability concerns due to declining biodiversity intactness
+    type: sustainability
+    justification_criterion: >-
+        The Global Biodiversity Framework (GBF) target halting human-induced species extinction by 2030 is interpreted as halting reducing biodiversity intactness by 2030 for systematic scneario check on biodiversity loss. Biodiversity intactness is only what is available variable in scenario data.
+    justification_threshold: >-
+        This scenario is not comparaboe with the Global Biodiversity Framework (GBF) target 
+        aiming to halt species extinctions by 2030.
 sustainable_bioenergy:
     name: Sustainability concerns due to excessive biomass use
     type: sustainability
