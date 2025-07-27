@@ -12,7 +12,7 @@ print(
     pd.DataFrame.from_records(operations)
     .assign(
         criterion_type=lambda df: df['criterion_type'].map({k: v['name'] for k, v in criteria_types.items()}),
-        threshold_severity=lambda df: df['threshold_severity'].str.replace('_', ' '),
+        threshold_severity=lambda df: df['level_of_concern'].str.replace('_', ' '),
         threshold_type=lambda df: df['threshold_type'].apply(', '.join),
     )
     .rename(columns=lambda x: x.upper().replace('_', ' '))
