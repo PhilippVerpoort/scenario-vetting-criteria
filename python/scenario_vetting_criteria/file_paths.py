@@ -13,3 +13,9 @@ file_paths = {
     for component in DATA_DIR.glob('*')
     if component.suffix in ['.csv', '.yaml', '.bib']
 }
+
+ref_paths = {
+    component.name.split('.')[0]: DATA_DIR / 'reference-data' / component.name
+    for component in (DATA_DIR / 'reference-data').glob('*')
+    if component.suffix == '.csv'
+}

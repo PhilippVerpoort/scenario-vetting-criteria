@@ -12,10 +12,8 @@ from IPython.display import display
 
 criteria_thrsh, criteria_meta = load_criteria(['criteria-thresholds', 'criteria-metadata']).values()
 
-df = criteria_thrsh.reset_index()
-df.columns = [(f"{col[0]} ({col[1]})" if col[1] else col[0]) for col in df.columns]
 print(
-    df
+    criteria_thrsh
     .assign(criterion=lambda df: df['criterion'].map({k: v['name'] for k, v in criteria_meta.items()}))
     .rename(columns=lambda x: x.upper().replace('_', ' '))
     .apply(lambda col: col.str.replace("|", "\|") if col.dtype == 'object' else col)

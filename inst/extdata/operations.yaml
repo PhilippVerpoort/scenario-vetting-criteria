@@ -1,5 +1,11 @@
 - criterion_type: historical
-  threshold_severity: very_strong
+  threshold_severity: strong
+  threshold_type:
+      - upper
+      - lower
+  operation: drop
+- criterion_id: nearterm_land_cover
+  threshold_severity: strong
   threshold_type:
       - upper
       - lower

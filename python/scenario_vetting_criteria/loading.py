@@ -1,9 +1,9 @@
 import importlib
 
-from .file_paths import file_paths
+from .file_paths import file_paths, ref_paths
 
 
-# for importing modules on demand and safely if modules are not installed
+# For importing modules on demand and safely if modules are not installed.
 def _import_module(pkg: str):
     try:
         globals()[pkg] = importlib.import_module(pkg)
@@ -12,72 +12,101 @@ def _import_module(pkg: str):
         return False
 
 
-# load criteria definitions from a specific criteria file
+# Load criteria definitions from a specific criteria file.
 csv_engines: list[str] = ['python', 'pandas']
-def _load_criteria_file(component: str, csv_engine: str):
-    # check if component is known
-    if component not in file_paths:
+def _load_criteria_file(component: str,
+                        csv_engine: str,
+                        reference_subset: list[str]):
+    # Check if component is known.
+    if component not in (list(file_paths) + ['reference-data']):
         raise Exception(f"Unknown component: {component}. Please choose one from: {','.join(list(file_paths))}")
 
-    # obtain file path and file type
-    file_path = file_paths[component]
-    file_type = file_path.suffixes[-1]
-
-    # check CVS engine argument
+    # Check CVS engine argument.
     if csv_engine not in csv_engines:
         raise Exception(f"Unknown CSV engine: {csv_engine}. Please choose one from: {','.join(csv_engines)}")
     if csv_engine == 'python':
         csv_engine = 'csv'
 
-    # open file as file stream and load
-    with file_path.open('r') as file_stream:
-        if file_type == '.csv':
-            if not _import_module(csv_engine):
-                raise Exception(f"Loading the criteria definition file '{file_path.stem}' requires the '{csv_engine}' package!")
-            if csv_engine == 'csv':
-                file_contents = list(csv.reader(file_stream, delimiter=',', quotechar='"'))
-            elif csv_engine == 'pandas':
-                if component == 'criteria-thresholds':
-                    file_contents = pandas.read_csv(
-                        file_stream,
-                        delimiter=',',
-                        quotechar='"',
-                        header=[0, 1],
-                        index_col=list(range(6)),
-                    )
-                else:
-                    file_contents = pandas.read_csv(
-                        file_stream,
-                        delimiter=',',
-                        quotechar='"',
-                    )
-        elif file_type == '.yaml':
-            if not _import_module('yaml'):
-                raise Exception(f"Loading the criteria definition file '{file_path.stem}' requires the pyyaml package!")
-            file_contents = yaml.safe_load(file_stream)
-        elif file_type == '.bib':
-            if not _import_module('pybtex'):
-                raise Exception(f"Loading the criteria definition file '{file_path.stem}' requires the pybtex package!")
-            from pybtex.database.input import bibtex
-            file_contents = bibtex.Parser().parse_file(file_stream)
-        else:
-            raise Exception(f"Unknown file format: {file_path.name}")
+    # Open file as file stream and load.
+    if component == 'reference-data':
+        if not _import_module(csv_engine):
+            raise Exception(f"Loading the criteria definition file '{file_path.stem}' requires the '{csv_engine}' package!")
+        if csv_engine == 'csv':
+            return {
+                source: list(csv.reader(
+                    ref_paths[source].open('r'),
+                    delimiter=',',
+                    quotechar='"',
+                ))
+                for source in (reference_subset or ref_paths)
+            }
+        elif csv_engine == 'pandas':
+            file_contents = pandas.concat([
+                pandas.read_csv(
+                    ref_paths[source],
+                    delimiter=',',
+                    quotechar='"',
+                )
+                .assign(source=source)
+                for source in (reference_subset or ref_paths)
+            ]).reset_index(drop=True)
         return file_contents
+    else:
+        # Obtain file path and file type.
+        file_path = file_paths[component]
+        file_type = file_path.suffixes[-1]
+
+        # Load file.
+        with file_path.open('r') as file_stream:
+            if file_type == '.csv':
+                if not _import_module(csv_engine):
+                    raise Exception(f"Loading the criteria definition file '{file_path.stem}' requires the '{csv_engine}' package!")
+                if csv_engine == 'csv':
+                    file_contents = list(csv.reader(file_stream, delimiter=',', quotechar='"'))
+                elif csv_engine == 'pandas':
+                    file_contents = pandas.read_csv(
+                        file_stream,
+                        delimiter=',',
+                        quotechar='"',
+                    )
+            elif file_type == '.yaml':
+                if not _import_module('yaml'):
+                    raise Exception(f"Loading the criteria definition file '{file_path.stem}' requires the pyyaml package!")
+                file_contents = yaml.safe_load(file_stream)
+            elif file_type == '.bib':
+                if not _import_module('pybtex'):
+                    raise Exception(f"Loading the criteria definition file '{file_path.stem}' requires the pybtex package!")
+                from pybtex.database.input import bibtex
+                file_contents = bibtex.Parser().parse_file(file_stream)
+            else:
+                raise Exception(f"Unknown file format: {file_path.name}")
+            return file_contents
 
 
-# load all criteria definitions
-def load_criteria(components: str | list[str] | tuple[str], csv_engine: str = 'pandas'):
+# Load all criteria definitions.
+def load_criteria(components: str | list[str] | tuple[str] | None = None,
+                  load_all: bool = False,
+                  csv_engine: str = 'pandas',
+                  reference_subset: str | list[str] | tuple[str] | None = None):
     """
     Loads and returns the criteria definitions contained in the package.
 
     Parameters
     ----------
-    components : str | list[str] | tuple[str]
+    components : str | list[str] | tuple[str] | None
         A string or list/vector of strings. The return type changes depending 
         on whether a list/vector or a single string is provided.
+    load_all : bool
+        Alternatively to providing the names of individual components, the 
+        loading of all components can be instructed with the key-word argument 
+        `load_all=True`.
     csv_engine : str = 'pandas'
         The method for loading CSV files if these are supposed to be loaded. Must 
         be one of `read.csv`, `readr`, and `data.table`. Defaults to `read.csv`.
+    reference_subset : str | list[str] | tuple[str] | None
+        When loading the component `reference-data`, by default all sources are 
+        loaded. Alternatively, a single string or a list or tuple of strings can 
+        be provided as argument `reference_subset` to load only a subset of sources.
 
     Returns
     -------
@@ -86,10 +115,29 @@ def load_criteria(components: str | list[str] | tuple[str], csv_engine: str = 'p
             If multiple data components are requested, then the components are 
             returned inside a keyworded list.
     """
+    if components is None and not load_all:
+        raise Exception('At least one component must be provided as function argument.')
+    if components is not None and load_all:
+        raise Exception('Component name(s) and `load_all` cannot be provided as arguments at the same time.')
+    if load_all:
+        components = list(file_paths) + ['reference-data']
+    if reference_subset is not None:
+        if isinstance(reference_subset, str):
+            reference_subset = [reference_subset]
+        elif isinstance(reference_subset, tuple):
+            reference_subset = list(reference_subset)
     if isinstance(components, str):
-        return _load_criteria_file(components, csv_engine=csv_engine)
+        return _load_criteria_file(
+            component=components,
+            csv_engine=csv_engine,
+            reference_subset=reference_subset,
+        )
     else:
         return {
-            component: _load_criteria_file(component, csv_engine=csv_engine)
+            component: _load_criteria_file(
+                component=component,
+                csv_engine=csv_engine,
+                reference_subset=reference_subset,
+            )
             for component in components
         }
