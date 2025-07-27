@@ -1316,7 +1316,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f4839d61">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=223524cb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1327,7 +1327,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0e388d6d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ab12752a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1344,7 +1344,7 @@ pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2ddcead7">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8e8a6b99">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1355,7 +1355,7 @@ pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=31288bca">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=69f33977">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1366,7 +1366,7 @@ pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=bc737024">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=18d3f8f1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1407,7 +1407,6 @@ for component_id, component_path in file_paths.items():
 <pre>operations:  ...io_vetting_criteria/data/operations.yaml
 criteria-thresholds:  ...ng_criteria/data/criteria-thresholds.csv
 criteria-types:  ...etting_criteria/data/criteria-types.yaml
-reference-data:  ...vetting_criteria/data/reference-data.csv
 reference-sources:  ...ting_criteria/data/reference-sources.bib
 criteria-metadata:  ...ing_criteria/data/criteria-metadata.yaml
 </pre>
@@ -1417,7 +1416,7 @@ criteria-metadata:  ...ing_criteria/data/criteria-metadata.yaml
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=041d072a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9219a178">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1428,7 +1427,7 @@ criteria-metadata:  ...ing_criteria/data/criteria-metadata.yaml
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1c96d5ed">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a4a791c3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1439,7 +1438,7 @@ criteria-metadata:  ...ing_criteria/data/criteria-metadata.yaml
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cecc1130">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9b7642b3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1485,129 +1484,91 @@ load_criteria('criteria-thresholds')</div>
         vertical-align: top;
     }
 
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
+    .dataframe thead th {
         text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
 <thead>
-<tr>
+<tr style="text-align: right;">
 <th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th>threshold_type</th>
-<th colspan="3" halign="left">lower</th>
-<th colspan="3" halign="left">upper</th>
-</tr>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th>threshold_severity</th>
-<th>very_strong</th>
-<th>strong</th>
-<th>medium</th>
-<th>medium</th>
-<th>strong</th>
-<th>very_strong</th>
-</tr>
-<tr>
 <th>criterion</th>
 <th>region</th>
-<th>period</th>
+<th>year</th>
 <th>variable</th>
 <th>reference_source</th>
 <th>unit</th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
+<th>level_of_concern</th>
+<th>lower</th>
+<th>upper</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th rowspan="2" valign="top">hist_pop</th>
-<th>Model Native Regions</th>
-<th>2010, 2015, 2020</th>
-<th>Population</th>
-<th>WDI-2024</th>
-<th>dimensionless</th>
-<td>0.65</td>
+<th>0</th>
+<td>hist_pop</td>
+<td>World</td>
+<td>2010, 2015, 2020, 2025</td>
+<td>Population</td>
+<td>range(WDI-2025, WDI-2025-extrapol25, WDI-2025-...</td>
+<td>dimensionless</td>
+<td>strong</td>
 <td>0.75</td>
-<td>NaN</td>
-<td>NaN</td>
 <td>1.25</td>
+</tr>
+<tr>
+<th>1</th>
+<td>hist_pop</td>
+<td>All Countries</td>
+<td>2010, 2015, 2020, 2025</td>
+<td>Population</td>
+<td>range(WDI-2025, WDI-2025-extrapol25, WDI-2025-...</td>
+<td>dimensionless</td>
+<td>strong</td>
+<td>0.65</td>
 <td>1.35</td>
 </tr>
 <tr>
-<th>World</th>
-<th>2010, 2015, 2020</th>
-<th>Population</th>
-<th>WDI-2024</th>
-<th>dimensionless</th>
+<th>2</th>
+<td>hist_gdp</td>
+<td>World</td>
+<td>2010, 2015, 2020, 2025</td>
+<td>GDP|PPP</td>
+<td>range(WDI-2025, WDI-2025-extrapol25, WDI-2025-...</td>
+<td>dimensionless</td>
+<td>strong</td>
 <td>0.75</td>
-<td>0.85</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1.15</td>
 <td>1.25</td>
 </tr>
 <tr>
-<th rowspan="3" valign="top">hist_gdp</th>
-<th rowspan="2" valign="top">Model Native Regions</th>
-<th>2010, 2015</th>
-<th>GDP|PPP</th>
-<th>WDI-2024</th>
-<th>dimensionless</th>
+<th>3</th>
+<td>hist_gdp</td>
+<td>All Countries</td>
+<td>2010, 2015, 2020, 2025</td>
+<td>GDP|PPP</td>
+<td>range(WDI-2025, WDI-2025-extrapol25, WDI-2025-...</td>
+<td>dimensionless</td>
+<td>strong</td>
 <td>0.65</td>
-<td>0.75</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1.25</td>
 <td>1.35</td>
 </tr>
 <tr>
-<th>2020</th>
-<th>GDP|PPP</th>
-<th>WDI-2024</th>
-<th>dimensionless</th>
-<td>0.50</td>
-<td>0.60</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1.40</td>
-<td>1.50</td>
-</tr>
-<tr>
-<th>World</th>
-<th>2010, 2015</th>
-<th>GDP|PPP</th>
-<th>WDI-2024</th>
-<th>dimensionless</th>
-<td>0.75</td>
-<td>0.85</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1.15</td>
-<td>1.25</td>
+<th>4</th>
+<td>hist_emi_afolu</td>
+<td>World</td>
+<td>2010, 2015, 2020</td>
+<td>Emissions|CO2|AFOLU</td>
+<td>range(EDGAR, FAO, PRIMAP_HISTCR, PRIMAP_HISTTP...</td>
+<td>dimensionless</td>
+<td>strong</td>
+<td>0.80</td>
+<td>1.20</td>
 </tr>
 <tr>
 <th>...</th>
-<th>...</th>
-<th>...</th>
-<th>...</th>
-<th>...</th>
-<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -1616,78 +1577,68 @@ load_criteria('criteria-thresholds')</div>
 <td>...</td>
 </tr>
 <tr>
-<th>sustainable_deforestation</th>
-<th>World</th>
-<th>2030</th>
-<th>Forest Area Change|Deforestation</th>
-<th>NaN</th>
-<th>million ha/yr</th>
+<th>91</th>
+<td>sustainable_deforestation</td>
+<td>World</td>
+<td>2030</td>
+<td>Forest Area Change|Deforestation</td>
 <td>NaN</td>
+<td>million ha/yr</td>
+<td>medium</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>0.0</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>0.00</td>
 </tr>
 <tr>
-<th>sustainable_primary_deforestation</th>
-<th>World</th>
-<th>2030</th>
-<th>Forest Area Change|Deforestation|Primary</th>
-<th>NaN</th>
-<th>million ha/yr</th>
+<th>92</th>
+<td>sustainable_primary_deforestation</td>
+<td>World</td>
+<td>2030</td>
+<td>Forest Area Change|Deforestation|Primary</td>
 <td>NaN</td>
+<td>million ha/yr</td>
+<td>medium</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>0.0</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>0.00</td>
 </tr>
 <tr>
-<th>sustainable_biodiversity_intactness</th>
-<th>World</th>
-<th>2030</th>
-<th>Terrestrial Biodiversity|BII, Terrestrial Biodiversity|Biodiversity Intactness Index</th>
-<th>NaN</th>
-<th>%/yr</th>
+<th>93</th>
+<td>sustainable_biodiversity_intactness</td>
+<td>World</td>
+<td>2030</td>
+<td>Terrestrial Biodiversity|BII, Terrestrial Biod...</td>
 <td>NaN</td>
+<td>%/yr</td>
+<td>medium</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>0.0</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>0.00</td>
 </tr>
 <tr>
-<th>sustainable_bioenergy</th>
-<th>World</th>
-<th>2025, 2030, 2035, 2040, 2045, 2050</th>
-<th>Primary Energy|Biomass</th>
-<th>NaN</th>
-<th>EJ/yr</th>
+<th>94</th>
+<td>sustainable_bioenergy</td>
+<td>World</td>
+<td>2025, 2030, 2035, 2040, 2045, 2050</td>
+<td>Primary Energy|Biomass</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>EJ/yr</td>
+<td>strong</td>
 <td>NaN</td>
 <td>100.00</td>
-<td>NaN</td>
 </tr>
 <tr>
-<th>sustainable_hydropower</th>
-<th>World</th>
-<th>2050</th>
-<th>Capacity|Electricity|Hydro</th>
-<th>NaN</th>
-<th>GW</th>
+<th>95</th>
+<td>sustainable_hydropower</td>
+<td>World</td>
+<td>2050</td>
+<td>Capacity|Electricity|Hydro</td>
 <td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>GW</td>
+<td>strong</td>
 <td>NaN</td>
 <td>1500.00</td>
-<td>NaN</td>
 </tr>
 </tbody>
 </table>
-<p>77 rows × 6 columns</p>
+<p>96 rows × 9 columns</p>
 </div>
 </div>
 </div>
@@ -1695,7 +1646,7 @@ load_criteria('criteria-thresholds')</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fdd60bb9">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5194f80e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1706,7 +1657,7 @@ load_criteria('criteria-thresholds')</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f8aec173">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f73dab70">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1741,19 +1692,13 @@ display(criteria['operations'])</div>
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>[{'criterion_type': 'historical',
-  'threshold_severity': 'very_strong',
+  'threshold_severity': 'strong',
   'threshold_type': ['upper', 'lower'],
   'operation': 'drop'},
- {'criterion_type': 'historical',
+ {'criterion_id': 'nearterm_land_cover',
   'threshold_severity': 'strong',
   'threshold_type': ['upper', 'lower'],
-  'operation': 'flag',
-  'colour': 'red'},
- {'criterion_type': 'historical',
-  'threshold_severity': 'strong',
-  'threshold_type': ['upper', 'lower'],
-  'operation': 'flag',
-  'colour': 'red'},
+  'operation': 'drop'},
  {'criterion_type': 'near_term_feasibility',
   'threshold_severity': 'strong',
   'threshold_type': ['upper', 'lower'],
@@ -1785,7 +1730,7 @@ display(criteria['operations'])</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=07acbd4d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=caec2c8e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1796,7 +1741,7 @@ display(criteria['operations'])</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=399599e1">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=384ac2bd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1807,7 +1752,7 @@ display(criteria['operations'])</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b4fffb3f">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=dbbee8be">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1834,7 +1779,7 @@ display(criteria['operations'])</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=34dd1a99">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5710d794">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1845,7 +1790,7 @@ display(criteria['operations'])</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=18f85149">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=14b137a9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1896,7 +1841,7 @@ display(reference_srcs_formatted['Creutzig14'])</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8ff0557f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9e31bf01">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1907,7 +1852,7 @@ display(reference_srcs_formatted['Creutzig14'])</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2d97b153">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=56f27640">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1957,7 +1902,7 @@ print(text[:30], '...   →  ', text_inserted[:30], '...')</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f2fbf543">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=918cefba">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1968,7 +1913,7 @@ print(text[:30], '...   →  ', text_inserted[:30], '...')</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a94b8417">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=38ec2fce">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>

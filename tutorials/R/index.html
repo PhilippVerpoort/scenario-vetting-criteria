@@ -1307,7 +1307,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=385815b8">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=73fe0bbd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1318,7 +1318,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4d779daf">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6b31a520">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1354,19 +1354,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </pre>
 </div>
 </div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre><span class="ansi-yellow-fg">!</span> Adding files missing in collate: <span class="ansi-blue-fg">/home/philippv/Documents/4-projects/17-SCI/02-SCI-thresholds/scenario-vetting-criteria/R/file_paths.R</span> and
-  <span class="ansi-blue-fg">/home/philippv/Documents/4-projects/17-SCI/02-SCI-thresholds/scenario-vetting-criteria/R/scenariovettingcriteria-package.R</span>
-</pre>
 </div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b4ff9196">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=30052aa1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1377,20 +1369,20 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3e94d20c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d3b23a55">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>While the R package has not been released yet, you have to install it from GitHub source using:</p>
-<div class="highlight"><pre><span></span><span class="nf">install_github</span><span class="p">(</span><span class="s">'PhilippVerpoort/scenario_vetting_criteria'</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">devtools</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">'PhilippVerpoort/scenario-vetting-criteria'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8d9ef97e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cfca5671">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1401,7 +1393,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5ff79919">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=273393cd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1412,7 +1404,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=315ae8da">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=daadf442">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1456,10 +1448,9 @@ for (component_id in names(file_paths)) {
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>[1] "criteria-metadata:  ...eria/inst/extdata/criteria-metadata.yaml"
 [1] "criteria-thresholds:  ...ria/inst/extdata/criteria-thresholds.csv"
-[1] "criteria-thresholds:  ...ria/inst/extdata/criteria-thresholds.csv"
 [1] "criteria-types:  ...riteria/inst/extdata/criteria-types.yaml"
 [1] "operations:  ...ng-criteria/inst/extdata/operations.yaml"
-[1] "reference-data:  ...criteria/inst/extdata/reference-data.csv"
+[1] "reference-data:  ...ing-criteria/inst/extdata/reference-data"
 [1] "reference-sources:  ...teria/inst/extdata/reference-sources.bib"
 </pre>
 </div>
@@ -1468,7 +1459,7 @@ for (component_id in names(file_paths)) {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cde26092">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5edffbb9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1479,7 +1470,7 @@ for (component_id in names(file_paths)) {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=80718824">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c2aaf4e7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1490,7 +1481,7 @@ for (component_id in names(file_paths)) {
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e6acc20e">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2d64d4aa">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1523,73 +1514,73 @@ for (component_id in names(file_paths)) {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <table class="dataframe">
-<caption>A data.frame: 77 × 12</caption>
+<caption>A data.frame: 94 × 9</caption>
 <thead>
-<tr><th scope="col">criterion</th><th scope="col">region</th><th scope="col">period</th><th scope="col">variable</th><th scope="col">reference_source</th><th scope="col">unit</th><th scope="col">lower.very_strong</th><th scope="col">lower.strong</th><th scope="col">lower.medium</th><th scope="col">upper.medium</th><th scope="col">upper.strong</th><th scope="col">upper.very_strong</th></tr>
-<tr><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th></tr>
+<tr><th scope="col">hist_pop</th><th scope="col">All.Countries</th><th scope="col">X2010..2015..2020..2025</th><th scope="col">Population</th><th scope="col">range.WDI.2025..WDI.2025.extrapol25..WDI.2025.COVIDaveraged.</th><th scope="col">dimensionless</th><th scope="col">level_of_concern.strong</th><th scope="col">lower.0.75</th><th scope="col">upper.1.25</th></tr>
+<tr><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th><th scope="col">&lt;chr&gt;</th></tr>
 </thead>
 <tbody>
-<tr><td>hist_pop        </td><td>Model Native Regions     </td><td>2010, 2015, 2020</td><td>Population                                                 </td><td>WDI-2024   </td><td>dimensionless</td><td>0.65</td><td>0.75  </td><td> </td><td> </td><td>1.25   </td><td>1.35</td></tr>
-<tr><td>hist_pop        </td><td>World                    </td><td>2010, 2015, 2020</td><td>Population                                                 </td><td>WDI-2024   </td><td>dimensionless</td><td>0.75</td><td>0.85  </td><td> </td><td> </td><td>1.15   </td><td>1.25</td></tr>
-<tr><td>hist_gdp        </td><td>Model Native Regions     </td><td>2010, 2015      </td><td>GDP|PPP                                                    </td><td>WDI-2024   </td><td>dimensionless</td><td>0.65</td><td>0.75  </td><td> </td><td> </td><td>1.25   </td><td>1.35</td></tr>
-<tr><td>hist_gdp        </td><td>Model Native Regions     </td><td>2020            </td><td>GDP|PPP                                                    </td><td>WDI-2024   </td><td>dimensionless</td><td>0.5 </td><td>0.6   </td><td> </td><td> </td><td>1.4    </td><td>1.5 </td></tr>
-<tr><td>hist_gdp        </td><td>World                    </td><td>2010, 2015      </td><td>GDP|PPP                                                    </td><td>WDI-2024   </td><td>dimensionless</td><td>0.75</td><td>0.85  </td><td> </td><td> </td><td>1.15   </td><td>1.25</td></tr>
-<tr><td>hist_gdp        </td><td>World                    </td><td>2020            </td><td>GDP|PPP                                                    </td><td>WDI-2024   </td><td>dimensionless</td><td>0.6 </td><td>0.7   </td><td> </td><td> </td><td>1.3    </td><td>1.4 </td></tr>
-<tr><td>hist_emi        </td><td>Model Native Regions     </td><td>2010, 2015      </td><td>Emissions|CO2|Energy and Industrial Processes              </td><td>CEDS-2024  </td><td>dimensionless</td><td>0.65</td><td>0.75  </td><td> </td><td> </td><td>1.25   </td><td>1.35</td></tr>
-<tr><td>hist_emi        </td><td>Model Native Regions     </td><td>2020            </td><td>Emissions|CO2|Energy and Industrial Processes              </td><td>CEDS-2024  </td><td>dimensionless</td><td>0.5 </td><td>0.6   </td><td> </td><td> </td><td>1.4    </td><td>1.5 </td></tr>
-<tr><td>hist_emi        </td><td>World                    </td><td>2010, 2015      </td><td>Emissions|CO2|Energy and Industrial Processes              </td><td>CEDS-2024  </td><td>dimensionless</td><td>0.75</td><td>0.85  </td><td> </td><td> </td><td>1.15   </td><td>1.25</td></tr>
-<tr><td>hist_emi        </td><td>World                    </td><td>2020, 2025      </td><td>Emissions|CO2|Energy and Industrial Processes              </td><td>CEDS-2024  </td><td>dimensionless</td><td>0.6 </td><td>0.7   </td><td> </td><td> </td><td>1.3    </td><td>1.4 </td></tr>
-<tr><td>hist_fe         </td><td>Model Native Regions     </td><td>2010, 2015      </td><td>Final Energy                                               </td><td>IEA-EB-2023</td><td>dimensionless</td><td>0.65</td><td>0.75  </td><td> </td><td> </td><td>1.25   </td><td>1.35</td></tr>
-<tr><td>hist_fe         </td><td>Model Native Regions     </td><td>2020            </td><td>Final Energy                                               </td><td>IEA-EB-2023</td><td>dimensionless</td><td>0.5 </td><td>0.6   </td><td> </td><td> </td><td>1.4    </td><td>1.5 </td></tr>
-<tr><td>hist_fe         </td><td>World                    </td><td>2010, 2015      </td><td>Final Energy                                               </td><td>IEA-EB-2023</td><td>dimensionless</td><td>0.75</td><td>0.85  </td><td> </td><td> </td><td>1.15   </td><td>1.25</td></tr>
-<tr><td>hist_fe         </td><td>World                    </td><td>2020            </td><td>Final Energy                                               </td><td>IEA-EB-2023</td><td>dimensionless</td><td>0.6 </td><td>0.7   </td><td> </td><td> </td><td>1.3    </td><td>1.4 </td></tr>
-<tr><td>hist_pe_fossil  </td><td>Model Native Regions     </td><td>2010, 2015      </td><td>Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas</td><td>IEA-EB-2023</td><td>dimensionless</td><td>0.65</td><td>0.75  </td><td> </td><td> </td><td>1.25   </td><td>1.35</td></tr>
-<tr><td>hist_pe_fossil  </td><td>Model Native Regions     </td><td>2020            </td><td>Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas</td><td>IEA-EB-2023</td><td>dimensionless</td><td>0.5 </td><td>0.6   </td><td> </td><td> </td><td>1.4    </td><td>1.5 </td></tr>
-<tr><td>hist_pe_fossil  </td><td>World                    </td><td>2010, 2015      </td><td>Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas</td><td>IEA-EB-2023</td><td>dimensionless</td><td>0.75</td><td>0.85  </td><td> </td><td> </td><td>1.15   </td><td>1.25</td></tr>
-<tr><td>hist_pe_fossil  </td><td>World                    </td><td>2020            </td><td>Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas</td><td>IEA-EB-2023</td><td>dimensionless</td><td>0.6 </td><td>0.7   </td><td> </td><td> </td><td>1.3    </td><td>1.4 </td></tr>
-<tr><td>nearterm_hydro  </td><td>Africa (R10)             </td><td>2030            </td><td>Capacity|Electricity|Hydro                                 </td><td> </td><td>GW           </td><td> </td><td> </td><td>15.3   </td><td>96.39  </td><td> </td><td> </td></tr>
-<tr><td>nearterm_hydro  </td><td>China+ (R10)             </td><td>2030            </td><td>Capacity|Electricity|Hydro                                 </td><td> </td><td>GW           </td><td> </td><td> </td><td>201.24 </td><td>832.12 </td><td> </td><td> </td></tr>
-<tr><td>nearterm_hydro  </td><td>Europe (R10)             </td><td>2030            </td><td>Capacity|Electricity|Hydro                                 </td><td> </td><td>GW           </td><td> </td><td> </td><td>106.16 </td><td>436.09 </td><td> </td><td> </td></tr>
-<tr><td>nearterm_hydro  </td><td>India+ (R10)             </td><td>2030            </td><td>Capacity|Electricity|Hydro                                 </td><td> </td><td>GW           </td><td> </td><td> </td><td>27.06  </td><td>149.56 </td><td> </td><td> </td></tr>
-<tr><td>nearterm_hydro  </td><td>Latin America (R10)      </td><td>2030            </td><td>Capacity|Electricity|Hydro                                 </td><td> </td><td>GW           </td><td> </td><td> </td><td>110.94 </td><td>376.29 </td><td> </td><td> </td></tr>
-<tr><td>nearterm_hydro  </td><td>Middle East (R10)        </td><td>2030            </td><td>Capacity|Electricity|Hydro                                 </td><td> </td><td>GW           </td><td> </td><td> </td><td>6.85   </td><td>31.76  </td><td> </td><td> </td></tr>
-<tr><td>nearterm_hydro  </td><td>North America (R10)      </td><td>2030            </td><td>Capacity|Electricity|Hydro                                 </td><td> </td><td>GW           </td><td> </td><td> </td><td>48.84  </td><td>187.67 </td><td> </td><td> </td></tr>
-<tr><td>nearterm_hydro  </td><td>Pacific OECD (R10)       </td><td>2030            </td><td>Capacity|Electricity|Hydro                                 </td><td> </td><td>GW           </td><td> </td><td> </td><td>65.94  </td><td>259.67 </td><td> </td><td> </td></tr>
-<tr><td>nearterm_hydro  </td><td>Reforming Economies (R10)</td><td>2030            </td><td>Capacity|Electricity|Hydro                                 </td><td> </td><td>GW           </td><td> </td><td> </td><td>37.74  </td><td>135.95 </td><td> </td><td> </td></tr>
-<tr><td>nearterm_hydro  </td><td>Rest of Asia (R10)       </td><td>2030            </td><td>Capacity|Electricity|Hydro                                 </td><td> </td><td>GW           </td><td> </td><td> </td><td>32.88  </td><td>189.6  </td><td> </td><td> </td></tr>
-<tr><td>nearterm_hydro  </td><td>World                    </td><td>2030            </td><td>Capacity|Electricity|Hydro                                 </td><td> </td><td>GW           </td><td> </td><td>979.43</td><td>1175.37</td><td>1606.66</td><td>2117.58</td><td> </td></tr>
-<tr><td>nearterm_nuclear</td><td>Africa (R10)             </td><td>2030            </td><td>Capacity|Electricity|Nuclear                               </td><td> </td><td>GW           </td><td> </td><td> </td><td>0.89   </td><td>8.75   </td><td> </td><td> </td></tr>
-<tr><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr>
-<tr><td>nearterm_ccus                      </td><td>Pacific OECD (R10)       </td><td>2030                              </td><td>Carbon Capture                                                                      </td><td></td><td>Mt CO2/yr    </td><td></td><td> </td><td>5.52  </td><td>92.09 </td><td> </td><td></td></tr>
-<tr><td>nearterm_ccus                      </td><td>Reforming Economies (R10)</td><td>2030                              </td><td>Carbon Capture                                                                      </td><td></td><td>Mt CO2/yr    </td><td></td><td> </td><td>0     </td><td>0     </td><td> </td><td></td></tr>
-<tr><td>nearterm_ccus                      </td><td>Rest of Asia (R10)       </td><td>2030                              </td><td>Carbon Capture                                                                      </td><td></td><td>Mt CO2/yr    </td><td></td><td> </td><td>0     </td><td>20.91 </td><td> </td><td></td></tr>
-<tr><td>nearterm_ccus                      </td><td>World                    </td><td>2030                              </td><td>Carbon Capture                                                                      </td><td></td><td>Mt CO2/yr    </td><td></td><td>0     </td><td>44.02 </td><td>152.47</td><td>457.89</td><td></td></tr>
-<tr><td>nearterm_solar                     </td><td>World                    </td><td>2025                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td></td><td>1609.2</td><td>2083  </td><td>3152  </td><td>3895.6</td><td></td></tr>
-<tr><td>nearterm_solar                     </td><td>China+ (R10)             </td><td>2025                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td></td><td> </td><td>518.1 </td><td>2671.7</td><td> </td><td></td></tr>
-<tr><td>nearterm_solar                     </td><td>Europe (R10)             </td><td>2025                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td></td><td> </td><td>194.2 </td><td>764.7 </td><td> </td><td></td></tr>
-<tr><td>nearterm_solar                     </td><td>India+ (R10)             </td><td>2025                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td></td><td> </td><td>56.2  </td><td>256.4 </td><td> </td><td></td></tr>
-<tr><td>nearterm_solar                     </td><td>World                    </td><td>2030                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td></td><td>2683.2</td><td>4350.2</td><td>8163.7</td><td>10896 </td><td></td></tr>
-<tr><td>nearterm_solar                     </td><td>China+ (R10)             </td><td>2030                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td></td><td> </td><td>936.1 </td><td>7874.1</td><td> </td><td></td></tr>
-<tr><td>nearterm_solar                     </td><td>Europe (R10)             </td><td>2030                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td></td><td> </td><td>280.6 </td><td>1839.9</td><td> </td><td></td></tr>
-<tr><td>nearterm_solar                     </td><td>India+ (R10)             </td><td>2030                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td></td><td> </td><td>104.4 </td><td>855.6 </td><td> </td><td></td></tr>
-<tr><td>nearterm_wind_onshore              </td><td>World                    </td><td>2025                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td></td><td>945   </td><td>1138  </td><td>1570  </td><td>1862  </td><td></td></tr>
-<tr><td>nearterm_wind_onshore              </td><td>Europe (R10)             </td><td>2025                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td></td><td>1220  </td><td>154   </td><td>505   </td><td>3655  </td><td></td></tr>
-<tr><td>nearterm_wind_onshore              </td><td>China+ (R10)             </td><td>2025                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td></td><td> </td><td>268   </td><td>1101  </td><td> </td><td></td></tr>
-<tr><td>nearterm_wind_onshore              </td><td>India+ (R10)             </td><td>2025                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td></td><td> </td><td>28    </td><td>91    </td><td> </td><td></td></tr>
-<tr><td>nearterm_wind_onshore              </td><td>World                    </td><td>2030                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td></td><td> </td><td>1719  </td><td>2853  </td><td> </td><td></td></tr>
-<tr><td>nearterm_wind_onshore              </td><td>Europe (R10)             </td><td>2030                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td></td><td> </td><td>191   </td><td>969   </td><td> </td><td></td></tr>
-<tr><td>nearterm_wind_onshore              </td><td>China+ (R10)             </td><td>2030                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td></td><td> </td><td>349   </td><td>2117  </td><td> </td><td></td></tr>
-<tr><td>nearterm_wind_onshore              </td><td>India+ (R10)             </td><td>2030                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td></td><td> </td><td>33    </td><td>154   </td><td> </td><td></td></tr>
-<tr><td>longterm_nuclear                   </td><td>World                    </td><td>2040                              </td><td>Capacity|Electricity|Nuclear                                                        </td><td></td><td>GW           </td><td></td><td> </td><td> </td><td>694   </td><td> </td><td></td></tr>
-<tr><td>longterm_nuclear                   </td><td>World                    </td><td>2050                              </td><td>Capacity|Electricity|Nuclear                                                        </td><td></td><td>GW           </td><td></td><td> </td><td> </td><td>950   </td><td> </td><td></td></tr>
-<tr><td>longterm_ccus                      </td><td>World                    </td><td>2035                              </td><td>Carbon Capture                                                                      </td><td></td><td>Mt CO2/yr    </td><td></td><td> </td><td> </td><td>1300  </td><td> </td><td></td></tr>
-<tr><td>longterm_ccus                      </td><td>World                    </td><td>2040                              </td><td>Carbon Capture                                                                      </td><td></td><td>Mt CO2/yr    </td><td></td><td> </td><td> </td><td>4300  </td><td> </td><td></td></tr>
-<tr><td>longterm_daccs                     </td><td>World                    </td><td>2050                              </td><td>Carbon Capture|Geological Storage|Direct Air Capture                                </td><td></td><td>Gt CO2/yr    </td><td></td><td> </td><td> </td><td>4.89  </td><td> </td><td></td></tr>
-<tr><td>sustainable_deforestation          </td><td>World                    </td><td>2030                              </td><td>Forest Area Change|Deforestation                                                    </td><td></td><td>million ha/yr</td><td></td><td> </td><td> </td><td>0     </td><td> </td><td></td></tr>
-<tr><td>sustainable_primary_deforestation  </td><td>World                    </td><td>2030                              </td><td>Forest Area Change|Deforestation|Primary                                            </td><td></td><td>million ha/yr</td><td></td><td> </td><td> </td><td>0     </td><td> </td><td></td></tr>
-<tr><td>sustainable_biodiversity_intactness</td><td>World                    </td><td>2030                              </td><td>Terrestrial Biodiversity|BII, Terrestrial Biodiversity|Biodiversity Intactness Index</td><td></td><td>%/yr         </td><td></td><td> </td><td> </td><td>0     </td><td> </td><td></td></tr>
-<tr><td>sustainable_bioenergy              </td><td>World                    </td><td>2025, 2030, 2035, 2040, 2045, 2050</td><td>Primary Energy|Biomass                                                              </td><td></td><td>EJ/yr        </td><td></td><td> </td><td> </td><td> </td><td>100   </td><td></td></tr>
-<tr><td>sustainable_hydropower             </td><td>World                    </td><td>2050                              </td><td>Capacity|Electricity|Hydro                                                          </td><td></td><td>GW           </td><td></td><td> </td><td> </td><td> </td><td>1500  </td><td></td></tr>
+<tr><td>hist_gdp                         </td><td>World               </td><td>2010, 2015, 2020, 2025</td><td>GDP|PPP                                                                             </td><td>range(WDI-2025, WDI-2025-extrapol25, WDI-2025-COVIDaveraged)                                                                                         </td><td>dimensionless</td><td>strong</td><td>0.75   </td><td>1.25   </td></tr>
+<tr><td>hist_gdp                         </td><td>All Countries       </td><td>2010, 2015, 2020, 2025</td><td>GDP|PPP                                                                             </td><td>range(WDI-2025, WDI-2025-extrapol25, WDI-2025-COVIDaveraged)                                                                                         </td><td>dimensionless</td><td>strong</td><td>0.65   </td><td>1.35   </td></tr>
+<tr><td>hist_emi_afolu                   </td><td>World               </td><td>2010, 2015, 2020      </td><td>Emissions|CO2|AFOLU                                                                 </td><td>range(EDGAR, FAO, PRIMAP_HISTCR, PRIMAP_HISTTP, OSCAR, Gasser-2020, GCB)                                                                             </td><td>dimensionless</td><td>strong</td><td>0.8    </td><td>1.2    </td></tr>
+<tr><td>hist_emi_afolu                   </td><td>World               </td><td>2025                  </td><td>Emissions|CO2|AFOLU                                                                 </td><td>range(EDGAR-extrapol25, FAO-extrapol25, PRIMAP_HISTCR-extrapol25, PRIMAP_HISTTP-extrapol25, OSCAR-extrapol25, Gasser-2020-extrapol25, GCB-extrapol25)</td><td>dimensionless</td><td>strong</td><td>0.7    </td><td>1.3    </td></tr>
+<tr><td>hist_emi_afolu                   </td><td>World, All Countries</td><td>2010, 2015, 2020      </td><td>Emissions|CH4|AFOLU|Agriculture, Emissions|N2O|AFOLU|Agriculture                    </td><td>range(EDGAR, FAO, PRIMAP_HISTCR, PRIMAP_HISTTP)                                                                                                      </td><td>dimensionless</td><td>strong</td><td>0.8    </td><td>1.2    </td></tr>
+<tr><td>hist_emi_afolu                   </td><td>World, All Countries</td><td>2025                  </td><td>Emissions|CH4|AFOLU|Agriculture, Emissions|N2O|AFOLU|Agriculture                    </td><td>range(EDGAR-extrapol25, FAO-extrapol25, PRIMAP_HISTCR-extrapol25, PRIMAP_HISTTP-extrapol25)                                                          </td><td>dimensionless</td><td>strong</td><td>0.7    </td><td>1.3    </td></tr>
+<tr><td>hist_emi_energy_industry         </td><td>World               </td><td>2010, 2015, 2020, 2025</td><td>Emissions|CO2|Energy and Industrial Processes                                       </td><td>range(CEDS-2025, CEDS-2025-extrapol25,CEDS-2025-COVIDaveraged)                                                                                       </td><td>dimensionless</td><td>strong</td><td>0.75   </td><td>1.25   </td></tr>
+<tr><td>hist_emi_energy_industry         </td><td>All Countries       </td><td>2010, 2015, 2020, 2025</td><td>Emissions|CO2|Energy and Industrial Processes                                       </td><td>range(CEDS-2025, CEDS-2025-extrapol25,CEDS-2025-COVIDaveraged)                                                                                       </td><td>dimensionless</td><td>strong</td><td>0.65   </td><td>1.35   </td></tr>
+<tr><td>hist_cropland_yield              </td><td>World, All Countries</td><td>2010, 2015, 2020      </td><td>Yield|Cropland|Cereals                                                              </td><td>range(FAO, FAO-extrapol25)                                                                                                                           </td><td>dimensionless</td><td>strong</td><td>0.8    </td><td>1.2    </td></tr>
+<tr><td>hist_cropland_yield              </td><td>World, All Countries</td><td>2025                  </td><td>Yield|Cropland|Cereals                                                              </td><td>range(FAO, FAO-extrapol25)                                                                                                                           </td><td>dimensionless</td><td>strong</td><td>0.7    </td><td>1.3    </td></tr>
+<tr><td>hist_food_availability           </td><td>World, All Countries</td><td>2010, 2015, 2020      </td><td>Food Availability [per capita]                                                      </td><td>range(FAO, FAO-extrapol25)                                                                                                                           </td><td>dimensionless</td><td>strong</td><td>0.8    </td><td>1.2    </td></tr>
+<tr><td>hist_food_availability           </td><td>World, All Countries</td><td>2025                  </td><td>Food Availability [per capita]                                                      </td><td>range(FAO, FAO-extrapol25)                                                                                                                           </td><td>dimensionless</td><td>strong</td><td>0.7    </td><td>1.3    </td></tr>
+<tr><td>hist_land_cover                  </td><td>World, All Countries</td><td>2010, 2015, 2020      </td><td>Land Cover                                                                          </td><td>range(LUH2, LUH2_GCB2025, LUH3, FAO)                                                                                                                 </td><td>dimensionless</td><td>strong</td><td>0.9    </td><td>1.1    </td></tr>
+<tr><td>hist_land_cover                  </td><td>World, All Countries</td><td>2025                  </td><td>Land Cover                                                                          </td><td>range(LUH2-extrapol25, LUH2_GCB2025-extrapol25, LUH3-extrapol25, FAO-extrapol25)                                                                     </td><td>dimensionless</td><td>strong</td><td>0.8    </td><td>1.2    </td></tr>
+<tr><td>hist_land_cover_cropland         </td><td>World, All Countries</td><td>2010, 2015, 2020      </td><td>Land Cover|Cropland                                                                 </td><td>range(LUH2, LUH2_GCB2025, LUH3, FAO)                                                                                                                 </td><td>dimensionless</td><td>strong</td><td>0.8    </td><td>1.2    </td></tr>
+<tr><td>hist_land_cover_cropland         </td><td>World, All Countries</td><td>2025                  </td><td>Land Cover|Cropland                                                                 </td><td>range(LUH2-extrapol25, LUH2_GCB2025-extrapol25, LUH3-extrapol25, FAO-extrapol25)                                                                     </td><td>dimensionless</td><td>strong</td><td>0.7    </td><td>1.3    </td></tr>
+<tr><td>hist_pe_fossil                   </td><td>World               </td><td>2010, 2015, 2020, 2025</td><td>Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas                         </td><td>range(IEA-EB-2024, IEA-EB-2024-extrapol25,IEA-EB-2024-COVIDaveraged)                                                                                 </td><td>dimensionless</td><td>strong</td><td>0.75   </td><td>1.25   </td></tr>
+<tr><td>hist_pe_fossil                   </td><td>All Countries       </td><td>2010, 2015, 2020, 2025</td><td>Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas                         </td><td>range(IEA-EB-2024, IEA-EB-2024-extrapol25,IEA-EB-2024-COVIDaveraged)                                                                                 </td><td>dimensionless</td><td>strong</td><td>0.65   </td><td>1.35   </td></tr>
+<tr><td>hist_fe                          </td><td>World               </td><td>2010, 2015, 2020, 2025</td><td>Final Energy                                                                        </td><td>range(IEA-EB-2024, IEA-EB-2024-extrapol25,IEA-EB-2024-COVIDaveraged)                                                                                 </td><td>dimensionless</td><td>strong</td><td>0.75   </td><td>1.25   </td></tr>
+<tr><td>hist_fe                          </td><td>All Countries       </td><td>2010, 2015, 2020, 2025</td><td>Final Energy                                                                        </td><td>range(IEA-EB-2024, IEA-EB-2024-extrapol25,IEA-EB-2024-COVIDaveraged)                                                                                 </td><td>dimensionless</td><td>strong</td><td>0.65   </td><td>1.35   </td></tr>
+<tr><td>nearterm_biodiversity_intactness </td><td>World               </td><td>2030                  </td><td>Terrestrial Biodiversity|BII, Terrestrial Biodiversity|Biodiversity Intactness Index</td><td> </td><td>%/yr         </td><td>medium</td><td>-0.11  </td><td> </td></tr>
+<tr><td>nearterm_deforestation           </td><td>World               </td><td>2030                  </td><td>Forest Area Change|Deforestation                                                    </td><td> </td><td>million ha/yr</td><td>medium</td><td> </td><td>16.0   </td></tr>
+<tr><td>nearterm_food_availability       </td><td>World               </td><td>2050, 2100            </td><td>Food Availability [per capita]                                                      </td><td> </td><td>kcal/cap/day </td><td>medium</td><td>2100.0 </td><td>5000.0 </td></tr>
+<tr><td>nearterm_forest_expansion        </td><td>World               </td><td>2030                  </td><td>Forest Area Change|Forest Expansion                                                 </td><td> </td><td>million ha/yr</td><td>medium</td><td> </td><td>10.0   </td></tr>
+<tr><td>nearterm_planted_forest_expansion</td><td>World               </td><td>2030                  </td><td>Forest Area Change|Forest Expansion|Planted                                         </td><td> </td><td>million ha/yr</td><td>medium</td><td> </td><td>5.0    </td></tr>
+<tr><td>nearterm_land_cover              </td><td>World               </td><td>2030                  </td><td>Land Cover                                                                          </td><td> </td><td>million ha   </td><td>strong</td><td>11554.0</td><td>14318.0</td></tr>
+<tr><td>nearterm_primary_deforestation   </td><td>World               </td><td>2030                  </td><td>Forest Area Change|Deforestation|Primary                                            </td><td> </td><td>million ha/yr</td><td>medium</td><td> </td><td>12.0   </td></tr>
+<tr><td>nearterm_hydro                   </td><td>Africa (R10)        </td><td>2030                  </td><td>Capacity|Electricity|Hydro                                                          </td><td> </td><td>GW           </td><td>medium</td><td>15.3   </td><td>96.39  </td></tr>
+<tr><td>nearterm_hydro                   </td><td>China+ (R10)        </td><td>2030                  </td><td>Capacity|Electricity|Hydro                                                          </td><td> </td><td>GW           </td><td>medium</td><td>201.24 </td><td>832.12 </td></tr>
+<tr><td>nearterm_hydro                   </td><td>Europe (R10)        </td><td>2030                  </td><td>Capacity|Electricity|Hydro                                                          </td><td> </td><td>GW           </td><td>medium</td><td>106.16 </td><td>436.09 </td></tr>
+<tr><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr>
+<tr><td>nearterm_solar                     </td><td>World       </td><td>2025                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td>strong</td><td>1609.2</td><td>3895.6 </td></tr>
+<tr><td>nearterm_solar                     </td><td>China+ (R10)</td><td>2025                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td>medium</td><td>518.1 </td><td>2671.7 </td></tr>
+<tr><td>nearterm_solar                     </td><td>Europe (R10)</td><td>2025                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td>medium</td><td>194.2 </td><td>764.7  </td></tr>
+<tr><td>nearterm_solar                     </td><td>India+ (R10)</td><td>2025                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td>medium</td><td>56.2  </td><td>256.4  </td></tr>
+<tr><td>nearterm_solar                     </td><td>World       </td><td>2030                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td>medium</td><td>4350.2</td><td>8163.7 </td></tr>
+<tr><td>nearterm_solar                     </td><td>World       </td><td>2030                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td>strong</td><td>2683.2</td><td>10896.0</td></tr>
+<tr><td>nearterm_solar                     </td><td>China+ (R10)</td><td>2030                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td>medium</td><td>936.1 </td><td>7874.1 </td></tr>
+<tr><td>nearterm_solar                     </td><td>Europe (R10)</td><td>2030                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td>medium</td><td>280.6 </td><td>1839.9 </td></tr>
+<tr><td>nearterm_solar                     </td><td>India+ (R10)</td><td>2030                              </td><td>Capacity|Electricity|Solar                                                          </td><td></td><td>GW           </td><td>medium</td><td>104.4 </td><td>855.6  </td></tr>
+<tr><td>nearterm_wind_onshore              </td><td>World       </td><td>2025                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td>medium</td><td>1138.0</td><td>1570.0 </td></tr>
+<tr><td>nearterm_wind_onshore              </td><td>World       </td><td>2025                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td>strong</td><td>945.0 </td><td>1862.0 </td></tr>
+<tr><td>nearterm_wind_onshore              </td><td>Europe (R10)</td><td>2025                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td>medium</td><td>154.0 </td><td>505.0  </td></tr>
+<tr><td>nearterm_wind_onshore              </td><td>China+ (R10)</td><td>2025                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td>medium</td><td>268.0 </td><td>1101.0 </td></tr>
+<tr><td>nearterm_wind_onshore              </td><td>India+ (R10)</td><td>2025                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td>medium</td><td>28.0  </td><td>91.0   </td></tr>
+<tr><td>nearterm_wind_onshore              </td><td>World       </td><td>2030                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td>medium</td><td>1719.0</td><td>2853.0 </td></tr>
+<tr><td>nearterm_wind_onshore              </td><td>World       </td><td>2030                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td>strong</td><td>1220.0</td><td>3655.0 </td></tr>
+<tr><td>nearterm_wind_onshore              </td><td>Europe (R10)</td><td>2030                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td>medium</td><td>191.0 </td><td>969.0  </td></tr>
+<tr><td>nearterm_wind_onshore              </td><td>China+ (R10)</td><td>2030                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td>medium</td><td>349.0 </td><td>2117.0 </td></tr>
+<tr><td>nearterm_wind_onshore              </td><td>India+ (R10)</td><td>2030                              </td><td>Capacity|Electricity|Wind|Onshore                                                   </td><td></td><td>GW           </td><td>medium</td><td>33.0  </td><td>154.0  </td></tr>
+<tr><td>longterm_cropland_yield            </td><td>World       </td><td>2100                              </td><td>Yield|Cropland|Cereals                                                              </td><td></td><td>t DM/ha/yr   </td><td>strong</td><td> </td><td>15.3   </td></tr>
+<tr><td>longterm_nuclear                   </td><td>World       </td><td>2040                              </td><td>Capacity|Electricity|Nuclear                                                        </td><td></td><td>GW           </td><td>medium</td><td> </td><td>694.0  </td></tr>
+<tr><td>longterm_nuclear                   </td><td>World       </td><td>2050                              </td><td>Capacity|Electricity|Nuclear                                                        </td><td></td><td>GW           </td><td>medium</td><td> </td><td>950.0  </td></tr>
+<tr><td>longterm_ccus                      </td><td>World       </td><td>2035                              </td><td>Carbon Capture                                                                      </td><td></td><td>Mt CO2/yr    </td><td>medium</td><td> </td><td>1300.0 </td></tr>
+<tr><td>longterm_ccus                      </td><td>World       </td><td>2040                              </td><td>Carbon Capture                                                                      </td><td></td><td>Mt CO2/yr    </td><td>medium</td><td> </td><td>4300.0 </td></tr>
+<tr><td>longterm_daccs                     </td><td>World       </td><td>2050                              </td><td>Carbon Capture|Geological Storage|Direct Air Capture                                </td><td></td><td>Gt CO2/yr    </td><td>medium</td><td> </td><td>4.89   </td></tr>
+<tr><td>sustainable_deforestation          </td><td>World       </td><td>2030                              </td><td>Forest Area Change|Deforestation                                                    </td><td></td><td>million ha/yr</td><td>medium</td><td> </td><td>0.0    </td></tr>
+<tr><td>sustainable_primary_deforestation  </td><td>World       </td><td>2030                              </td><td>Forest Area Change|Deforestation|Primary                                            </td><td></td><td>million ha/yr</td><td>medium</td><td> </td><td>0.0    </td></tr>
+<tr><td>sustainable_biodiversity_intactness</td><td>World       </td><td>2030                              </td><td>Terrestrial Biodiversity|BII, Terrestrial Biodiversity|Biodiversity Intactness Index</td><td></td><td>%/yr         </td><td>medium</td><td> </td><td>0.0    </td></tr>
+<tr><td>sustainable_bioenergy              </td><td>World       </td><td>2025, 2030, 2035, 2040, 2045, 2050</td><td>Primary Energy|Biomass                                                              </td><td></td><td>EJ/yr        </td><td>strong</td><td> </td><td>100.0  </td></tr>
+<tr><td>sustainable_hydropower             </td><td>World       </td><td>2050                              </td><td>Capacity|Electricity|Hydro                                                          </td><td></td><td>GW           </td><td>strong</td><td> </td><td>1500.0 </td></tr>
 </tbody>
 </table>
 </div>
@@ -1598,7 +1589,7 @@ for (component_id in names(file_paths)) {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c427c542">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0d8f2fd0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1609,7 +1600,7 @@ for (component_id in names(file_paths)) {
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d0c27fc5">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fbf2b0bd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1648,7 +1639,7 @@ criteria$operations</div>
 <dt>$criterion_type</dt>
 <dd>'historical'</dd>
 <dt>$threshold_severity</dt>
-<dd>'very_strong'</dd>
+<dd>'strong'</dd>
 <dt>$threshold_type</dt>
 <dd><style>
 .list-inline {list-style: none; margin:0; padding: 0}
@@ -1662,8 +1653,8 @@ criteria$operations</div>
 </dl>
 </li>
 <li><dl>
-<dt>$criterion_type</dt>
-<dd>'historical'</dd>
+<dt>$criterion_id</dt>
+<dd>'nearterm_land_cover'</dd>
 <dt>$threshold_severity</dt>
 <dd>'strong'</dd>
 <dt>$threshold_type</dt>
@@ -1675,28 +1666,7 @@ criteria$operations</div>
 <ol class="list-inline"><li>'upper'</li><li>'lower'</li></ol>
 </dd>
 <dt>$operation</dt>
-<dd>'flag'</dd>
-<dt>$colour</dt>
-<dd>'red'</dd>
-</dl>
-</li>
-<li><dl>
-<dt>$criterion_type</dt>
-<dd>'historical'</dd>
-<dt>$threshold_severity</dt>
-<dd>'strong'</dd>
-<dt>$threshold_type</dt>
-<dd><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class="list-inline"><li>'upper'</li><li>'lower'</li></ol>
-</dd>
-<dt>$operation</dt>
-<dd>'flag'</dd>
-<dt>$colour</dt>
-<dd>'red'</dd>
+<dd>'drop'</dd>
 </dl>
 </li>
 <li><dl>
@@ -1801,7 +1771,7 @@ criteria$operations</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=32b257e1">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ef41eb68">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1812,7 +1782,7 @@ criteria$operations</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a64aa9d2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fe0fe8d6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
