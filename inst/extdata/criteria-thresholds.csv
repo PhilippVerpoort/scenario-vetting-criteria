@@ -1,24 +1,35 @@
 threshold_type,,,,,,lower,lower,lower,upper,upper,upper
 threshold_severity,,,,,,very_strong,strong,medium,medium,strong,very_strong
 criterion,region,period,variable,reference_source,unit,,,,,,
-hist_pop,Model Native Regions,"2010, 2015, 2020",Population,WDI-2024,dimensionless,0.65,0.75,,,1.25,1.35
-hist_pop,World,"2010, 2015, 2020",Population,WDI-2024,dimensionless,0.75,0.85,,,1.15,1.25
-hist_gdp,Model Native Regions,"2010, 2015",GDP|PPP,WDI-2024,dimensionless,0.65,0.75,,,1.25,1.35
-hist_gdp,Model Native Regions,2020,GDP|PPP,WDI-2024,dimensionless,0.5,0.6,,,1.4,1.5
-hist_gdp,World,"2010, 2015",GDP|PPP,WDI-2024,dimensionless,0.75,0.85,,,1.15,1.25
-hist_gdp,World,2020,GDP|PPP,WDI-2024,dimensionless,0.6,0.7,,,1.3,1.4
-hist_emi,Model Native Regions,"2010, 2015",Emissions|CO2|Energy and Industrial Processes,CEDS-2024,dimensionless,0.65,0.75,,,1.25,1.35
-hist_emi,Model Native Regions,2020,Emissions|CO2|Energy and Industrial Processes,CEDS-2024,dimensionless,0.5,0.6,,,1.4,1.5
-hist_emi,World,"2010, 2015",Emissions|CO2|Energy and Industrial Processes,CEDS-2024,dimensionless,0.75,0.85,,,1.15,1.25
-hist_emi,World,"2020, 2025",Emissions|CO2|Energy and Industrial Processes,CEDS-2024,dimensionless,0.6,0.7,,,1.3,1.4
-hist_fe,Model Native Regions,"2010, 2015",Final Energy,IEA-EB-2023,dimensionless,0.65,0.75,,,1.25,1.35
-hist_fe,Model Native Regions,2020,Final Energy,IEA-EB-2023,dimensionless,0.5,0.6,,,1.4,1.5
-hist_fe,World,"2010, 2015",Final Energy,IEA-EB-2023,dimensionless,0.75,0.85,,,1.15,1.25
-hist_fe,World,2020,Final Energy,IEA-EB-2023,dimensionless,0.6,0.7,,,1.3,1.4
-hist_pe_fossil,Model Native Regions,"2010, 2015","Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas",IEA-EB-2023,dimensionless,0.65,0.75,,,1.25,1.35
-hist_pe_fossil,Model Native Regions,2020,"Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas",IEA-EB-2023,dimensionless,0.5,0.6,,,1.4,1.5
-hist_pe_fossil,World,"2010, 2015","Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas",IEA-EB-2023,dimensionless,0.75,0.85,,,1.15,1.25
-hist_pe_fossil,World,2020,"Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas",IEA-EB-2023,dimensionless,0.6,0.7,,,1.3,1.4
+hist_pop,World,"2010, 2015, 2020, 2025",Population,"range(WDI-2025, WDI-2025-extrapol25, WDI-2025-COVIDaveraged)",dimensionless,0.75,,,,,1.25
+hist_pop,All Countries,"2010, 2015, 2020, 2025",Population,"range(WDI-2025, WDI-2025-extrapol25, WDI-2025-COVIDaveraged)",dimensionless,0.65,,,,,1.35
+hist_gdp,World,"2010, 2015, 2020, 2025",GDP|PPP,"range(WDI-2025, WDI-2025-extrapol25, WDI-2025-COVIDaveraged)",dimensionless,0.75,,,,,1.25
+hist_gdp,All Countries,"2010, 2015, 2020, 2025",GDP|PPP,"range(WDI-2025, WDI-2025-extrapol25, WDI-2025-COVIDaveraged)",dimensionless,0.65,,,,,1.35
+hist_emi_afolu,World,"2010, 2015, 2020",Emissions|CO2|AFOLU,"range(EDGAR, FAO, PRIMAP_HISTCR, PRIMAP_HISTTP, OSCAR, Gasser-2020, GCB)",dimensionless,0.8,,,,,1.2
+hist_emi_afolu,World,2025,Emissions|CO2|AFOLU,"range(EDGAR-extrapol25, FAO-extrapol25, PRIMAP_HISTCR-extrapol25, PRIMAP_HISTTP-extrapol25, OSCAR-extrapol25, Gasser-2020-extrapol25, GCB-extrapol25)",dimensionless,0.7,,,,,1.3
+hist_emi_afolu,"World, All Countries","2010, 2015, 2020","Emissions|CH4|AFOLU|Agriculture, Emissions|N2O|AFOLU|Agriculture","range(EDGAR, FAO, PRIMAP_HISTCR, PRIMAP_HISTTP)",dimensionless,0.8,,,,,1.2
+hist_emi_afolu,"World, All Countries",2025,"Emissions|CH4|AFOLU|Agriculture, Emissions|N2O|AFOLU|Agriculture","range(EDGAR-extrapol25, FAO-extrapol25, PRIMAP_HISTCR-extrapol25, PRIMAP_HISTTP-extrapol25)",dimensionless,0.7,,,,,1.3
+hist_emi_energy_industry,World,"2010, 2015, 2020, 2025",Emissions|CO2|Energy and Industrial Processes,"range(CEDS-2025, CEDS-2025-extrapol25,CEDS-2025-COVIDaveraged)",dimensionless,0.75,,,,,1.25
+hist_emi_energy_industry,All Countries,"2010, 2015, 2020, 2025",Emissions|CO2|Energy and Industrial Processes,"range(CEDS-2025, CEDS-2025-extrapol25,CEDS-2025-COVIDaveraged)",dimensionless,0.65,,,,,1.35
+hist_cropland_yield,"World, All Countries","2010, 2015, 2020",Yield|Cropland|Cereals,"range(FAO, FAO-extrapol25)",dimensionless,0.8,,,,,1.2
+hist_cropland_yield,"World, All Countries",2025,Yield|Cropland|Cereals,"range(FAO, FAO-extrapol25)",dimensionless,0.7,,,,,1.3
+hist_food_availability,"World, All Countries","2010, 2015, 2020",Food Availability [per capita],"range(FAO, FAO-extrapol25)",dimensionless,0.8,,,,,1.2
+hist_food_availability,"World, All Countries",2025,Food Availability [per capita],"range(FAO, FAO-extrapol25)",dimensionless,0.7,,,,,1.3
+hist_land_cover,"World, All Countries","2010, 2015, 2020",Land Cover,"range(LUH2, LUH2_GCB2025, LUH3, FAO)",dimensionless,0.9,,,,,1.1
+hist_land_cover,"World, All Countries",2025,Land Cover,"range(LUH2-extrapol25, LUH2_GCB2025-extrapol25, LUH3-extrapol25, FAO-extrapol25)",dimensionless,0.8,,,,,1.2
+hist_land_cover_cropland,"World, All Countries","2010, 2015, 2020",Land Cover|Cropland,"range(LUH2, LUH2_GCB2025, LUH3, FAO)",dimensionless,0.8,,,,,1.2
+hist_land_cover_cropland,"World, All Countries",2025,Land Cover|Cropland,"range(LUH2-extrapol25, LUH2_GCB2025-extrapol25, LUH3-extrapol25, FAO-extrapol25)",dimensionless,0.7,,,,,1.3
+hist_pe_fossil,World,"2010, 2015, 2020, 2025","Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas","range(IEA-EB-2024, IEA-EB-2024-extrapol25,IEA-EB-2024-COVIDaveraged)",dimensionless,0.75,,,,,1.25
+hist_pe_fossil,All Countries,"2010, 2015, 2020, 2025","Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas","range(IEA-EB-2024, IEA-EB-2024-extrapol25,IEA-EB-2024-COVIDaveraged)",dimensionless,0.65,,,,,1.35
+hist_fe,World,"2010, 2015, 2020, 2025",Final Energy,"range(IEA-EB-2024, IEA-EB-2024-extrapol25,IEA-EB-2024-COVIDaveraged)",dimensionless,0.75,,,,,1.25
+hist_fe,All Countries,"2010, 2015, 2020, 2025",Final Energy,"range(IEA-EB-2024, IEA-EB-2024-extrapol25,IEA-EB-2024-COVIDaveraged)",dimensionless,0.65,,,,,1.35
+nearterm_biodiversity_intactness,World,2030,"Terrestrial Biodiversity|BII, Terrestrial Biodiversity|Biodiversity Intactness Index",,%/yr,,,-0.11,,,
+nearterm_deforestation,World,2030,Forest Area Change|Deforestation,,million ha/yr,,,,16,,
+nearterm_food_availability,World,"2050, 2100",Food Availability [per capita],,kcal/cap/day,,,2100,5000,,
+nearterm_forest_expansion,World,2030,Forest Area Change|Forest Expansion,,million ha/yr,,,,10,,
+nearterm_planted_forest_expansion,World,2030,Forest Area Change|Forest Expansion|Planted,,million ha/yr,,,,5,,
+nearterm_land_cover,World,2030,Land Cover,,million ha,11554,,,,,14318
+nearterm_primary_deforestation,World,2030,Forest Area Change|Deforestation|Primary,,million ha/yr,,,,12,,
 nearterm_hydro,Africa (R10),2030,Capacity|Electricity|Hydro,,GW,,,15.3,96.39,,
 nearterm_hydro,China+ (R10),2030,Capacity|Electricity|Hydro,,GW,,,201.24,832.12,,
 nearterm_hydro,Europe (R10),2030,Capacity|Electricity|Hydro,,GW,,,106.16,436.09,,
@@ -68,6 +79,7 @@ nearterm_wind_onshore,World,2030,Capacity|Electricity|Wind|Onshore,,GW,,1220,171
 nearterm_wind_onshore,Europe (R10),2030,Capacity|Electricity|Wind|Onshore,,GW,,,191,969,,
 nearterm_wind_onshore,China+ (R10),2030,Capacity|Electricity|Wind|Onshore,,GW,,,349,2117,,
 nearterm_wind_onshore,India+ (R10),2030,Capacity|Electricity|Wind|Onshore,,GW,,,33,154,,
+longterm_cropland_yield,World,2100,Yield|Cropland|Cereals,,t DM/ha/yr,,,,,,15.3
 longterm_nuclear,World,2040,Capacity|Electricity|Nuclear,,GW,,,,694,,
 longterm_nuclear,World,2050,Capacity|Electricity|Nuclear,,GW,,,,950,,
 longterm_ccus,World,2035,Carbon Capture,,Mt CO2/yr,,,,1300,,
@@ -76,5 +88,6 @@ longterm_daccs,World,2050,Carbon Capture|Geological Storage|Direct Air Capture,,
 sustainable_deforestation,World,2030,Forest Area Change|Deforestation,,million ha/yr,,,,0,,
 sustainable_primary_deforestation,World,2030,Forest Area Change|Deforestation|Primary,,million ha/yr,,,,0,,
 sustainable_biodiversity_intactness,World,2030,"Terrestrial Biodiversity|BII, Terrestrial Biodiversity|Biodiversity Intactness Index",,%/yr,,,,0,,
-sustainable_bioenergy,World,"2025, 2030, 2035, 2040, 2045, 2050",Primary Energy|Biomass,,EJ/yr,,,,,100,
-sustainable_hydropower,World,2050,Capacity|Electricity|Hydro,,GW,,,,,1500,
+sustainable_bioenergy,World,"2025, 2030, 2040, 2050, 2100",Primary Energy|Biomass,,EJ/yr,,,,,100,
+sustainable_hydropower,World,"2025, 2030, 2040, 2050, 2100",Capacity|Electricity|Hydro,,GW,,,,,1500,
+,,,,,,,,,,,

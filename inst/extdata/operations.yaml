@@ -4,13 +4,6 @@
       - upper
       - lower
   operation: drop
-- criterion_type: historical
-  threshold_severity: strong
-  threshold_type:
-      - upper
-      - lower
-  operation: flag
-  colour: red
 - criterion_type: near_term_feasibility
   threshold_severity: strong
   threshold_type:

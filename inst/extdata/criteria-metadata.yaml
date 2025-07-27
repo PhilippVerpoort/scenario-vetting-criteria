@@ -7,11 +7,12 @@ hist_pop:
         likely makes false assumptions on the the mitigation effort required to
         reach net-zero emissions.
     justification_threshold: >-
-        Historical values are provided by the World Development Indicators 
-        {{citep:WDI-2024}}. The thresholds are set as follows.
-        
+        Historical values are reported by the World Development Indicators 
+        {{citep:WDI-2024}}.
 
-        For years 2010, 2015, and 2020:
+        
+        The thresholds are derived from these sources for years 2010, 2015, 
+        2020, and 2025 as follows:
 
         • Single region: ±35% deviation will lead to exclusion, ±25% will lead
         to a red flag.
@@ -20,9 +21,15 @@ hist_pop:
         to a red flag.
 
 
-        Note that these thresholds not only give models some leeway in being 
-        compatible with historical values, but also account for uncertainty 
-        in the underlying data sources.
+        Note that these ranges not only give models some leeway to deviate, but 
+        also account for uncertainty in the underlying data sources. To further 
+        account for uncertainty in the historical values, the most permissible 
+        source of all sources for each variable, region, and period is used to 
+        set the threshold.
+
+
+        The threshold for 2025 is derived from data in 2022 and 2023 through 
+        linear extrapolation.
 hist_gdp:
     name: Historical GDP
     type: historical
@@ -33,65 +40,206 @@ hist_gdp:
         mitigation effort required to reach net-zero emissions.
     justification_threshold: >-
         Historical values are provided by the World Development Indicators
-        {{citep:WDI-2024}}. The thresholds are set as follows.
+        {{citep:WDI-2024}}.
+
+        
+        The thresholds are derived from these sources for years 2010, 2015, 
+        2020, and 2025 as follows:
+
+        • Single region: ±35% deviation will lead to exclusion.
+
+        • Whole world: ±25% deviation will lead to exclusion.
 
 
-        For years 2010 and 2015:
-
-        • Single region: ±35% deviation will lead to exclusion, ±25% will lead
-        to a red flag.
-
-        • Whole world: ±25% deviation will lead to exclusion, ±15% will lead
-        to a red flag.
+        Note that these ranges not only give models some leeway to deviate, but 
+        also account for uncertainty in the underlying data sources. To further 
+        account for uncertainty in the historical values, the most permissible 
+        source of all sources for each variable, region, and period is used to 
+        set the threshold.
 
 
-        For 2020 due to the COVID shock:
-
-        • Single region: ±50% deviation will lead to exclusion, ±40% will lead
-        to a red flag.
-
-        • Whole world: ±40% deviation will lead to exclusion, ±30% will lead
-        to a red flag.
-
-
-        Note that these thresholds not only give models some leeway in being 
-        compatible with historical values, but also account for uncertainty 
-        in the underlying data sources.
-hist_emi:
-    name: Historical emissions
+        The threshold for 2025 is derived from data in 2022 and 2023 through 
+        linear extrapolation.
+hist_emi_afolu:
+    name: Historical emissions from agriculture, forestry and land-use
     type: historical
     justification_criterion: >-
-        This scenario reports CO2 emissions in the energy and industry sector
-        that are inconsistent with historical values. This is a concern
-        because the underlying modelling likely makes false assumptions on the
-        remaining GHG emissions budget and the mitigation effort required to
-        reach net-zero emissions.
+        This scenario reports greenhouse-gas emissions from agriculture,
+        forestry, and land-use that are inconsistent with historical values. 
+        This is a concern because the underlying modelling likely makes false 
+        assumptions on the remaining GHG emissions budget and the mitigation 
+        effort required to reach net-zero emissions.
+    justification_threshold: >-
+        Historical values for CH₄ and N₂O from agriculture are provided by 
+        {{cite:FAO}}, {{cite:EDGAR}}, {{cite:PRIMAP_HISTCR}}, and 
+        {{cite:PRIMAP_HISTTP}}. Historical values for CO₂ emissions from
+        agriculture, forestry, and land-use are provided by these sources 
+        and additionally by {{cite:OSCAR}}, {{cite:Gasser-2020}}, and 
+        {{cite:GCB}}.
+
+        
+        The thresholds are derived from these sources as follows:
+
+        • 2010, 2015, and 2020: ±20% deviation will lead to exclusion.
+
+        • 2025: ±30% deviation will lead to exclusion.
+
+
+        Note that these ranges not only give models some leeway to deviate, but 
+        also account for uncertainty in the underlying data sources. To further 
+        account for uncertainty in the historical values, the most permissible 
+        source of all sources for each variable, region, and period is used to 
+        set the threshold.
+
+
+        The threshold for 2025 is set to the value reported for 2020.
+hist_emi_energy_industry:
+    name: Historical emissions from energy and industrial processes
+    type: historical
+    justification_criterion: >-
+        This scenario reports CO2 emissions in the energy supply, energy demand,
+        and industry sectors that are inconsistent with historical values. This 
+        is a concern because the underlying modelling likely makes false 
+        assumptions on the remaining GHG emissions budget and the mitigation 
+        effort required to reach net-zero emissions.
     justification_threshold: >-
         Historical values are provided by the Community Emissions Data System 
-        {{citep:CEDS-2024}}. The thresholds are set as follows.
+        {{citep:CEDS-2024}}.
+
         
+        The thresholds are derived from these sources as follows:
 
-        For years 2010 and 2015:
+        • Single region: ±35% deviation will lead to exclusion.
 
-        • Single region: ±35% deviation will lead to exclusion, ±25% will lead 
-        to a red flag.
-
-        • Whole world: ±25% deviation will lead to exclusion, ±15% will lead 
-        to a red flag.
+        • Whole world: ±25% deviation will lead to exclusion.
 
 
-        For 2020 due to the COVID shock:
-
-        • Single region: ±50% deviation will lead to exclusion, ±40% will lead 
-        to a red flag.
-
-        • Whole world: ±40% deviation will lead to exclusion, ±30% will lead 
-        to a red flag.
+        Note that these ranges not only give models some leeway to deviate, but 
+        also account for uncertainty in the underlying data sources. To further 
+        account for uncertainty in the historical values, the most permissible 
+        source of all sources for each variable, region, and period is used to 
+        set the threshold.
 
 
-        Note that these thresholds not only give models some leeway in being 
-        compatible with historical values, but also account for uncertainty 
-        in the underlying data sources.
+        The threshold for 2025 is derived from data in 2022 and 2023 through 
+        linear extrapolation. Due to the COVID-19 shock in 2020, the threshold 
+        value can be either the exact value in 2020 or the value averaged over 
+        the period Jan 2018 till Dec 2022, whichever is more permissible for 
+        the scenario in question.
+hist_cropland_yield:
+    name: Historical crop-land yields
+    type: historical
+    justification_criterion: >-
+        This scenario reports crop-land yields that are inconsistent with 
+        historical values. This is a concern because the underlying modelling 
+        likely makes false assumptions on the crop-land yields and the effort 
+        required to reach net-zero emissions while feeding the population of 
+        the world.
+    justification_threshold: >-
+        Historical values are provided by the Food and Agriculture Organization 
+        of the United Nations {{citep:FAO}}.
+
+
+        The thresholds are derived from these sources as follows:
+
+        • 2010, 2015, and 2020: ±20% deviation will lead to exclusion.
+
+        • 2025: ±30% deviation will lead to exclusion.
+
+
+        Note that these ranges not only give models some leeway to deviate, but 
+        also account for uncertainty in the underlying data sources. To further 
+        account for uncertainty in the historical values, the most permissible 
+        source of all sources for each variable, region, and period is used to 
+        set the threshold.
+
+
+        The threshold for 2025 is set to the value reported for 2020.
+hist_food_availability:
+    name: Historical levels of food availability
+    type: historical
+    justification_criterion: >-
+        This scenario reports levels of food availability that are inconsistent 
+        with historical values. This is a concern because the underlying modelling 
+        likely makes false assumptions on the current state of food availability 
+        and the effort required to reach net-zero emissions while growing 
+        sufficient food for the world population.
+    justification_threshold: >-
+        Historical values are provided by the Food and Agriculture Organization 
+        of the United Nations {{citep:FAO}}.
+
+        
+        The thresholds are derived from these sources as follows:
+
+        • 2010, 2015, and 2020: ±20% deviation will lead to exclusion.
+
+        • 2025: ±30% deviation will lead to exclusion.
+
+
+        Note that these ranges not only give models some leeway to deviate, but 
+        also account for uncertainty in the underlying data sources. To further 
+        account for uncertainty in the historical values, the most permissible 
+        source of all sources for each variable, region, and period is used to 
+        set the threshold.
+
+
+        The threshold for 2025 is set to the value reported for 2020.
+hist_land_cover:
+    name: Historical land cover
+    type: historical
+    justification_criterion: >-
+        This scenario reports land cover that is inconsistent with historical 
+        values. This is a concern because the underlying modelling likely makes 
+        false assumptions on land cover today and the efforts needed to reduce 
+        emissions while feeding the planet.
+    justification_threshold: >-
+        Historical values for land cover are provided by {{LUH2}}, {{LUH2_GCB2025}},
+        {{LUH3}}, and {{FAO}}.
+        
+        
+        The thresholds are derived from these sources as follows:
+
+        • 2010, 2015, and 2020: ±10% deviation will lead to exclusion.
+
+        • 2025: ±20% deviation will lead to exclusion.
+
+
+        Note that these ranges not only give models some leeway to deviate, but 
+        also account for uncertainty in the underlying data sources. To further 
+        account for uncertainty in the historical values, the most permissible 
+        source of all sources for each variable, region, and period is used to 
+        set the threshold.
+
+
+        The threshold for 2025 is set to the value reported for 2020.
+hist_land_cover_cropland:
+    name: Historical crop-land cover
+    type: historical
+    justification_criterion: >-
+        This scenario reports crop-land cover that is inconsistent with historical 
+        values. This is a concern because the underlying modelling likely makes 
+        false assumptions on land cover today and the efforts needed to reduce 
+        emissions while feeding the planet.
+    justification_threshold: >-
+        Historical values for crop-land cover are provided by {{LUH2}}, 
+        {{LUH2_GCB2025}}, {{LUH3}}, and {{FAO}}.
+
+
+        The thresholds are derived from these sources as follows:
+
+        • 2010, 2015, and 2020: ±20% deviation will lead to exclusion.
+
+        • 2025: ±30% deviation will lead to exclusion.
+
+
+        Note that these ranges not only give models some leeway to deviate, but 
+        also account for uncertainty in the underlying data sources. To further 
+        account for uncertainty in the historical values, the most permissible 
+        source of all sources for each variable, region, and period is used to 
+        set the threshold.
+
+
+        The threshold for 2025 is set to the value reported for 2020.
 hist_fe:
     name: Historical energy demand
     type: historical
@@ -104,30 +252,30 @@ hist_fe:
         Note that final energy includes non-energy use.
     justification_threshold: >-
         Historical values are provided by the International Energy Agency 
-        {{citep:IEA-EB-23}}. The thresholds are set as follows.
+        {{citep:IEA-EB-23}}.
+
         
+        The thresholds are derived from these sources for years 2010, 2015, 
+        2020, and 2025 as follows:
 
-        For years 2010 and 2015:
-
-        • Single region: ±35% deviation will lead to exclusion, ±25% will lead
-        to a red flag.
+        • Single region: ±35% deviation will lead to exclusion.
 
         • Whole world: ±25% deviation will lead to exclusion, ±15% will lead
         to a red flag.
 
 
-        For 2020 due to the COVID shock:
-
-        • Single region: ±50% deviation will lead to exclusion, ±40% will lead
-        to a red flag.
-
-        • Whole world: ±40% deviation will lead to exclusion, ±30% will lead
-        to a red flag.
+        Note that these ranges not only give models some leeway to deviate, but 
+        also account for uncertainty in the underlying data sources. To further 
+        account for uncertainty in the historical values, the most permissible 
+        source of all sources for each variable, region, and period is used to 
+        set the threshold.
 
 
-        Note that these thresholds not only give models some leeway in being 
-        compatible with historical values, but also account for uncertainty 
-        in the underlying data sources.
+        The threshold for 2025 is derived from data in 2022 and 2023 through 
+        linear extrapolation. Due to the COVID-19 shock in 2020, the threshold 
+        value can be either the exact value in 2020 or the value averaged over 
+        the period Jan 2018 till Dec 2022, whichever is more permissible for 
+        the scenario in question.
 hist_pe_fossil:
     name: Historical fossil primary energy production
     type: historical
@@ -138,10 +286,11 @@ hist_pe_fossil:
         mitigation effort required to reach net-zero emissions.
     justification_threshold: >-
         Historical values are provided by the International Energy Agency 
-        {{citep:IEA-EB-2023}}. The thresholds are set as follows.
-        
+        {{citep:IEA-EB-2023}}.
 
-        For years 2010 and 2015:
+
+        The thresholds are derived from these sources for years 2010, 2015, 
+        2020, and 2025 as follows:
 
         • Single region: ±35% deviation will lead to exclusion, ±25% will lead
         to a red flag.
@@ -150,51 +299,90 @@ hist_pe_fossil:
         to a red flag.
 
 
-        For 2020 due to the COVID shock:
-
-        • Single region: ±50% deviation will lead to exclusion, ±40% will lead
-        to a red flag.
-
-        • Whole world: ±40% deviation will lead to exclusion, ±30% will lead
-        to a red flag.
+        Note that these ranges not only give models some leeway to deviate, but 
+        also account for uncertainty in the underlying data sources. To further 
+        account for uncertainty in the historical values, the most permissible 
+        source of all sources for each variable, region, and period is used to 
+        set the threshold.
 
 
-        Note that these thresholds not only give models some leeway in being 
-        compatible with historical values, but also account for uncertainty 
-        in the underlying data sources.
+        The threshold for 2025 is derived from data in 2022 and 2023 through 
+        linear extrapolation. Due to the COVID-19 shock in 2020, the threshold 
+        value can be either the exact value in 2020 or the value averaged over 
+        the period Jan 2018 till Dec 2022, whichever is more permissible for 
+        the scenario in question.
+nearterm_biodiversity_intactness:
+    name: Near-term biodiversity intactness
+    type: near_term_feasibility
+    justification_criterion: >-
+        This scenario reports a near-term decline of biodiversity intactness that 
+        is stronger than what has been reported historically.
+
+
+        This is a concern because this near-term trend is inconsistent with 
+        historically change rates.
+
+
+        The Global Biodiversity Framework (GBF) targets halting human-induced species 
+        extinction by 2030, which we interpret as halting reducing biodiversity intactness 
+        by 2030.
+    justification_threshold: >-
+        Historical values for the change rate of biodiversity intactness are reported 
+        by {{citep:Pereira-2024}}.
+
+
+        The threshold is set as the lowest historical change rate.
 nearterm_deforestation:
     name: Near-term annual gross loss of primary and secondary forest area
     type: near_term_feasibility
     justification_criterion: >-
-        This scenario exceeds the historical highest deforestation rate in near future.
-  
-        
-        This is a concern because it would be unprecedented and would go beyond what has 
-        been experienced historically.
+        This scenario reports a level of near-term deforestation that is above what has been 
+        reported historically.
+
+
+        This is a concern because it would mean unprecedented deforestation, which would go 
+        beyond what has been experienced historically.
     justification_threshold: >-
         The highest annual rate of deforestation in the last four decades (1990–2020) was 
-        estimated at 16 million ha per year for 1990-2000 {{citep:FRA-2020}}.
+        estimated at 16 million ha per year for the period of 1990-2000 {{citep:FRA-2020}}.
 nearterm_primary_deforestation:
     name: Near-term annual gross loss of primary forest area
     type: near_term_feasibility
     justification_criterion: >-
-        This scenario exceeds the historical highest primary deforestation rate in near future.
-  
-        
-        This is a concern because it would be unprecedented and would go beyond what has 
-        been experienced historically.
+        This scenario reports a level of near-term primary deforestation that is above what has 
+        been reported historically.
+
+
+        This is a concern because it would mean unprecedented primary deforestation, which would go 
+        beyond what has been experienced historically.
     justification_threshold: >-
         The highest annual rate of primary deforestation in the last four decades (1990–2020) was 
-        estimated at 12 million ha per year for 1990-2000 {{citep:FRA-2020}}.
+        estimated at 12 million ha per year for the period of 1990-2000 {{citep:FRA-2020}}.
+nearterm_food_availability:
+    name: Near-term food availability
+    type: near_term_feasibility
+    justification_criterion: >-
+        This scenario reports levels of food availability that are above or below human nutritional 
+        needs.
+        
+        
+        This is a concern, because food availability below nutritional needs would mean hunger and 
+        because food availability above nutritional needs would mean overconsumption.
+    justification_threshold: >-
+        According to the {{cite:FAO}}, the Minimum Dietary Energy Requirement is 2,100 kcal per person 
+        per day, which is used as the lower threshold. Meanwhile, the highest historical level of 
+        food availability is 4,000 kcal per person per day, so that the threshold is set at 5,000 
+        kcal per person per day.
 nearterm_forest_expansion:
     name: Near-term annual gross expansion of forest area planted and unplanted in total
     type: near_term_feasibility
     justification_criterion: >-
-        This scenario exceeds the historical highest forest expansion rate in the near future.
+        This scenario reports a near-term forest expansion rate that is above what has been reported
+        historically.
   
         
-        This is a concern because it would be unprecedented and would go beyond what has 
-        been experienced historically.
+        This is a concern because it would mean unprecedented forest expansion, which would go 
+        beyond what has been experienced historically.
     justification_threshold: >-
         The highest annual rate of forest expansion in the last four decades (1990–2020) was 
         estimated at 10 million ha/year for 2000-2010 {{citep:FRA-2020}}.
@@ -202,25 +390,33 @@ nearterm_planted_forest_expansion:
     name: Near-term annual gross expansion of planted forest area
     type: near_term_feasibility
     justification_criterion: >-
-        This scenario exceeds the historical highest rate of plantation in the near future.
+        This scenario reports a near-term planted-forest expansion rate that is above what has 
+        been reported historically.
   
         
-        This is a concern because it would be unprecedented and would go beyond what has 
-        been experienced historically.
+        This is a concern because it would mean unprecedented planted-forest expansion, which would 
+        go beyond what has been experienced historically.
     justification_threshold: >-
         The highest annual net change in planted forest area in the last four decades 
         (1990–2020) was estimated at 5 million ha/year for 1990-2000 {{citep:FRA-2020}}.
-nearterm_biodiversity_intactness:
-    name: Near-term biodiversity intactness
-    type: near_term_feasibility
+nearterm_land_cover:
+    name: Historical land cover
+    type: historical
     justification_criterion: >-
-        The Global Biodiversity Framework (GBF) target halting human-induced species 
-        extinction by 2030 is interpreted as halting reducing biodiversity intactness by 
-        2030 for systematic scneario check on biodiversity loss. Biodiversity intactness 
-        is only what is available variable in scenario data.
+        This scenario reports land cover that is inconsistent with near-term trends.
+        
+        
+        This is a concern because the underlying modelling likely makes false assumptions on land 
+        cover and the efforts needed to reduce emissions while growing sufficient food.
     justification_threshold: >-
-        This scenario exceeds the historical change rate of biodiversity intactness 
-        {{citep:Pereira-2024}}.
+        Near-term values for land cover are provided by {{LUH3}}.
+        
+        The threshold for 2030 is derived from this source as follows:
+
+        • ±10% deviation will lead to exclusion.
+
+        Note that this range not only give models some leeway to deviate, but 
+        also account for uncertainty in the underlying data sources.
 nearterm_hydro:
     name: Near-term expansion of hydropower
     type: near_term_feasibility
@@ -451,6 +647,14 @@ nearterm_wind_onshore:
 
         • Upper, red: 10% (globally) more than existing capacities plus
         200% of market outlook.
+longterm_cropland_yield:
+    name: Future long-term crop-land yield
+    type: long_term_feasibility
+    justification_criterion: >-
+        This scenario assumes future long-term crop-land yields that go 
+        beyond what is technically feasible.
+    justification_threshold: >-
+        TO BE INSERTED
 longterm_nuclear:
     name: Future long-term expansion of nuclear power
     type: long_term_feasibility
@@ -506,38 +710,47 @@ longterm_daccs:
     justification_threshold: >-
         An upper limit of 4.89 Gt CO2eq/yr of DACCS is derived by 
         {{cite:Edwards-2024}}.
-sustainable_deforestation:
-    name: Sustainability concerns due to annual gross loss of primary and secondary forest area
-    type: sustainability
-    justification_criterion: >-
-      The Global Biodiversity Framework (GBF) Target 1 impling close to zero deforestation 
-      by 2030 was simply interpreted as 0 Mha/year of deforestation in 2030 for systematic 
-      scneario check on forest sustainability.
-    justification_threshold: >-
-      This scenario is not comparable with the Global Biodiversity Framework (GBF) Target 1 
-      implying close to zero deforestation by 2030.
-
-      GBF aims to halt deforestation by 2030 (Target 1), https://www.cbd.int/gbf/targets.
-sustainable_primary_deforestation:
-    name: Sustainability concerns due to annual gross loss of primary and secondary forest area
-    type: sustainability
-    justification_criterion: >-
-      The Global Biodiversity Framework (GBF) Target 1 impling close to zero deforestation 
-      by 2030 was simply interpreted as 0 Mha/year of deforestation in 2030 for systematic 
-      scneario check on forest sustainability.
-    justification_threshold: >-
-      This scenario is not comparable with the Global Biodiversity Framework (GBF) Target 1 
-      implying close to zero deforestation by 2030.
-
-      GBF aims to halt deforestation of natural forests by 2030 (Target5), https://www.cbd.int/gbf/targets.
 sustainable_biodiversity_intactness:
     name: Sustainability concerns due to declining biodiversity intactness
     type: sustainability
     justification_criterion: >-
-        The Global Biodiversity Framework (GBF) target halting human-induced species extinction by 2030 is interpreted as halting reducing biodiversity intactness by 2030 for systematic scneario check on biodiversity loss. Biodiversity intactness is only what is available variable in scenario data.
+        Halting biodiversity loss is considered a Sustainable Development Goal (SDG) by 
+        the United Nations for maritime (SDG14) and terrestrial (SDG15) life 
+        {{citep:UN-SDGs-2025}}. According to the 2024 Planetary Boundary Health Check 
+        {{citep:PBHC-2024}}, the loss of genetic diversity exceeded its safe levels in 
+        2024. The {{cite:GBF-2025}} targets halting human-induced species extinction by 2030.
     justification_threshold: >-
-        This scenario is not comparaboe with the Global Biodiversity Framework (GBF) target 
-        aiming to halt species extinctions by 2030.
+        We interpret the target of halting human-induced species extinction by 2030 as a 
+        non-negative change rate of the biodiversity intactness index.
+
+
+        Therefore, the lower threshold for the biodiversity intactness index is set to zero.
+sustainable_deforestation:
+    name: Sustainability concerns due to annual gross loss of primary and secondary forest area
+    type: sustainability
+    justification_criterion: >-
+        Managing forests sustainably is considered a Sustainable Development Goal (SDG) by 
+        the United Nations (SDG15) {{citep:UN-SDGs-2025}}. The Target 1 put forward by the 
+        {{cite:GBF-2025}} implies close to zero deforestation by 2030.
+    justification_threshold: >-
+        We interpret the target of near-zero deforestation as 0 Mha/year of deforestation in 
+        2030.
+
+
+        Therefore, the lower threshold for deforestation is set to zero.
+sustainable_primary_deforestation:
+    name: Sustainability concerns due to annual gross loss of primary forest area
+    type: sustainability
+    justification_criterion: >-
+        Managing forests sustainably is considered a Sustainable Development Goal (SDG) by 
+        the United Nations (SDG15) {{citep:UN-SDGs-2025}}. The Target 1 put forward by the 
+        {{cite:GBF-2025}} implies close to zero deforestation by 2030.
+    justification_threshold: >-
+        We interpret the target of near-zero deforestation as 0 Mha/year of deforestation in 
+        2030.
+
+
+        Therefore, the lower threshold for deforestation is set to zero.
 sustainable_bioenergy:
     name: Sustainability concerns due to excessive biomass use
     type: sustainability
