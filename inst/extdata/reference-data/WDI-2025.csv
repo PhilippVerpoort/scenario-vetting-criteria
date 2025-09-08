@@ -1,3 +1,5 @@
+# source: WDI-2025
+# description: Based on {{source}}.
 variable,year,region,unit,value
 GDP|PPP,2010,ABW,billion USD_2010/yr,2.98085016
 GDP|PPP,2010,AFG,billion USD_2010/yr,66.41498976

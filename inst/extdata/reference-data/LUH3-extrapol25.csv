@@ -1,3 +1,5 @@
+# source: LUH3
+# description: Data from {{source}} extrapolated to 2025.
 variable,year,region,unit,value
 Land Cover,2025,AFG,million ha,64.2392697403903
 Land Cover,2025,AGO,million ha,124.850120631332

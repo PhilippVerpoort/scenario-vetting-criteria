@@ -1,3 +1,5 @@
+# source: LUH2-GCB-2025
+# description: Based on {{source}}.
 variable,year,region,unit,value
 Land Cover,2010,AFG,million ha,64.2392697403903
 Land Cover,2010,AGO,million ha,124.850120631332

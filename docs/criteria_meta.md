@@ -7,16 +7,16 @@ from scenario_vetting_criteria import load_criteria
 from scenario_vetting_criteria.formatting import format_sources, insert_citations
 from IPython.display import display
 
-criteria_meta, criteria_types, reference_srcs = load_criteria(['criteria-metadata', 'criteria-types', 'reference-sources']).values()
-reference_srcs_formatted = format_sources(reference_srcs)
+criteria_meta, criteria_types, sources = load_criteria(['criteria-metadata', 'criteria-types', 'sources']).values()
+sources_formatted = format_sources(sources)
 
 print(
     pd.DataFrame.from_dict(criteria_meta, orient='index')
     .reset_index(drop=True)
     .assign(
         type=lambda df: df['type'].map({k: v['name'] for k, v in criteria_types.items()}),
-        justification_threshold=lambda df: df['justification_threshold'].apply(insert_citations, args=(reference_srcs_formatted, '../reference_srcs/')),
-        justification_criterion=lambda df: df['justification_criterion'].apply(insert_citations, args=(reference_srcs_formatted, '../reference_srcs/')),
+        justification_threshold=lambda df: df['justification_threshold'].apply(insert_citations, args=(sources_formatted, '../sources/')),
+        justification_criterion=lambda df: df['justification_criterion'].apply(insert_citations, args=(sources_formatted, '../sources/')),
     )
     .rename(columns={
         'name': 'NAME',

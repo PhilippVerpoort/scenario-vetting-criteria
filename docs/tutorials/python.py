@@ -66,15 +66,15 @@ display(criteria['operations'])
 # Loading the reference sources from the BibTeX file will return a pybtex object.
 
 # %%
-reference_srcs = load_criteria('reference-sources')
+sources = load_criteria('sources')
 
 # %% [markdown]
 # The entries in this object can be formatted according to some predefined style.
 
 # %%
 from scenario_vetting_criteria.formatting import format_sources
-reference_srcs_formatted = format_sources(reference_srcs)
-display(reference_srcs_formatted['Creutzig14'])
+sources_formatted = format_sources(sources)
+display(sources_formatted['Creutzig-2014'])
 
 # %% [markdown]
 # The `insert_citations` function can be used to insert citations into text with citation patterns.
@@ -83,7 +83,7 @@ display(reference_srcs_formatted['Creutzig14'])
 from scenario_vetting_criteria.formatting import insert_citations
 
 text = load_criteria('criteria-metadata')['sustainable_bioenergy']['justification_threshold']
-text_inserted = insert_citations(text, reference_srcs_formatted)
+text_inserted = insert_citations(text, sources_formatted)
 
 print(text[:30], '...   →  ', text_inserted[:30], '...')
 

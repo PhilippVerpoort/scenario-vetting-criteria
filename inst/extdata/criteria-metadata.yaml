@@ -8,7 +8,7 @@ hist_pop:
         reach net-zero emissions.
     justification_threshold: >-
         Historical values are reported by the World Development Indicators 
-        {{citep:WDI-2024}}.
+        {{citep:WDI-2025}}.
 
         
         The thresholds are derived from these sources for years 2010, 2015, 
@@ -40,7 +40,7 @@ hist_gdp:
         mitigation effort required to reach net-zero emissions.
     justification_threshold: >-
         Historical values are provided by the World Development Indicators
-        {{citep:WDI-2024}}.
+        {{citep:WDI-2025}}.
 
         
         The thresholds are derived from these sources for years 2010, 2015, 
@@ -71,11 +71,10 @@ hist_emi_afolu:
         effort required to reach net-zero emissions.
     justification_threshold: >-
         Historical values for CH₄ and N₂O from agriculture are provided by 
-        {{cite:FAO}}, {{cite:EDGAR}}, {{cite:PRIMAP_HISTCR}}, and 
-        {{cite:PRIMAP_HISTTP}}. Historical values for CO₂ emissions from
-        agriculture, forestry, and land-use are provided by these sources 
-        and additionally by {{cite:OSCAR}}, {{cite:Gasser-2020}}, and 
-        {{cite:GCB}}.
+        {{cite:FAOSTAT-2025}}, {{cite:EDGAR-2024}}, and {{cite:PRIMAP-2025}}.
+        Historical values for CO₂ emissions from agriculture, forestry, and
+        land-use are provided by these sources and additionally by
+        {{cite:Gasser-2020}}, {{cite:OSCAR-GCB-2023}}, and {{cite:GCB-2023}}.
 
         
         The thresholds are derived from these sources as follows:
@@ -104,7 +103,7 @@ hist_emi_energy_industry:
         effort required to reach net-zero emissions.
     justification_threshold: >-
         Historical values are provided by the Community Emissions Data System 
-        {{citep:CEDS-2024}}.
+        {{citep:CEDS-2025}}.
 
         
         The thresholds are derived from these sources as follows:
@@ -137,7 +136,7 @@ hist_cropland_yield:
         the world.
     justification_threshold: >-
         Historical values are provided by the Food and Agriculture Organization 
-        of the United Nations {{citep:FAO}}.
+        of the United Nations {{citep:FAOSTAT-2025}}.
 
 
         The thresholds are derived from these sources as follows:
@@ -166,7 +165,7 @@ hist_food_availability:
         sufficient food for the world population.
     justification_threshold: >-
         Historical values are provided by the Food and Agriculture Organization 
-        of the United Nations {{citep:FAO}}.
+        of the United Nations {{citep:FAOSTAT-2025}}.
 
         
         The thresholds are derived from these sources as follows:
@@ -193,8 +192,8 @@ hist_land_cover:
         false assumptions on land cover today and the efforts needed to reduce 
         emissions while feeding the planet.
     justification_threshold: >-
-        Historical values for land cover are provided by {{LUH2}}, {{LUH2_GCB2025}},
-        {{LUH3}}, and {{FAO}}.
+        Historical values for land cover are provided by {{cite:LUH2-2020}},
+        {{cite:LUH2-GCB-2025}}, {{cite:LUH3}}, and {{cite:FAOSTAT-2025}}.
         
         
         The thresholds are derived from these sources as follows:
@@ -221,8 +220,8 @@ hist_land_cover_cropland:
         false assumptions on land cover today and the efforts needed to reduce 
         emissions while feeding the planet.
     justification_threshold: >-
-        Historical values for crop-land cover are provided by {{LUH2}}, 
-        {{LUH2_GCB2025}}, {{LUH3}}, and {{FAO}}.
+        Historical values for crop-land cover are provided by {{cite:LUH2-2020}},
+        {{cite:LUH2-GCB-2025}}, {{cite:LUH3}}, and {{cite:FAOSTAT-2025}}.
 
 
         The thresholds are derived from these sources as follows:
@@ -252,7 +251,7 @@ hist_fe:
         Note that final energy includes non-energy use.
     justification_threshold: >-
         Historical values are provided by the International Energy Agency 
-        {{citep:IEA-EB-23}}.
+        {{citep:IEA-EB-2024}}.
 
         
         The thresholds are derived from these sources for years 2010, 2015, 
@@ -286,7 +285,7 @@ hist_pe_fossil:
         mitigation effort required to reach net-zero emissions.
     justification_threshold: >-
         Historical values are provided by the International Energy Agency 
-        {{citep:IEA-EB-2023}}.
+        {{citep:IEA-EB-2024}}.
 
 
         The thresholds are derived from these sources for years 2010, 2015, 
@@ -369,7 +368,7 @@ nearterm_food_availability:
         This is a concern, because food availability below nutritional needs would mean hunger and 
         because food availability above nutritional needs would mean overconsumption.
     justification_threshold: >-
-        According to the {{cite:FAO}}, the Minimum Dietary Energy Requirement is 2,100 kcal per person 
+        According to the {{cite:FRA-2020}}, the Minimum Dietary Energy Requirement is 2,100 kcal per person
         per day, which is used as the lower threshold. Meanwhile, the highest historical level of 
         food availability is 4,000 kcal per person per day, so that the threshold is set at 5,000 
         kcal per person per day.
@@ -409,7 +408,7 @@ nearterm_land_cover:
         This is a concern because the underlying modelling likely makes false assumptions on land 
         cover and the efforts needed to reduce emissions while growing sufficient food.
     justification_threshold: >-
-        Near-term values for land cover are provided by {{LUH3}}.
+        Near-term values for land cover are provided by {{cite:LUH3}}.
         
         The threshold for 2030 is derived from this source as follows:
 
@@ -584,7 +583,7 @@ nearterm_solar:
 
         This technology is available at scale and has short project lead
         times, meaning that there are no fundamental obstacles to fast
-        deployment. Yet, it's near-term growth can be estimated based on
+        deployment. Yet, its near-term growth can be estimated based on
         today's market dynamics. While these estimates have their limitations,
         they can be used to set broad ranges of near-term feasibility.
     justification_threshold: >-
@@ -618,7 +617,7 @@ nearterm_wind_onshore:
 
         This technology is available at scale and has short project lead
         times, meaning that there are no fundamental obstacles to fast
-        deployment. Yet, it's near-term growth can be estimated based on
+        deployment. Yet, its near-term growth can be estimated based on
         today's market dynamics. While these estimates have their limitations,
         they can be used to set broad ranges of near-term feasibility.
     justification_threshold: >-

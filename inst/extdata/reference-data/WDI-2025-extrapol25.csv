@@ -1,3 +1,5 @@
+# source: WDI-2025
+# description: Data from {{source}} linearly extrapolated to 2025.
 variable,year,region,unit,value
 GDP|PPP,2025,ABW,billion USD_2010/yr,3.87889824
 GDP|PPP,2025,AFG,billion USD_2010/yr,71.67893592000001

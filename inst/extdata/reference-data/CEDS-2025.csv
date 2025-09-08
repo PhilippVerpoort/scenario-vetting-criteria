@@ -1,3 +1,5 @@
+# source: CEDS-2025
+# description: Based on {{source}}.
 variable,year,region,unit,value
 Emissions|CO2|Energy and Industrial Processes,2010,World,Mt CO2/yr,33460.0812
 Emissions|CO2|Energy and Industrial Processes,2015,World,Mt CO2/yr,35627.281

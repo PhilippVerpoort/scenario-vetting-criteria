@@ -14,8 +14,9 @@ file_paths = {
     if component.suffix in ['.csv', '.yaml', '.bib']
 }
 
-ref_paths = {
+ref_data_paths = {
     component.name.split('.')[0]: DATA_DIR / 'reference-data' / component.name
     for component in (DATA_DIR / 'reference-data').glob('*')
     if component.suffix == '.csv'
 }
+ref_data_paths = dict(sorted(ref_data_paths.items()))

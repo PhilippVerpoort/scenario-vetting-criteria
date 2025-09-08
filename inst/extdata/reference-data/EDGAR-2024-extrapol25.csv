@@ -1,3 +1,5 @@
+# source: EDGAR-2024
+# description: Data from {{source}} linearly extrapolated to 2025.
 variable,year,region,unit,value
 Emissions|CH4|AFOLU|Agriculture,2025,ABW,Mt CH4/yr,5.2184802141272e-05
 Emissions|CH4|AFOLU|Agriculture,2025,AFG,Mt CH4/yr,0.434007072798877

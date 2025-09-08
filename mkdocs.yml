@@ -11,7 +11,7 @@ nav:
     - Criteria thresholds: criteria_thrsh.md
     - Operations: operations.md
     - Reference data: reference_data.md
-    - Reference sources: reference_srcs.md
+    - Sources: sources.md
   - Tutorials:
     - Basic usage: tutorials/basic.md
     - R: tutorials/R.py

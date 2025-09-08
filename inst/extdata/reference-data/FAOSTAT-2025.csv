@@ -1,3 +1,5 @@
+# source: FAOSTAT-2025
+# description: Based on {{source}}.
 variable,year,region,unit,value
 Emissions|CH4|AFOLU|Agriculture,2010,AFG,Mt CH4/yr,0.4601056
 Emissions|CH4|AFOLU|Agriculture,2010,AGO,Mt CH4/yr,0.1856814

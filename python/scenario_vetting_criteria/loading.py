@@ -1,6 +1,6 @@
 import importlib
 
-from .file_paths import file_paths, ref_paths
+from .file_paths import file_paths, ref_data_paths
 
 
 # For importing modules on demand and safely if modules are not installed.
@@ -18,7 +18,7 @@ def _load_criteria_file(component: str,
                         csv_engine: str,
                         reference_subset: list[str]):
     # Check if component is known.
-    if component not in (list(file_paths) + ['reference-data']):
+    if component not in (list(file_paths) + ['reference-data', 'reference-metadata']):
         raise Exception(f"Unknown component: {component}. Please choose one from: {','.join(list(file_paths))}")
 
     # Check CVS engine argument.
@@ -33,24 +33,41 @@ def _load_criteria_file(component: str,
             raise Exception(f"Loading the criteria definition file '{file_path.stem}' requires the '{csv_engine}' package!")
         if csv_engine == 'csv':
             return {
-                source: list(csv.reader(
-                    ref_paths[source].open('r'),
-                    delimiter=',',
-                    quotechar='"',
-                ))
-                for source in (reference_subset or ref_paths)
+                ref_data: list(
+                    row
+                    for row in csv.reader(
+                        ref_data_paths[ref_data].open('r'),
+                        delimiter=',',
+                        quotechar='"',
+                    )
+                    if not row.startswith('#')
+                )
+                for ref_data in (reference_subset or ref_data_paths)
             }
         elif csv_engine == 'pandas':
             file_contents = pandas.concat([
                 pandas.read_csv(
-                    ref_paths[source],
+                    ref_data_paths[ref_data],
                     delimiter=',',
                     quotechar='"',
+                    comment='#',
                 )
-                .assign(source=source)
-                for source in (reference_subset or ref_paths)
+                .assign(reference_data=ref_data)
+                for ref_data in (reference_subset or ref_data_paths)
             ]).reset_index(drop=True)
         return file_contents
+    elif component == 'reference-metadata':
+        ret = {}
+        for ref_data in (reference_subset or ref_data_paths):
+            with open(ref_data_paths[ref_data]) as file_handle:
+                lines = []
+                for line in file_handle:
+                    if line.startswith('#'):
+                        lines.append(line[1:])
+                    else:
+                        continue
+                ret[ref_data] = yaml.safe_load("\n".join(lines))
+        return ret
     else:
         # Obtain file path and file type.
         file_path = file_paths[component]
@@ -120,7 +137,7 @@ def load_criteria(components: str | list[str] | tuple[str] | None = None,
     if components is not None and load_all:
         raise Exception('Component name(s) and `load_all` cannot be provided as arguments at the same time.')
     if load_all:
-        components = list(file_paths) + ['reference-data']
+        components = list(file_paths) + ['reference-data', 'reference-metadata']
     if reference_subset is not None:
         if isinstance(reference_subset, str):
             reference_subset = [reference_subset]

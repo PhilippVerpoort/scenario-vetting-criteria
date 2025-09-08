@@ -1,3 +1,5 @@
+# source: EDGAR-2024
+# description: Based on {{source}}.
 variable,year,region,unit,value
 Emissions|CH4|AFOLU|Agriculture,2010,ABW,Mt CH4/yr,5.1280866455724e-05
 Emissions|CH4|AFOLU|Agriculture,2010,AFG,Mt CH4/yr,0.461488931673208
