@@ -17,9 +17,9 @@ hist_land_cover,"World, All Countries","2010, 2015, 2020",Land Cover,"range(LUH2
 hist_land_cover,"World, All Countries",2025,Land Cover,"range(LUH2-2020-extrapol25, LUH2-GCB-2025-extrapol25, LUH3-extrapol25, FAO-2025-extrapol25)",dimensionless,strong,0.8,1.2
 hist_land_cover_cropland,"World, All Countries","2010, 2015, 2020",Land Cover|Cropland,"range(LUH2-2020, LUH2-GCB-2025, LUH3, FAO-2025)",dimensionless,strong,0.8,1.2
 hist_land_cover_cropland,"World, All Countries",2025,Land Cover|Cropland,"range(LUH2-2020-extrapol25, LUH2-GCB-2025-extrapol25, LUH3-extrapol25, FAO-2025-extrapol25)",dimensionless,strong,0.7,1.3
-hist_pe_fossil,World,"2010, 2015, 2020, 2025","Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas","range(IEA-EB-2024, IEA-EB-2024-extrapol25,IEA-EB-2024-COVIDaveraged)",dimensionless,strong,0.75,1.25
+hist_pe_fossil,World,"2010, 2015, 2020, 2025","Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas","range(IEA-EB-2024, IEA-EB-2024-extrapol25,IEA-EB-2024-COVIDaveraged,BP,BP-extrapol25)",dimensionless,strong,0.75,1.25
 hist_pe_fossil,All Countries,"2010, 2015, 2020, 2025","Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas","range(IEA-EB-2024, IEA-EB-2024-extrapol25,IEA-EB-2024-COVIDaveraged)",dimensionless,strong,0.65,1.35
-hist_fe,World,"2010, 2015, 2020, 2025",Final Energy,"range(IEA-EB-2024, IEA-EB-2024-extrapol25,IEA-EB-2024-COVIDaveraged)",dimensionless,strong,0.75,1.25
+hist_fe,World,"2010, 2015, 2020, 2025",Final Energy,"range(IEA-EB-2024, IEA-EB-2024-extrapol25,IEA-EB-2024-COVIDaveraged,BP,BP-extrapol25)",dimensionless,strong,0.75,1.25
 hist_fe,All Countries,"2010, 2015, 2020, 2025",Final Energy,"range(IEA-EB-2024, IEA-EB-2024-extrapol25,IEA-EB-2024-COVIDaveraged)",dimensionless,strong,0.65,1.35
 nearterm_biodiversity_intactness,World,2030,"Terrestrial Biodiversity|BII, Terrestrial Biodiversity|Biodiversity Intactness Index",,%/yr,medium,-0.11,
 nearterm_deforestation,World,2030,Forest Area Change|Deforestation,,million ha/yr,medium,,16.0
