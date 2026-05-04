@@ -1,0 +1,4 @@
+criterion,variable,region,year,reference_data,unit,level_of_concern,lower,upper
+Emissions|CO2|Energy and Industrial Processes,Emissions|CO2|Energy and Industrial Processes,World,"2010, 2015, 2020, 2025","range(CEDS-2025, CEDS-2025-extrapol25,CEDS-2025-COVIDaveraged)",dimensionless,strong,0.75,1.25
+Primary Energy,"Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas",World,"2010, 2015, 2020, 2025","range(IEA-EB-2024, IEA-EB-2024-extrapol25,IEA-EB-2024-COVIDaveraged,BP,BP-extrapol25)",dimensionless,strong,0.75,1.25
+Final Energy,Final Energy,World,"2010, 2015, 2020, 2025","range(IEA-EB-2024, IEA-EB-2024-extrapol25,IEA-EB-2024-COVIDaveraged,BP,BP-extrapol25)",dimensionless,strong,0.75,1.25

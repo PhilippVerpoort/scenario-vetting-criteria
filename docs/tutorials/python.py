@@ -22,24 +22,23 @@
 # While the Python package has not been released yet, you have to install it from GitHub source using:
 #
 # ```bash
-# # when using poetry
+# # When using poetry.
 # poetry add git+https://github.com:PhilippVerpoort/scenario-vetting-criteria.git
 #
-# # when using pip
+# # When using pip.
 # pip install git+https://github.com:PhilippVerpoort/scenario-vetting-criteria.git
 # ```
 
 # %% [markdown]
-# ## Raw file paths
+# ## Releases
 
 # %% [markdown]
-# The package contains definition files for the criteria. The paths to those files are contained in `file_paths`.
+# The package contains definition files for the criteria for different releases. You can import the `releases` set from the root of the package to see what releases are available.
 
 # %%
-from scenario_vetting_criteria import file_paths
+from scenario_vetting_criteria import releases
 
-for component_id, component_path in file_paths.items():
-    print(f"{component_id}:  ...{str(component_path)[-40:]}")
+print("\n".join(releases))
 
 # %% [markdown]
 # ## Load functions
@@ -50,14 +49,14 @@ for component_id, component_path in file_paths.items():
 # %%
 from scenario_vetting_criteria import load_criteria
 
-load_criteria('criteria-thresholds')
+load_criteria("criteria-thresholds")
 
 # %% [markdown]
 # Multiple files can be loaded in one go.
 
 # %%
-criteria = load_criteria(['criteria-thresholds', 'operations'])
-display(criteria['operations'])
+criteria = load_criteria(["criteria-thresholds", "reference-data"])
+display(criteria["reference-data"])
 
 # %% [markdown]
 # ## Formatting citations and sources
@@ -66,7 +65,7 @@ display(criteria['operations'])
 # Loading the reference sources from the BibTeX file will return a pybtex object.
 
 # %%
-sources = load_criteria('sources')
+sources = load_criteria("sources")
 
 # %% [markdown]
 # The entries in this object can be formatted according to some predefined style.
@@ -74,7 +73,7 @@ sources = load_criteria('sources')
 # %%
 from scenario_vetting_criteria.formatting import format_sources
 sources_formatted = format_sources(sources)
-display(sources_formatted['Creutzig-2014'])
+display(sources_formatted["Creutzig-2014"])
 
 # %% [markdown]
 # The `insert_citations` function can be used to insert citations into text with citation patterns.
@@ -82,10 +81,10 @@ display(sources_formatted['Creutzig-2014'])
 # %%
 from scenario_vetting_criteria.formatting import insert_citations
 
-text = load_criteria('criteria-metadata')['sustainable_bioenergy']['justification_threshold']
+text = load_criteria("criteria-metadata")["Sustainability Concern|Unsustainable Bioenergy Use"]["justification_threshold"]
 text_inserted = insert_citations(text, sources_formatted)
 
-print(text[:30], '...   →  ', text_inserted[:30], '...')
+print(text[:50], "...   →  ", text_inserted[:43], "...")
 
 # %% [markdown]
 # ## Apply vetting criteria to scenarios

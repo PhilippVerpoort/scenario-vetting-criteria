@@ -1,0 +1,8 @@
+criterion,variable,region,year,reference_data,unit,level_of_concern,lower,upper
+Food Availability,Food Availability [per capita],World,,,kcal/cap/day,medium,2100,5000
+Biodiversity,"Terrestrial Biodiversity|BII, Terrestrial Biodiversity|Biodiversity Intactness Index",World,2030,,%/yr,medium,,0
+Deforestation,Forest Area Change|Deforestation,World,2030,,million ha/yr,medium,,0
+Deforestation,Forest Area Change|Deforestation|Primary,World,2030,,million ha/yr,medium,,0
+Unsustainable Bioenergy Use,Primary Energy|Biomass,World,,,EJ/yr,medium,,100
+Unsustainable Bioenergy Use,Primary Energy|Biomass,World,,,EJ/yr,strong,,245
+Unsustainable Hydropower Use,Capacity|Electricity|Hydro,World,,,GW,strong,,1500
