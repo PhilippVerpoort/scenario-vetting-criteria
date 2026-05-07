@@ -1,61 +1,19 @@
 criterion,variable,region,year,reference_data,unit,level_of_concern,lower,upper
-Hydropower Capacity,Capacity|Electricity|Hydro,Africa (R10),2030,,GW,medium,15.3,96.39
-Hydropower Capacity,Capacity|Electricity|Hydro,China+ (R10),2030,,GW,medium,201.24,832.12
-Hydropower Capacity,Capacity|Electricity|Hydro,Europe (R10),2030,,GW,medium,106.16,436.09
-Hydropower Capacity,Capacity|Electricity|Hydro,India+ (R10),2030,,GW,medium,27.06,149.56
-Hydropower Capacity,Capacity|Electricity|Hydro,Latin America (R10),2030,,GW,medium,110.94,376.29
-Hydropower Capacity,Capacity|Electricity|Hydro,Middle East (R10),2030,,GW,medium,6.85,31.76
-Hydropower Capacity,Capacity|Electricity|Hydro,North America (R10),2030,,GW,medium,48.84,187.67
-Hydropower Capacity,Capacity|Electricity|Hydro,Pacific OECD (R10),2030,,GW,medium,65.94,259.67
-Hydropower Capacity,Capacity|Electricity|Hydro,Reforming Economies (R10),2030,,GW,medium,37.74,135.95
-Hydropower Capacity,Capacity|Electricity|Hydro,Rest of Asia (R10),2030,,GW,medium,32.88,189.6
 Hydropower Capacity,Capacity|Electricity|Hydro,World,2030,,GW,medium,1175.37,1606.66
 Hydropower Capacity,Capacity|Electricity|Hydro,World,2030,,GW,strong,979.43,2117.58
-Near-term Nuclear Capacity,Capacity|Electricity|Nuclear,Africa (R10),2030,,GW,medium,0.89,8.75
-Near-term Nuclear Capacity,Capacity|Electricity|Nuclear,China+ (R10),2030,,GW,medium,26.89,115.25
-Near-term Nuclear Capacity,Capacity|Electricity|Nuclear,Europe (R10),2030,,GW,medium,50.51,161.01
-Near-term Nuclear Capacity,Capacity|Electricity|Nuclear,India+ (R10),2030,,GW,medium,3.32,17.25
-Near-term Nuclear Capacity,Capacity|Electricity|Nuclear,Latin America (R10),2030,,GW,medium,2.43,9.01
-Near-term Nuclear Capacity,Capacity|Electricity|Nuclear,Middle East (R10),2030,,GW,medium,3,10.09
-Near-term Nuclear Capacity,Capacity|Electricity|Nuclear,North America (R10),2030,,GW,medium,46.54,135.73
-Near-term Nuclear Capacity,Capacity|Electricity|Nuclear,Pacific OECD (R10),2030,,GW,medium,11.88,38.36
-Near-term Nuclear Capacity,Capacity|Electricity|Nuclear,Reforming Economies (R10),2030,,GW,medium,20.42,67.86
-Near-term Nuclear Capacity,Capacity|Electricity|Nuclear,Rest of Asia (R10),2030,,GW,medium,13.96,47.49
 Near-term Nuclear Capacity,Capacity|Electricity|Nuclear,World,2030,,GW,medium,320.33,441.92
 Near-term Nuclear Capacity,Capacity|Electricity|Nuclear,World,2030,,GW,strong,269.75,479.92
 Long-term Nuclear Capacity,Capacity|Electricity|Nuclear,World,2040,,GW,medium,,694
 Long-term Nuclear Capacity,Capacity|Electricity|Nuclear,World,2050,,GW,medium,,950
-Near-term Carbon Capture,Carbon Capture,Africa (R10),2030,,Mt CO2/yr,medium,0,2.24
-Near-term Carbon Capture,Carbon Capture,China+ (R10),2030,,Mt CO2/yr,medium,2.01,12.95
-Near-term Carbon Capture,Carbon Capture,Europe (R10),2030,,Mt CO2/yr,medium,1.12,110.6
-Near-term Carbon Capture,Carbon Capture,India+ (R10),2030,,Mt CO2/yr,medium,0,0.98
-Near-term Carbon Capture,Carbon Capture,Latin America (R10),2030,,Mt CO2/yr,medium,6.36,28.84
-Near-term Carbon Capture,Carbon Capture,Middle East (R10),2030,,Mt CO2/yr,medium,2.22,30.32
-Near-term Carbon Capture,Carbon Capture,North America (R10),2030,,Mt CO2/yr,medium,12.12,283.84
-Near-term Carbon Capture,Carbon Capture,Pacific OECD (R10),2030,,Mt CO2/yr,medium,5.52,92.09
-Near-term Carbon Capture,Carbon Capture,Reforming Economies (R10),2030,,Mt CO2/yr,medium,0,0
-Near-term Carbon Capture,Carbon Capture,Rest of Asia (R10),2030,,Mt CO2/yr,medium,0,20.91
 Near-term Carbon Capture,Carbon Capture,World,2030,,Mt CO2/yr,medium,44.02,152.47
 Near-term Carbon Capture,Carbon Capture,World,2030,,Mt CO2/yr,strong,0,457.89
 Long-term Carbon Capture,Carbon Capture,World,2035,,Mt CO2/yr,medium,,1300
 Long-term Carbon Capture,Carbon Capture,World,2040,,Mt CO2/yr,medium,,4300
 Solar PV Capacity,Capacity|Electricity|Solar,World,2025,,GW,medium,2083,3152
 Solar PV Capacity,Capacity|Electricity|Solar,World,2025,,GW,strong,1609.2,3895.6
-Solar PV Capacity,Capacity|Electricity|Solar,China+ (R10),2025,,GW,medium,518.1,2671.7
-Solar PV Capacity,Capacity|Electricity|Solar,Europe (R10),2025,,GW,medium,194.2,764.7
-Solar PV Capacity,Capacity|Electricity|Solar,India+ (R10),2025,,GW,medium,56.2,256.4
 Solar PV Capacity,Capacity|Electricity|Solar,World,2030,,GW,medium,4350.2,8163.7
 Solar PV Capacity,Capacity|Electricity|Solar,World,2030,,GW,strong,2683.2,10896
-Solar PV Capacity,Capacity|Electricity|Solar,China+ (R10),2030,,GW,medium,936.1,7874.1
-Solar PV Capacity,Capacity|Electricity|Solar,Europe (R10),2030,,GW,medium,280.6,1839.9
-Solar PV Capacity,Capacity|Electricity|Solar,India+ (R10),2030,,GW,medium,104.4,855.6
 Onshore Wind Capacity,Capacity|Electricity|Wind|Onshore,World,2025,,GW,medium,1138,1570
 Onshore Wind Capacity,Capacity|Electricity|Wind|Onshore,World,2025,,GW,strong,945,1862
-Onshore Wind Capacity,Capacity|Electricity|Wind|Onshore,Europe (R10),2025,,GW,medium,154,505
-Onshore Wind Capacity,Capacity|Electricity|Wind|Onshore,China+ (R10),2025,,GW,medium,268,1101
-Onshore Wind Capacity,Capacity|Electricity|Wind|Onshore,India+ (R10),2025,,GW,medium,28,91
 Onshore Wind Capacity,Capacity|Electricity|Wind|Onshore,World,2030,,GW,medium,1719,2853
 Onshore Wind Capacity,Capacity|Electricity|Wind|Onshore,World,2030,,GW,strong,1220,3655
-Onshore Wind Capacity,Capacity|Electricity|Wind|Onshore,Europe (R10),2030,,GW,medium,191,969
-Onshore Wind Capacity,Capacity|Electricity|Wind|Onshore,China+ (R10),2030,,GW,medium,349,2117
-Onshore Wind Capacity,Capacity|Electricity|Wind|Onshore,India+ (R10),2030,,GW,medium,33,154

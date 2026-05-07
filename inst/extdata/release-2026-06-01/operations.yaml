@@ -1,0 +1,47 @@
+- criterion_type: historical
+  level_of_concern: strong
+  threshold_type:
+      - upper
+      - lower
+  operation: drop
+- criterion_id: nearterm_land_cover
+  level_of_concern: strong
+  threshold_type:
+      - upper
+      - lower
+  operation: drop
+- criterion_type: near_term_feasibility
+  level_of_concern: strong
+  threshold_type:
+      - upper
+      - lower
+  operation: flag
+  colour: red
+- criterion_type: near_term_feasibility
+  level_of_concern: medium
+  threshold_type:
+      - upper
+      - lower
+  operation: flag
+  colour: yellow
+- criterion_type: long_term_feasibility
+  level_of_concern: strong
+  threshold_type:
+      - upper
+      - lower
+  operation: flag
+  colour: red
+- criterion_type: long_term_feasibility
+  level_of_concern: medium
+  threshold_type:
+      - upper
+      - lower
+  operation: flag
+  colour: yellow
+- criterion_type: sustainability
+  level_of_concern: strong
+  threshold_type:
+      - upper
+      - lower
+  operation: flag
+  colour: purple
