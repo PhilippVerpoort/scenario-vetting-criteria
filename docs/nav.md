@@ -1,5 +1,5 @@
 - Criteria definitions
-    - [Index](index.md)
+    - [Home](index.md)
   - Tutorials
     - [Basic usage](tutorials/basic.md)
     - [R](tutorials/R.py)

@@ -1,9 +1,6 @@
-{% include-markdown "../README.md" %}
+{{ readme_section('## Background', '## Repository structure') }}
 
-You can use the navigation sidebar to inspect individual releases and components.
-
-## Releases
-The validation criteria are continuously updated and made available as separate releases. These releases are currently available:
+Currently, the following releases are available:
 
 ```python exec="true" session="index" showcode="false"
 from scenario_vetting_criteria import releases
@@ -19,3 +16,5 @@ Each releases contains the following components:
 * Metadata — Explains the justification for defining criteria and the specific threshold level chosen
 * Reference data — Used for setting threshold levels relative to some external data source
 * Sources — Bibliographic information on sources and references used
+
+You can use the navigation sidebar to inspect individual releases and components.

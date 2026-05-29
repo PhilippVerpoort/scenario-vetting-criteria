@@ -44,7 +44,8 @@ markdown_extensions:
 
 plugins:
   - search
-  - macros
+  - macros:
+      module_name: scripts/mkdocs_macros
   - gen-files:
       scripts:
         - scripts/gen_pages.py
