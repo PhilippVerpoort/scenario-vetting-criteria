@@ -1,3 +1,5 @@
+# source: EI-2023
+# description: Based on {{source}}.
 variable,period,region,unit,value
 Primary Energy|Coal,2010,ABW,EJ/yr,0.0001
 Primary Energy|Coal,2010,AFG,EJ/yr,0.0862
