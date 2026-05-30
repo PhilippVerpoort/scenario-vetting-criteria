@@ -23,6 +23,8 @@ generate-setup-file = false
 script = "build_copy_extdata.py"
 
 [tool.poetry.group.devtools.dependencies]
+pytest = "^8.0"
+pycountry = "^24.0"
 ruff = "^0.12.1"
 pyyaml = "^6.0.2"
 pandas = "^2.3.0"
@@ -52,6 +54,9 @@ mike = "^2.2.0"
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
 
 [tool.ruff]
 line-length = 79
