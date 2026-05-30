@@ -1,45 +1,63 @@
-The reference data is used to define some of
-the [criteria thresholds](../criteria_thrsh). The identifiers used in the
-reference data column of the thresholds correspond to the identifiers of the
-reference data below.
+The reference data is used to define some of the [criteria thresholds](thresholds.md).
+The identifiers in the reference data column of the thresholds correspond to
+the dataset identifiers listed below.
 
-```python exec="true" session="index" showcode="false"
-import yaml
-
+```python exec="true" session="refdata" showcode="false"
+from itables import to_html_datatable
 from scenario_vetting_criteria import load_criteria
+from scenario_vetting_criteria.formatting import format_sources
 
-reference_data, reference_metadata, sources = load_criteria(
-    ["reference-data", "reference-metadata", "sources"],
-    release="{{ release }}",
-).values()
+release = "{{ release }}"
+
+sources = load_criteria("sources", release=release)
 sources_formatted = format_sources(sources)
+reference_data_all, reference_metadata = load_criteria(
+    ["reference-data", "reference-metadata"],
+    release=release,
+).values()
 
-for ref, df_ref in reference_data.groupby("reference_data"):
-    source = reference_metadata[ref].get("source")
-    source_cite = (
-        sources_formatted[source]["cite"]
-        if source in sources_formatted else
-        source
-    )
-    description = reference_metadata[ref].get("description", "").replace(
-        "{% raw %}{{source}}{% endraw %}",
-        f"[{source_cite}](/sources/#{source})",
-    )
+all_datasets = sorted(reference_data_all["reference_data"].unique())
 
-    print(f"## `{ref}`\n\n")
-    print(description)
-    print("\n\n")
-    print(
-        df_ref
+
+def source_link(source_key):
+    if not source_key:
+        return "—"
+    page = f"../sources/#{source_key}"
+    cite = (
+        sources_formatted[source_key]["cite"]
+        if source_key in sources_formatted
+        else source_key
+    )
+    return f"[{cite}]({page})"
+
+
+# Overview table
+print("| Dataset | Source | Description |")
+print("|---|---|---|")
+for ref in all_datasets:
+    meta = reference_metadata.get(ref, {})
+    src = source_link(meta.get("source"))
+    desc = meta.get("description", "").replace(
+        "{% raw %}{{source}}{% endraw %}", src
+    )
+    print(f"| [`{ref}`](#{ref.lower()}) | {src} | {desc} |")
+
+print()
+
+# Per-dataset sections
+for ref in all_datasets:
+    meta = reference_metadata.get(ref, {})
+    src = source_link(meta.get("source"))
+    desc = meta.get("description", "").replace(
+        "{% raw %}{{source}}{% endraw %}", src
+    )
+    df = (
+        reference_data_all[reference_data_all["reference_data"] == ref]
         .drop(columns="reference_data")
-        .apply(
-            lambda col: col.str.replace("|", "\|")
-            if col.name == "variable" else
-            col
-        )
-        .rename(columns=lambda x: x.upper())
-        .fillna("")
-        .to_markdown(index=False)
     )
-    print("\n\n")
+    print(f"\n## {ref}\n")
+    if desc:
+        print(f"{desc}\n")
+    table_html = to_html_datatable(df, connected=True, style="width:100%")
+    print(f"<div>\n{table_html}\n</div>\n")
 ```

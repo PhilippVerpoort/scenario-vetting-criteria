@@ -11,9 +11,6 @@ if not partials_dir.is_dir():
     raise Exception("Partials directory not found!")
 
 
-# partials = sorted(
-#     [partial_path.stem for partial_path in partials_dir.glob("*.md")]
-# )
 partials = [
     "types",
     "metadata",
