@@ -1,15 +1,23 @@
-# define path to data directory and check if it exists
+# Define path to data directory and check if it exists.
 DATA_DIR <- paste0(system.file(package = "scenariovettingcriteria"), "/extdata")
 if (!dir.exists(DATA_DIR)) {
-  stop("Could not find data directory.")
+    stop("Could not find data directory.")
 }
 
+# Get list of releases.
+release_dirs <- list.dirs(path = DATA_DIR, full.names = TRUE, recursive = FALSE)
+release_dirs <- release_dirs[grepl("/release-", release_dirs)]
+if (length(release_dirs) == 0) {
+    stop("Could not find releases.")
+}
 
-# define file paths to individual criteria files
-component_paths <- list.files(path = DATA_DIR, recursive = FALSE, full.names = TRUE)
-file_paths_list <- lapply(component_paths, function(component_path) {
-  component <- sub("\\..*", "", basename(component_path))
-  list(name = component, path = component_path)
-})
+#' Available releases of the criteria definitions.
+#'
+#' A named list mapping release date strings to their directory paths within
+#' the installed package.
+#'
 #' @export
-file_paths <- setNames(lapply(file_paths_list, function(x) x$path), sapply(file_paths_list, function(x) x$name))
+releases <- setNames(
+    as.list(release_dirs),
+    sub("^release-", "", basename(release_dirs))
+)

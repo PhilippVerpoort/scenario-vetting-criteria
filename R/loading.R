@@ -1,106 +1,232 @@
-# load criteria definitions from a specific criteria file
-csv_engines <- c('read.csv', 'readr', 'data.table')
-load_criteria_file <- function(component, csv_engine = 'read.csv') {
-  # check if component is known
-  if (!(component %in% names(file_paths))) {
-    stop(paste0("Unknown component: ", component, ". Please choose one from: ", toString(names(file_paths))))
-  }
+.csv_engines <- c('read.csv', 'readr', 'data.table')
 
-  # obtain file path and file type
-  file_path <- file_paths[[component]]
-  file_type <- tools::file_ext(file_path)
-
-  # check CSV engine argument
-  if (!(csv_engine %in% csv_engines)) {
-    stop(paste("Unknown CSV engine:", csv_engine, ". Please choose one from:", toString(csv_engines)))
-  }
-
-  # open file as file stream and load
-  suppressMessages({
-    if (file_type == 'csv') {
-      if (csv_engine != 'read.csv' && !require(csv_engine, character.only = TRUE, quietly = TRUE)) {
-        stop(paste("Could not load library:", csv_engine))
-      }
-      if (component == 'criteria-thresholds') {
-        if (csv_engine == 'read.csv') {
-          df1 <- read.csv(file_path, sep=",", quote="\"", skip=2, header=TRUE)
-          df2 <- read.csv(file_path, sep=",", quote="\"", skip=0, header=FALSE)
-        } else if (csv_engine == 'readr') {
-          df1 <- readr::read_csv(file_path, quote="\"", skip=2, col_names=TRUE)
-          df2 <- readr::read_csv(file_path, quote="\"", skip=0, col_names=FALSE)
-        } else if (csv_engine == 'data.table') {
-          df1 <- data.table::fread(file_path, quote="\"", skip=2, header=TRUE)
-          df2 <- data.table::fread(file_path, quote="\"", skip=0, header=FALSE)
-        } else {
-          stop(paste("Unknown CSV engine:", csv_engine, ". Please choose one from:", csv_engines))
-        }
-        df1 <- df1[, 1:6]
-        df2 <- df2[, -c(1:6)]
-        new_names <- paste(df2[1, ], df2[2, ], sep = ".")
-        df2 <- df2[-(1:3), ]
-        colnames(df2) <- new_names
-        rownames(df2) <- NULL
-        file_contents <- cbind(df1, df2)
-      } else {
-        if (csv_engine == 'read.csv') {
-          file_contents <- read.csv(file_path, sep=",", quote="\"", skip=0, header=TRUE)
-        } else if (csv_engine == 'readr') {
-          file_contents <- readr::read_csv(file_path, quote="\"", skip=0, col_names=TRUE)
-        } else if (csv_engine == 'data.table') {
-          file_contents <- data.table::fread(file_path, sep=",", quote="\"", skip=0, header=TRUE)
-        } else {
-          stop(paste("Unknown CSV engine:", csv_engine, ". Please choose one from:", csv_engines))
-        }
-      }
-    } else if (file_type == 'yaml') {
-      if (!require("yaml", character.only = TRUE, quietly = TRUE)) {
-        stop(paste0("Loading the criteria definition file '", basename(file_path), "' requires the 'pyyaml' package!"))
-      }
-      file_contents <- yaml.load_file(file_path)
-    } else if (file_type == 'bib') {
-      if (!require("bibtex", character.only = TRUE, quietly = TRUE)) {
-        stop(paste0("Loading the criteria definition file '", basename(file_path), "' requires the 'bibtex' package!"))
-      }
-      file_contents <- read.bib(file_path)
-    } else {
-      stop(paste("Unknown file format:", basename(file_path)))
+.read_csv <- function(file_path, csv_engine) {
+    if (!(csv_engine %in% .csv_engines)) {
+        stop(paste(
+            "Unknown CSV engine:", csv_engine,
+            ". Please choose one from:", toString(.csv_engines)
+        ))
     }
-  })
-
-  return(file_contents)
+    suppressMessages({
+        if (csv_engine == 'read.csv') {
+            read.csv(file_path, comment.char = "#")
+        } else if (csv_engine == 'readr') {
+            if (!requireNamespace("readr", quietly = TRUE)) {
+                stop("CSV engine 'readr' requires the 'readr' package to be installed.")
+            }
+            readr::read_csv(file_path, comment = "#", show_col_types = FALSE)
+        } else {
+            if (!requireNamespace("data.table", quietly = TRUE)) {
+                stop("CSV engine 'data.table' requires the 'data.table' package to be installed.")
+            }
+            lines <- readLines(file_path)
+            data.table::fread(
+                text = paste(lines[!startsWith(lines, "#")], collapse = "\n")
+            )
+        }
+    })
 }
 
 
-#' @title load_criteria
+.load_criteria_file <- function(
+    component,
+    csv_engine,
+    criteria_types,
+    reference_subset,
+    release_path
+) {
+    if (component %in% c("criteria-thresholds", "criteria-metadata")) {
+        # Build list of criteria-type directories.
+        criteria_dirs <- list.dirs(
+            file.path(release_path, "criteria"),
+            full.names = TRUE, recursive = FALSE
+        )
+        criteria_dirs <- setNames(as.list(criteria_dirs), basename(criteria_dirs))
+
+        if (!is.null(criteria_types)) {
+            unknown <- setdiff(criteria_types, names(criteria_dirs))
+            if (length(unknown) > 0) {
+                stop(paste("Criteria type(s) unknown:", toString(unknown)))
+            }
+            criteria_dirs <- criteria_dirs[criteria_types]
+        }
+
+        if (component == "criteria-thresholds") {
+            dfs <- lapply(names(criteria_dirs), function(criteria_type) {
+                df <- .read_csv(
+                    file.path(criteria_dirs[[criteria_type]], "thresholds.csv"),
+                    csv_engine
+                )
+                df$criterion <- paste0(criteria_type, "|", df$criterion)
+                df
+            })
+            do.call(rbind, dfs)
+        } else {
+            if (!requireNamespace("yaml", quietly = TRUE)) {
+                stop("Loading 'criteria-metadata' requires the 'yaml' package to be installed.")
+            }
+            ret <- list()
+            for (criteria_type in names(criteria_dirs)) {
+                crit_defs <- yaml::yaml.load_file(
+                    file.path(criteria_dirs[[criteria_type]], "metadata.yaml")
+                )
+                names(crit_defs) <- paste0(criteria_type, "|", names(crit_defs))
+                ret <- c(ret, crit_defs)
+            }
+            ret
+        }
+
+    } else if (component == "criteria-variables") {
+        thresholds <- .load_criteria_file(
+            "criteria-thresholds", csv_engine, criteria_types,
+            reference_subset, release_path
+        )
+        vars <- unlist(strsplit(as.character(thresholds$variable), ","))
+        sort(unique(trimws(vars)))
+
+    } else if (component == "criteria-types") {
+        if (!requireNamespace("yaml", quietly = TRUE)) {
+            stop("Loading 'criteria-types' requires the 'yaml' package to be installed.")
+        }
+        yaml::yaml.load_file(file.path(release_path, "criteria-types.yaml"))
+
+    } else if (component %in% c("reference-data", "reference-metadata")) {
+        ref_files <- list.files(
+            file.path(release_path, "reference-data"),
+            pattern = "\\.csv$", full.names = TRUE
+        )
+        ref_names <- tools::file_path_sans_ext(basename(ref_files))
+        reference_data <- setNames(as.list(ref_files), ref_names)
+        reference_data <- reference_data[order(names(reference_data))]
+
+        if (!is.null(reference_subset)) {
+            unknown <- setdiff(reference_subset, names(reference_data))
+            if (length(unknown) > 0) {
+                stop(paste("Reference dataset(s) unknown:", toString(unknown)))
+            }
+            reference_data <- reference_data[reference_subset]
+        }
+
+        if (component == "reference-data") {
+            dfs <- lapply(names(reference_data), function(ref_name) {
+                df <- .read_csv(reference_data[[ref_name]], csv_engine)
+                df$reference_data <- ref_name
+                df
+            })
+            do.call(rbind, dfs)
+        } else {
+            if (!requireNamespace("yaml", quietly = TRUE)) {
+                stop("Loading 'reference-metadata' requires the 'yaml' package to be installed.")
+            }
+            ret <- list()
+            for (ref_name in names(reference_data)) {
+                lines <- readLines(reference_data[[ref_name]])
+                comment_lines <- lines[startsWith(lines, "#")]
+                stripped <- sub("^#", "", comment_lines)
+                meta <- yaml::yaml.load(paste(stripped, collapse = "\n"))
+                ret[[ref_name]] <- if (is.null(meta)) list() else meta
+            }
+            ret
+        }
+
+    } else if (component == "sources") {
+        if (!requireNamespace("bibtex", quietly = TRUE)) {
+            stop("Loading 'sources' requires the 'bibtex' package to be installed.")
+        }
+        bibtex::read.bib(file.path(release_path, "sources.bib"))
+
+    } else {
+        stop(paste("Unknown component:", component))
+    }
+}
+
+
+#' Load criteria definitions.
 #'
-#' @description Loads and returns the criteria definitions contained in the package.
+#' Loads and returns the criteria definitions contained in the package.
 #'
-#' @param components A string or list/vector of strings. The return type changes depending on whether a list/vector or a single string is provided.
-#' @param csv_engine The method for loading CSV files if these are supposed to be loaded. Must be one of `read.csv`, `readr`, and `data.table`. Defaults to `read.csv`.
+#' @param components A string or character vector of component names. The
+#'   return type changes depending on whether a single string or a vector is
+#'   provided. Available components: `"criteria-thresholds"`,
+#'   `"criteria-metadata"`, `"criteria-variables"`, `"criteria-types"`,
+#'   `"reference-data"`, `"reference-metadata"`, `"sources"`.
+#' @param load_all Logical. Load all available components. Cannot be combined
+#'   with `components`.
+#' @param csv_engine The method for loading CSV files. One of `"read.csv"`
+#'   (default), `"readr"`, or `"data.table"`.
+#' @param criteria_types Character string or vector. When loading
+#'   `"criteria-thresholds"` or `"criteria-metadata"`, restrict to these
+#'   criteria types only. Defaults to all types.
+#' @param reference_subset Character string or vector. When loading
+#'   `"reference-data"` or `"reference-metadata"`, restrict to these datasets
+#'   only. Defaults to all datasets.
+#' @param release Character string specifying the release to load, e.g.
+#'   `"2026-06-01"`. Defaults to the latest release.
 #'
-#' @return Returns the loaded data. This data can be a dataframe or a nested list. If multiple data components are requested, then the components are returned inside a keyworded list.
+#' @return The loaded data. A data frame or named list for a single component;
+#'   a named list of those when multiple components are requested.
 #'
 #' @examples
-#' df.criteria.thresholds <- load_criteria('criteria-thresholds')
-#' print(df.criteria.thresholds)
-#' 
-#' list.criteria.metadata <- load_criteria('criteria-metadata')
-#' print(list.criteria.metadata)
-#' 
-#' criteria.defs <- load_criteria(c('criteria-thresholds', 'criteria-metadata', 'reference-data'))
-#' print(criteria.defs[['criteria-metadata']])
-#' 
+#' df_thresholds <- load_criteria("criteria-thresholds")
+#' print(df_thresholds)
+#'
+#' list_metadata <- load_criteria("criteria-metadata")
+#' print(list_metadata)
+#'
+#' criteria <- load_criteria(c("criteria-thresholds", "criteria-metadata"))
+#' print(criteria[["criteria-metadata"]])
+#'
 #' @export
-load_criteria <- function(components, csv_engine = 'read.csv') {
-  if (is.character(components) && length(components) == 1) {
-    # load single component
-    return(load_criteria_file(components, csv_engine=csv_engine))
-  } else {
-    # loop over parts if it is a list or vector
-    ret <- list()
-    for (component in components) {
-      ret[[component]] <- load_criteria_file(component, csv_engine=csv_engine)
+load_criteria <- function(
+    components = NULL,
+    load_all = FALSE,
+    csv_engine = 'read.csv',
+    criteria_types = NULL,
+    reference_subset = NULL,
+    release = NULL
+) {
+    all_components <- c(
+        "criteria-thresholds",
+        "criteria-variables",
+        "criteria-metadata",
+        "criteria-types",
+        "reference-data",
+        "reference-metadata",
+        "sources"
+    )
+
+    if (is.null(components) && !load_all) {
+        stop("At least one component must be provided as a function argument.")
     }
-    return(ret)
-  }
+    if (!is.null(components) && load_all) {
+        stop("'components' and 'load_all' cannot be provided at the same time.")
+    }
+    if (load_all) {
+        components <- all_components
+    }
+
+    if (is.null(release)) {
+        release <- tail(sort(names(releases)), 1)
+    } else if (!(release %in% names(releases))) {
+        stop(paste0(
+            "Release '", release, "' not known. Choose from: ",
+            toString(sort(names(releases)))
+        ))
+    }
+    release_path <- releases[[release]]
+
+    if (is.character(components) && length(components) == 1) {
+        .load_criteria_file(
+            components, csv_engine, criteria_types, reference_subset, release_path
+        )
+    } else if (is.character(components) && length(components) > 1) {
+        result <- lapply(components, function(component) {
+            .load_criteria_file(
+                component, csv_engine, criteria_types, reference_subset, release_path
+            )
+        })
+        setNames(result, components)
+    } else {
+        stop("Argument 'components' must be a character string or character vector.")
+    }
 }

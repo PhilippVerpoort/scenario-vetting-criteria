@@ -39,16 +39,10 @@ Collate:
 	'loading.R'
 	'file_paths.R'
 	'scenariovettingcriteria-package.R'
-Imports:
-	Deriv,
-	GROAN,
-	assertthat,
-	docstring,
-	dplyr,
-	purrr,
-	roxygen2,
-	stringr,
-	tidyr
 Suggests:
+    yaml,
+    bibtex,
+    readr,
+    data.table,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
