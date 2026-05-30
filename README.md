@@ -49,7 +49,6 @@ subdirectory:
 ```
 inst/extdata/release-YYYY-MM-DD/
 ├── criteria-types.yaml          # Definitions of criterion types
-├── operations.yaml              # Actions triggered by each criterion type
 ├── sources.bib                  # Bibliographic references
 ├── criteria/
 │   ├── Historical Vetting/
