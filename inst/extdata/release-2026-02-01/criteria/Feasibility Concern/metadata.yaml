@@ -41,16 +41,15 @@ Hydropower Capacity:
         We assume the following thresholds for 2030 based on data provided by 
         the IEA:
 
-        • Lower, red:  10% (globally) less than currently operational capacities.
+        • Lower, red:  10% less than currently operational capacities.
 
-        • Lower, yellow: 5% (globally) or 40% (regionally) less than what is
-        expected to come online according to the IEA by 2030.
+        • Lower, yellow: 5% less than what is expected to come online
+        according to the IEA by 2030.
 
-        • Upper, yellow: 5% (globally) or 80% (regionally) more than what is
-        expected to come online assuming accelerated efforts according to the 
-        IEA by 2030.
+        • Upper, yellow: 5% more than what is expected to come online
+        assuming accelerated efforts according to the IEA by 2030.
 
-        • Upper, red: 45% (globally) more than what is expected to come online
+        • Upper, red: 45% more than what is expected to come online
         assuming accelerated efforts according to the IEA by 2030.
 Nuclear Capacity:
     justification_criterion: >-
@@ -93,17 +92,15 @@ Nuclear Capacity:
         We assume the following thresholds for 2030 based on data provided by 
         the IAEA:
 
-        • Lower, red:  30% (globally) less than currently operational
-        capacities.
+        • Lower, red:  30% less than currently operational capacities.
 
-        • Lower, yellow:  15% (globally) or 50% (regionally) less than
-        currently operational capacities.
+        • Lower, yellow:  15% less than currently operational capacities.
 
-        • Upper, yellow:  5% (globally) or 40% (regionally) more than plants
-        operational today plus bringing retired plants in Japan back online 
-        plus 75% of plants under construction.
+        • Upper, yellow:  5% more than plants operational today plus bringing
+        retired plants in Japan back online plus 75% of plants under
+        construction.
 
-        • Upper, red:  10% (globally) more than the highest estimate published
+        • Upper, red:  10% more than the highest estimate published
         by the IAEA (461 GW).
 Carbon Capture:
     justification_criterion: >-
@@ -148,18 +145,16 @@ Carbon Capture:
         We assume the following thresholds for 2030 based on data provided by
         the IEA CCUS database:
 
-        • Lower, red:  10% (globally) less than currently operational
-        capacities.
+        • Lower, red:  10% less than currently operational capacities.
 
-        • Lower, yellow:  5% (globally) or 40% (regionally) less than
-        currently operational capacities and 50% of projects under construction.
+        • Lower, yellow:  5% less than currently operational capacities and
+        50% of projects under construction.
 
-        • Upper, yellow:  5% (globally) or 40% (regionally) more than plants
-        operational today plus all projects under construction plus 20% of
-        projects planned without FID.
+        • Upper, yellow:  5% more than plants operational today plus all
+        projects under construction plus 20% of projects planned without FID.
 
-        • Upper, red:  10% (globally) more than all projects operational,
-        under construction, and announced.
+        • Upper, red:  10% more than all projects operational, under
+        construction, and announced.
 
 
         Long-term (2035–2040): this scenario assumes capacity deployment of
@@ -184,18 +179,16 @@ Solar PV Capacity:
 
         We assume the following thresholds for 2030:
 
-        • Lower, red: 10% (globally) less than existing capacities plus
+        • Lower, red: 10% less than existing capacities plus
         37.5% of market outlook.
 
-        • Lower, yellow: 5% (globally) or 40% (regionally) less than
-        existing capacities plus 75% (globally) or 37.5% (regionally) of
-        market outlook.
+        • Lower, yellow: 5% less than existing capacities plus
+        75% of market outlook.
 
-        • Upper, yellow: 5% (globally) or 40% (regionally) more than
-        existing capacities plus 150% (globally) or 200% (regionally) of
-        market outlook.
+        • Upper, yellow: 5% more than existing capacities plus
+        150% of market outlook.
 
-        • Upper, red: 10% (globally) more than existing capacities plus
+        • Upper, red: 10% more than existing capacities plus
         200% of market outlook.
 Onshore Wind Capacity:
     justification_criterion: >-
@@ -221,18 +214,16 @@ Onshore Wind Capacity:
 
         We assume the following thresholds for 2030:
 
-        • Lower, red: 10% (globally) less than existing capacities plus
+        • Lower, red: 10% less than existing capacities plus
         37.5% of market outlook.
 
-        • Lower, yellow: 5% (globally) or 40% (regionally) less than
-        existing capacities plus 75% (globally) or 37.5% (regionally) of
-        market outlook.
+        • Lower, yellow: 5% less than existing capacities plus
+        75% of market outlook.
 
-        • Upper, yellow: 5% (globally) or 40% (regionally) more than
-        existing capacities plus 150% (globally) or 200% (regionally) of
-        market outlook.
+        • Upper, yellow: 5% more than existing capacities plus
+        150% of market outlook.
 
-        • Upper, red: 10% (globally) more than existing capacities plus
+        • Upper, red: 10% more than existing capacities plus
         200% of market outlook.
 Wind Capacity:
     justification_criterion: >-
@@ -263,9 +254,8 @@ Wind Capacity:
         total wind capacity, reflecting the assumption that onshore wind
         alone provides a sufficient lower bound for total deployment:
 
-        • Lower, red: 10% (globally) less than existing capacities plus
+        • Lower, red: 10% less than existing capacities plus
         37.5% of market outlook.
 
-        • Lower, yellow: 5% (globally) or 40% (regionally) less than
-        existing capacities plus 75% (globally) or 37.5% (regionally) of
-        market outlook.
+        • Lower, yellow: 5% less than existing capacities plus
+        75% of market outlook.
