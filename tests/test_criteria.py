@@ -2,6 +2,7 @@
 import yaml
 import pycountry
 
+from scenario_vetting_criteria import _expand_metadata_templates
 from utils import (
     load_csv_rows, parse_ref_data_col, extract_citations,
     EXPECTED_THRESHOLD_COLS, METADATA_REQUIRED_KEYS,
@@ -13,7 +14,8 @@ VALID_THRESHOLD_REGIONS = {"World", "All Countries"} | _COUNTRY_CODES
 
 
 def _load_metadata(crit_dir):
-    return yaml.safe_load((crit_dir / "metadata.yaml").read_text())
+    raw = yaml.safe_load((crit_dir / "metadata.yaml").read_text())
+    return _expand_metadata_templates(raw)
 
 
 # ---------------------------------------------------------------------------

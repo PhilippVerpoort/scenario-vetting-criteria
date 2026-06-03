@@ -1,5 +1,61 @@
 .csv_engines <- c('read.csv', 'readr', 'data.table')
 
+
+.expand_metadata_templates <- function(metadata) {
+    result <- list()
+    for (key in names(metadata)) {
+        spec <- metadata[[key]]
+        if (is.null(spec[["replacements"]])) {
+            result[[key]] <- spec
+            next
+        }
+        replacements <- spec[["replacements"]]
+        base_spec <- spec[names(spec) != "replacements"]
+        var_names <- names(replacements)
+        # Build list of (option_key, text_subs) pairs per variable.
+        option_lists <- lapply(var_names, function(v) {
+            lapply(names(replacements[[v]]), function(opt) {
+                list(option_key = opt, text_subs = replacements[[v]][[opt]])
+            })
+        })
+        # Cartesian product across variables.
+        combos <- expand.grid(
+            lapply(option_lists, seq_along),
+            stringsAsFactors = FALSE
+        )
+        for (i in seq_len(nrow(combos))) {
+            subs <- list()
+            for (j in seq_along(var_names)) {
+                entry <- option_lists[[j]][[combos[i, j]]]
+                subs[[var_names[[j]]]] <- entry$option_key
+                for (sub_var in names(entry$text_subs)) {
+                    subs[[sub_var]] <- entry$text_subs[[sub_var]]
+                }
+            }
+            new_key <- key
+            for (sub_var in names(subs)) {
+                new_key <- gsub(
+                    paste0("\\{", sub_var, "\\}"),
+                    subs[[sub_var]], new_key
+                )
+            }
+            new_spec <- lapply(base_spec, function(field_val) {
+                if (is.character(field_val)) {
+                    for (sub_var in names(subs)) {
+                        field_val <- gsub(
+                            paste0("\\{", sub_var, "\\}"),
+                            subs[[sub_var]], field_val
+                        )
+                    }
+                }
+                field_val
+            })
+            result[[new_key]] <- new_spec
+        }
+    }
+    result
+}
+
 .read_csv <- function(file_path, csv_engine) {
     if (!(csv_engine %in% .csv_engines)) {
         stop(paste(
@@ -70,6 +126,7 @@
                 crit_defs <- yaml::yaml.load_file(
                     file.path(criteria_dirs[[criteria_type]], "metadata.yaml")
                 )
+                crit_defs <- .expand_metadata_templates(crit_defs)
                 names(crit_defs) <- paste0(criteria_type, "|", names(crit_defs))
                 ret <- c(ret, crit_defs)
             }

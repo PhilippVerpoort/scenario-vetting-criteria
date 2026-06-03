@@ -52,6 +52,50 @@ THRESHOLD_COLS_DTYPES: dict[str, str] = {
 CSV_ENGINES: set[str] = {"pandas", "python"}
 
 
+def _expand_metadata_templates(metadata: dict) -> dict:
+    """Expand template entries (those with a 'replacements' field) in a
+    metadata dict into individual entries, applying all substitutions to
+    both the criterion key and the text fields.
+
+    A template entry looks like:
+        "Criterion|{VarName}":
+            justification_criterion: "... {text_sub} ..."
+            replacements:
+                VarName:
+                    OptionA:
+                        text_sub: value_a
+                    OptionB:
+                        text_sub: value_b
+    """
+    import itertools
+
+    result = {}
+    for key, spec in metadata.items():
+        if "replacements" not in spec:
+            result[key] = spec
+            continue
+        replacements = spec["replacements"]
+        base_spec = {k: v for k, v in spec.items() if k != "replacements"}
+        var_names = list(replacements.keys())
+        option_lists = [list(replacements[v].items()) for v in var_names]
+        for combo in itertools.product(*option_lists):
+            subs: dict[str, str] = {}
+            for var_name, (option_key, text_subs) in zip(var_names, combo):
+                subs[var_name] = option_key
+                subs.update(text_subs or {})
+            new_key = key
+            for sub_var, sub_val in subs.items():
+                new_key = new_key.replace(f"{{{sub_var}}}", sub_val)
+            new_spec = {}
+            for field_k, field_v in base_spec.items():
+                if isinstance(field_v, str):
+                    for sub_var, sub_val in subs.items():
+                        field_v = field_v.replace(f"{{{sub_var}}}", sub_val)
+                new_spec[field_k] = field_v
+            result[new_key] = new_spec
+    return result
+
+
 # Load criteria definitions from a specific criteria file.
 def _load_criteria_file(
     component: str,
@@ -156,6 +200,7 @@ def _load_criteria_file(
                         criteria_dir / "metadata.yaml"
                     ).open() as file_handle:
                         crit_defs = yaml.safe_load(file_handle)
+                        crit_defs = _expand_metadata_templates(crit_defs)
                         ret |= {
                             f"{criteria_type}|" + crit_key: crit_specs
                             for crit_key, crit_specs in crit_defs.items()
