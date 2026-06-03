@@ -18,6 +18,12 @@ def format_sources(
     fields, and returns a formatted list of sources based on the specified
     style and format. The sources are loaded from 'sources.bib' file.
 
+    When two or more entries share the same first author and year, a
+    lower-case letter suffix is appended to the year to disambiguate them
+    (e.g. "IAEA, 2024a" and "IAEA, 2024b"). Entries within each collision
+    group are sorted alphabetically by their BibTeX key to ensure a
+    deterministic assignment of letters.
+
     Parameters
     ----------
     bib_data
@@ -42,29 +48,52 @@ def format_sources(
             with any excluded fields removed.
 
     """
-    # set exclude_fields to an empty list if provided as None
+    from collections import defaultdict
+
     exclude_fields = exclude_fields or []
 
-    # load pybtext styles and formats based on arguments
-    pyb_style = find_plugin("pybtex.style.formatting", style)()
-    pyb_format = find_plugin("pybtex.backends", target)()
+    # --- Pass 1: collect (cite_auth, cite_year) for every entry ----------
+    auth_year: dict[str, tuple[str, str]] = {}
+    for identifier, entry in bib_data.entries.items():
+        first_author = entry.persons.get("author", [])[0].last_names
+        cite_auth = re.sub("[{}]", "", " ".join(first_author))
+        cite_year = entry.fields.get("year", "n.d.")
+        auth_year[identifier] = (cite_auth, str(cite_year))
 
-    # exclude undesired fields
+    # --- Assign disambiguation suffixes for (auth, year) collisions ------
+    groups: dict[tuple[str, str], list[str]] = defaultdict(list)
+    for identifier, key in auth_year.items():
+        groups[key].append(identifier)
+
+    suffixes: dict[str, str] = {}
+    for ids in groups.values():
+        if len(ids) > 1:
+            for i, identifier in enumerate(sorted(ids)):
+                suffixes[identifier] = chr(ord("a") + i)
+
+    # --- Patch year fields in-place before formatting --------------------
+    for identifier, suffix in suffixes.items():
+        entry = bib_data.entries[identifier]
+        entry.fields["year"] = auth_year[identifier][1] + suffix
+
+    # --- Exclude undesired fields ----------------------------------------
     if exclude_fields:
         for entry in bib_data.entries.values():
             for ef in exclude_fields:
                 if ef in entry.fields.__dict__["_dict"]:
                     del entry.fields.__dict__["_dict"][ef]
 
-    # loop over entries and format accordingly
+    # --- Pass 2: format each entry ---------------------------------------
+    pyb_style = find_plugin("pybtex.style.formatting", style)()
+    pyb_format = find_plugin("pybtex.backends", target)()
+
     ret = {}
     for identifier in bib_data.entries:
         try:
             entry = bib_data.entries[identifier]
-
-            first_author = entry.persons.get("author", [])[0].last_names
-            cite_auth = re.sub("[{}]", "", " ".join(first_author))
-            cite_year = entry.fields.get("year", "n.d.")
+            cite_auth, base_year = auth_year[identifier]
+            suffix = suffixes.get(identifier, "")
+            cite_year = base_year + suffix
 
             doi = entry.fields.get("doi", None)
             url = entry.fields.get("url", None)
