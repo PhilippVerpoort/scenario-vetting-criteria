@@ -65,20 +65,10 @@ Nuclear Capacity:
         lower projections can be made based on exisiting capacities and
         because retirement rates can reasonably be assumed to be low.
     justification_threshold: >-
-        Data on nuclear power plant projects was published by the 
-        International Atomic Energy Agency (IAEA) in 2021. Details can be 
-        found here:
+        Data on nuclear power plants is published by the International Atomic
+        Energy Agency and, including plant-level data {{citep:IAEA-PRIS-2024}}
+        and estimates until 2050 {{citep:IAEA-E50-2024}}.
 
-
-        Country statistics today:
-
-        https://pris.iaea.org/PRIS/CountryStatistics/CountryStatisticsLandingPage.aspx
-        
-
-        IAEA's own estimates:
-
-        https://www-pub.iaea.org/MTCD/Publications/PDF/RDS-1-44_web.pdf
-        
 
         The IAEA publishes capacities in three categories:
 
@@ -89,19 +79,21 @@ Nuclear Capacity:
         • Retired: inactive capacity that has been retired
         
 
-        We assume the following thresholds for 2030 based on data provided by 
-        the IAEA:
+        We assume the following thresholds for 2030 based on the plant-level
+        data:
 
-        • Lower, red:  30% less than currently operational capacities.
+        • Lower, red:  30% less than currently operational capacities
+        {{citep:IAEA-PRIS-2024}}.
 
-        • Lower, yellow:  15% less than currently operational capacities.
+        • Lower, yellow:  15% less than currently operational capacities
+        {{citep:IAEA-PRIS-2024}}.
 
         • Upper, yellow:  5% more than plants operational today plus bringing
         retired plants in Japan back online plus 75% of plants under
-        construction.
+        construction {{citep:IAEA-PRIS-2024}}.
 
-        • Upper, red:  10% more than the highest estimate published
-        by the IAEA (461 GW).
+        • Upper, red:  10% more than the highest estimate (461 GW) published
+        by the {{cite:IAEA-E50-2024}}.
 Carbon Capture:
     justification_criterion: >-
         This scenario assumes a deployment of CCU/S technologies that is
