@@ -1,0 +1,8 @@
+# source: IEA-EB-2025
+# description: Data from {{source}} extrapolated to 2025 using the 2021-2023 average growth rate.
+variable,year,region,unit,value
+Final Energy,2025,World,EJ/yr,443.09
+Primary Energy|Coal,2025,World,EJ/yr,200.43
+Primary Energy|Gas,2025,World,EJ/yr,164.66
+Primary Energy|Oil,2025,World,EJ/yr,197.75
+Primary Energy|Nuclear,2025,World,EJ/yr,8.97

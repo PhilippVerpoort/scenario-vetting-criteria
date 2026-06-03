@@ -52,7 +52,7 @@ Hydropower Capacity:
 
         • Upper, red: 45% (globally) more than what is expected to come online
         assuming accelerated efforts according to the IEA by 2030.
-Near-term Nuclear Capacity:
+Nuclear Capacity:
     justification_criterion: >-
         This scenario assumes a deployment of nuclear power plants that is
         inconsistent with near-term projections.
@@ -105,41 +105,35 @@ Near-term Nuclear Capacity:
 
         • Upper, red:  10% (globally) more than the highest estimate published
         by the IAEA (461 GW).
-Long-term Nuclear Capacity:
-    justification_criterion: >-
-        This scenario assumes a high long-term deployment of nuclear power
-        plants.
-
-
-        Nuclear power is a technology that is known to exhibit low growth
-        rates. While governmental programmes to speed up development could
-        results in a increased growth rates, such developments seem unlikely
-        given recent trends and the required public funding. This is
-        reflected by the fact that even the industry's own association (the
-        International Atomic Energy Agency) estimates a maximum increase
-        of today's capacity by 150% {{citep:IAEA-2024}}.
-    justification_threshold: >-
-        The International Atomic Energy Agency publishes its own long-term 
-        estimates for nuclear power-plant capacity {{citep:IAEA-2024}}. The
-        highest estimates are at 694 GWe in 2040 and 950 GWe in 2050.
-Near-term Carbon Capture:
+Carbon Capture:
     justification_criterion: >-
         This scenario assumes a deployment of CCU/S technologies that is
-        inconsistent with near-term projections.
+        inconsistent with near-term projections (2030) or long-term feasibility
+        constraints (2035–2040).
 
 
-        Near-term upper and lower capacity projections can be derived from
-        existing capacities and from current project announcements and known
-        project lead times. Robust upper projections can be made because
-        projects take at least 5 years to plan and construct and therefore
-        will not be operational by 2030 if not yet announced by today. Robust
-        lower projections can be made based on exisiting capacities and
-        because retirement rates can reasonably be assumed to be low.
+        Near-term (2030): near-term upper and lower capacity projections can
+        be derived from existing capacities and from current project
+        announcements and known project lead times. Robust upper projections
+        can be made because projects take at least 5 years to plan and
+        construct and therefore will not be operational by 2030 if not yet
+        announced by today. Robust lower projections can be made based on
+        existing capacities and because retirement rates can reasonably be
+        assumed to be low.
+
+
+        Long-term (2035–2040): CCU/S involves capturing CO₂ from flue gases
+        and storing it geologically or in products. The required technologies
+        for these activities are highly non-modular and application-specific.
+        Additionally, CCS depends on infrastructure like CO₂ pipeline
+        networks, which still have to be built. Therefore it will likely grow
+        more slowly than modular technologies with some degree of existing
+        infrastructure, such as solar, wind, and batteries.
     justification_threshold: >-
-        CCU/S projects are tracked by the IEA and published annually in its 
-        CCUS Database. Details can be found here:
+        Near-term (2030): CCU/S projects are tracked by the IEA and published
+        annually in its CCUS Database. Details can be found here:
         https://www.iea.org/data-and-statistics/data-product/ccus-projects-database
-        
+
 
         Projects in the CCUS database have one of the following statuses:
 
@@ -148,10 +142,10 @@ Near-term Carbon Capture:
         • Construction: currently under construction
 
         • Planned: announced but without final investment decision in 2024.
-        Projects that were decommissioned or suspended are not 
-        
+        Projects that were decommissioned or suspended are not counted.
 
-        We assume the following thresholds for 2030 based on data provided by 
+
+        We assume the following thresholds for 2030 based on data provided by
         the IEA CCUS database:
 
         • Lower, red:  10% (globally) less than currently operational
@@ -161,24 +155,16 @@ Near-term Carbon Capture:
         currently operational capacities and 50% of projects under construction.
 
         • Upper, yellow:  5% (globally) or 40% (regionally) more than plants
-        operational today plus all projects under construction plus 20% of 
+        operational today plus all projects under construction plus 20% of
         projects planned without FID.
 
         • Upper, red:  10% (globally) more than all projects operational,
         under construction, and announced.
-Long-term Carbon Capture:
-    justification_criterion: >-
-        This scenario assumes a high deployment of CCU/S in 2035--2040. CCU/S
-        involves capturing CO₂ from flue gases and storing it geologically or
-        in products. The required technologies for these activities are highly
-        non-modular and application-specific. Additionally, CCS depends on
-        infrastructure like CO₂ pipeline networks, which still have to be
-        built. Therefore it will likely grow more slowly than modular
-        technologies with some degree of existing infrastructure, such as
-        solar, wind, and batteries.
-    justification_threshold: >-
-        This scenario assumes capacity deployment of CCS in 2035 and 2040 that 
-        would require unlikely growth rates (compare {{cite:Kazlou-2024}}).
+
+
+        Long-term (2035–2040): this scenario assumes capacity deployment of
+        CCS in 2035 and 2040 that would require unlikely growth rates
+        (compare {{cite:Kazlou-2024}}).
 Solar PV Capacity:
     justification_criterion: >-
         This scenario assumes a deployment of solar photovoltaics that is
@@ -196,17 +182,17 @@ Solar PV Capacity:
         {{cite:BNEF-2024}}.
 
 
-        We assume the following thresholds for 2025 and 2030:
+        We assume the following thresholds for 2030:
 
         • Lower, red: 10% (globally) less than existing capacities plus
         37.5% of market outlook.
 
         • Lower, yellow: 5% (globally) or 40% (regionally) less than
-        existing capacities plus 75% (globally) or 37.5% (regionally) of 
+        existing capacities plus 75% (globally) or 37.5% (regionally) of
         market outlook.
 
         • Upper, yellow: 5% (globally) or 40% (regionally) more than
-        existing capacities plus 150% (globally) or 200% (regionally) of 
+        existing capacities plus 150% (globally) or 200% (regionally) of
         market outlook.
 
         • Upper, red: 10% (globally) more than existing capacities plus
@@ -233,18 +219,53 @@ Onshore Wind Capacity:
         project pipeline, and input from industry experts.
 
 
-        We assume the following thresholds for 2025 and 2030:
+        We assume the following thresholds for 2030:
 
         • Lower, red: 10% (globally) less than existing capacities plus
         37.5% of market outlook.
 
         • Lower, yellow: 5% (globally) or 40% (regionally) less than
-        existing capacities plus 75% (globally) or 37.5% (regionally) of 
+        existing capacities plus 75% (globally) or 37.5% (regionally) of
         market outlook.
 
         • Upper, yellow: 5% (globally) or 40% (regionally) more than
-        existing capacities plus 150% (globally) or 200% (regionally) of 
+        existing capacities plus 150% (globally) or 200% (regionally) of
         market outlook.
 
         • Upper, red: 10% (globally) more than existing capacities plus
         200% of market outlook.
+Wind Capacity:
+    justification_criterion: >-
+        This scenario assumes a deployment of total wind power capacity
+        (onshore and offshore combined) that falls below near-term minimum
+        expectations.
+
+
+        Since available near-term projections primarily cover onshore wind,
+        the onshore wind lower bounds are used as a conservative floor for
+        total wind capacity. This is justified by the assumption that onshore
+        wind deployment alone should at minimum match these thresholds, making
+        the onshore lower bounds applicable as floor values for total wind
+        capacity.
+    justification_threshold: >-
+        The lower bounds are derived from the same sources as the Onshore Wind
+        Capacity criterion. Existing capacities in 2022 are reported by
+        {{cite:Ember-2024}}. Yearly additions for 2023–2028 are estimated in a
+        market outlook by the {{cite:GWEC-2024}}.
+
+
+        This outlook is based on input from regional wind associations,
+        government targets, tender results, announced auction plans, available
+        project pipeline, and input from industry experts.
+
+
+        The same lower bounds as for Onshore Wind Capacity are applied to
+        total wind capacity, reflecting the assumption that onshore wind
+        alone provides a sufficient lower bound for total deployment:
+
+        • Lower, red: 10% (globally) less than existing capacities plus
+        37.5% of market outlook.
+
+        • Lower, yellow: 5% (globally) or 40% (regionally) less than
+        existing capacities plus 75% (globally) or 37.5% (regionally) of
+        market outlook.
