@@ -21,7 +21,7 @@ for crit_type in load_criteria("criteria-types"):
     criteria_thrsh, criteria_meta = load_criteria(
         ["criteria-thresholds", "criteria-metadata"],
         criteria_types=crit_type,
-        release="{{ release }}",
+        edition="{{ edition }}",
     ).values()
     
     print(

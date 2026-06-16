@@ -26,28 +26,28 @@ validation criteria so that different research groups can apply the same standar
 
 ---
 
-## Releases and versions
+## Editions and versions
 
-* **Releases:** The criteria definitions are continuously updated and published
-in regular releases. These releases are named using a `YYYY-MM-DD` pattern that
-indicates the date of the release. Releases remain accessible throughout new package
+* **Editions:** The criteria definitions are continuously updated and published
+in regular editions. These editions are named using a `YYYY-MM-DD` pattern that
+indicates the date of the edition. Editions remain accessible throughout new package
 versions.
-* **Versions:** As more releases are added, new version of the package are published.
+* **Versions:** As more editions are added, new versions of the package are published.
 The versions are named using a `vX.X.X` pattern, corresponding to major, minor, and
 patch version numbers. Major version changes indicate breaking backwards-compatibility,
-minor version changes indicate additional "features" (usually new releases), and
-patch version changes indicate minor fixes. New versions retain copies of older releases
+minor version changes indicate additional "features" (usually new editions), and
+patch version changes indicate minor fixes. New versions retain copies of older editions
 for backwards-compatibility.
 
 ---
 
 ## Repository structure
 
-The core data lives in `inst/extdata/`. Each versioned release has its own
+The core data lives in `inst/extdata/`. Each versioned edition has its own
 subdirectory:
 
 ```
-inst/extdata/release-YYYY-MM-DD/
+inst/extdata/edition-YYYY-MM-DD/
 ├── criteria-types.yaml          # Definitions of criterion types
 ├── sources.bib                  # Bibliographic references
 ├── criteria/

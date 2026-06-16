@@ -89,12 +89,12 @@
     csv_engine,
     criteria_types,
     reference_subset,
-    release_path
+    edition_path
 ) {
     if (component %in% c("criteria-thresholds", "criteria-metadata")) {
         # Build list of criteria-type directories.
         criteria_dirs <- list.dirs(
-            file.path(release_path, "criteria"),
+            file.path(edition_path, "criteria"),
             full.names = TRUE, recursive = FALSE
         )
         criteria_dirs <- setNames(as.list(criteria_dirs), basename(criteria_dirs))
@@ -136,7 +136,7 @@
     } else if (component == "criteria-variables") {
         thresholds <- .load_criteria_file(
             "criteria-thresholds", csv_engine, criteria_types,
-            reference_subset, release_path
+            reference_subset, edition_path
         )
         vars <- unlist(strsplit(as.character(thresholds$variable), ","))
         sort(unique(trimws(vars)))
@@ -145,11 +145,11 @@
         if (!requireNamespace("yaml", quietly = TRUE)) {
             stop("Loading 'criteria-types' requires the 'yaml' package to be installed.")
         }
-        yaml::yaml.load_file(file.path(release_path, "criteria-types.yaml"))
+        yaml::yaml.load_file(file.path(edition_path, "criteria-types.yaml"))
 
     } else if (component %in% c("reference-data", "reference-metadata")) {
         ref_files <- list.files(
-            file.path(release_path, "reference-data"),
+            file.path(edition_path, "reference-data"),
             pattern = "\\.csv$", full.names = TRUE
         )
         ref_names <- tools::file_path_sans_ext(basename(ref_files))
@@ -190,7 +190,7 @@
         if (!requireNamespace("bibtex", quietly = TRUE)) {
             stop("Loading 'sources' requires the 'bibtex' package to be installed.")
         }
-        bibtex::read.bib(file.path(release_path, "sources.bib"))
+        bibtex::read.bib(file.path(edition_path, "sources.bib"))
 
     } else {
         stop(paste("Unknown component:", component))
@@ -217,8 +217,8 @@
 #' @param reference_subset Character string or vector. When loading
 #'   `"reference-data"` or `"reference-metadata"`, restrict to these datasets
 #'   only. Defaults to all datasets.
-#' @param release Character string specifying the release to load, e.g.
-#'   `"2026-06-01"`. Defaults to the latest release.
+#' @param edition Character string specifying the edition to load, e.g.
+#'   `"2026-06-01"`. Defaults to the latest edition.
 #'
 #' @return The loaded data. A data frame or named list for a single component;
 #'   a named list of those when multiple components are requested.
@@ -240,7 +240,7 @@ load_criteria <- function(
     csv_engine = 'read.csv',
     criteria_types = NULL,
     reference_subset = NULL,
-    release = NULL
+    edition = NULL
 ) {
     all_components <- c(
         "criteria-thresholds",
@@ -262,24 +262,24 @@ load_criteria <- function(
         components <- all_components
     }
 
-    if (is.null(release)) {
-        release <- tail(sort(names(releases)), 1)
-    } else if (!(release %in% names(releases))) {
+    if (is.null(edition)) {
+        edition <- tail(sort(names(editions)), 1)
+    } else if (!(edition %in% names(editions))) {
         stop(paste0(
-            "Release '", release, "' not known. Choose from: ",
-            toString(sort(names(releases)))
+            "Edition '", edition, "' not known. Choose from: ",
+            toString(sort(names(editions)))
         ))
     }
-    release_path <- releases[[release]]
+    edition_path <- editions[[edition]]
 
     if (is.character(components) && length(components) == 1) {
         .load_criteria_file(
-            components, csv_engine, criteria_types, reference_subset, release_path
+            components, csv_engine, criteria_types, reference_subset, edition_path
         )
     } else if (is.character(components) && length(components) > 1) {
         result <- lapply(components, function(component) {
             .load_criteria_file(
-                component, csv_engine, criteria_types, reference_subset, release_path
+                component, csv_engine, criteria_types, reference_subset, edition_path
             )
         })
         setNames(result, components)

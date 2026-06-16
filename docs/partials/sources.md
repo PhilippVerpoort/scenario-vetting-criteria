@@ -7,7 +7,7 @@ import pandas as pd
 from scenario_vetting_criteria import load_criteria
 from scenario_vetting_criteria.formatting import format_sources
 
-sources = load_criteria("sources", release="{{ release }}")
+sources = load_criteria("sources", edition="{{ edition }}")
 sources_formatted = format_sources(sources, target="html")
 df_table = pd.DataFrame.from_dict(
     sources_formatted,

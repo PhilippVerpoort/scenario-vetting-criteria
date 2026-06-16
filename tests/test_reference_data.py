@@ -15,7 +15,7 @@ _VALID_REGIONS = {"World"} | {c.alpha_3 for c in pycountry.countries} | {"KOS"}
 # Every reference dataset must be used somewhere in thresholds
 # ---------------------------------------------------------------------------
 
-def test_reference_datasets_are_used(release_path, reference_datasets, criteria_dirs):
+def test_reference_datasets_are_used(edition_path, reference_datasets, criteria_dirs):
     # Collect all dataset names appearing in any threshold reference_data column.
     used: set[str] = set()
     for crit_dir in criteria_dirs.values():
@@ -31,7 +31,7 @@ def test_reference_datasets_are_used(release_path, reference_datasets, criteria_
 
     unused = set(reference_datasets) - used
     assert not unused, (
-        f"{release_path.name}: reference datasets never referenced in any "
+        f"{edition_path.name}: reference datasets never referenced in any "
         f"thresholds file: {sorted(unused)}"
     )
 
@@ -40,7 +40,7 @@ def test_reference_datasets_are_used(release_path, reference_datasets, criteria_
 # Header (YAML comment block)
 # ---------------------------------------------------------------------------
 
-def test_reference_data_header_has_required_keys(release_path, reference_datasets):
+def test_reference_data_header_has_required_keys(edition_path, reference_datasets):
     errors = []
     for name, path in reference_datasets.items():
         header = read_ref_data_header(path)
@@ -54,7 +54,7 @@ def test_reference_data_header_has_required_keys(release_path, reference_dataset
 # CSV columns
 # ---------------------------------------------------------------------------
 
-def test_reference_data_column_names_and_order(release_path, reference_datasets):
+def test_reference_data_column_names_and_order(edition_path, reference_datasets):
     errors = []
     for name, path in reference_datasets.items():
         rows = load_csv_rows(path)
@@ -73,7 +73,7 @@ def test_reference_data_column_names_and_order(release_path, reference_datasets)
 # Region values
 # ---------------------------------------------------------------------------
 
-def test_reference_data_regions(release_path, reference_datasets):
+def test_reference_data_regions(edition_path, reference_datasets):
     errors = []
     for name, path in reference_datasets.items():
         for i, row in enumerate(load_csv_rows(path), 1):
@@ -90,7 +90,7 @@ def test_reference_data_regions(release_path, reference_datasets):
 # Year values — integers divisible by 5
 # ---------------------------------------------------------------------------
 
-def test_reference_data_years(release_path, reference_datasets):
+def test_reference_data_years(edition_path, reference_datasets):
     errors = []
     for name, path in reference_datasets.items():
         for i, row in enumerate(load_csv_rows(path), 1):
@@ -112,7 +112,7 @@ def test_reference_data_years(release_path, reference_datasets):
 # ---------------------------------------------------------------------------
 
 def test_reference_data_source_is_valid_bib_key(
-    release_path, reference_datasets, bib_keys
+    edition_path, reference_datasets, bib_keys
 ):
     errors = []
     for name, path in reference_datasets.items():
@@ -126,7 +126,7 @@ def test_reference_data_source_is_valid_bib_key(
 
 
 def test_reference_data_description_citations_are_valid(
-    release_path, reference_datasets, bib_keys
+    edition_path, reference_datasets, bib_keys
 ):
     errors = []
     for name, path in reference_datasets.items():

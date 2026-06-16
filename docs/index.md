@@ -1,15 +1,15 @@
 {{ readme_section('## Background', '## Repository structure') }}
 
-Currently, the following releases are available:
+Currently, the following editions are available:
 
 ```python exec="true" session="index" showcode="false"
-from scenario_vetting_criteria import releases
-for i, release in enumerate(reversed(releases)):
-    print(f"* Release {release}" + ("(latest)" if not i else ""))
+from scenario_vetting_criteria import editions
+for i, edition in enumerate(reversed(editions)):
+    print(f"* Edition {edition}" + ("(latest)" if not i else ""))
 ```
 
 ## Components
-Each releases contains the following components:
+Each edition contains the following components:
 
 * Types — Distinguishes criteria based on the purpose
 * Thresholds — Defines threshold levels for all criteria across different years
@@ -17,4 +17,4 @@ Each releases contains the following components:
 * Reference data — Used for setting threshold levels relative to some external data source
 * Sources — Bibliographic information on sources and references used
 
-You can use the navigation sidebar to inspect individual releases and components.
+You can use the navigation sidebar to inspect individual editions and components.

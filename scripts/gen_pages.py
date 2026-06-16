@@ -1,9 +1,9 @@
-"""Generate criteria definition documentation pages for each release."""
+"""Generate criteria definition documentation pages for each edition."""
 from pathlib import Path
 
 import mkdocs_gen_files
 
-from scenario_vetting_criteria import releases
+from scenario_vetting_criteria import editions
 
 
 partials_dir = Path(__file__).parent.parent / "docs" / "partials"
@@ -21,7 +21,7 @@ partials = [
 
 
 page_template = """---
-release: {release}
+edition: {edition}
 ---
 {outdated_notice}
 
@@ -32,25 +32,25 @@ release: {release}
 outdated_template = """
 !!! warning
 
-    This page documents an **outdated release** of the criteria definitions. 
-    Click [here](../../release-{latest_release}/{partial}) to get to the 
-    latest release.
+    This page documents an **outdated edition** of the criteria definitions.
+    Click [here](../../edition-{latest_edition}/{partial}) to get to the
+    latest edition.
 """
 
 
 nav_entries = []
-for i, release in enumerate(reversed(releases)):
-    nav_entries += f"    - Release {release}\n"
+for i, edition in enumerate(reversed(editions)):
+    nav_entries += f"    - Edition {edition}\n"
     for partial in partials:
         outdated_notice = (
             outdated_template.format(
-                latest_release=list(releases)[-1],
+                latest_edition=list(editions)[-1],
                 partial=partial,
             )
             if i
             else ""
         )
-        page_path = f"release-{release}/{partial}"
+        page_path = f"edition-{edition}/{partial}"
         nav_entries += (
             f"        - "
             f"[{partial.capitalize().replace('_', ' ')}]"
@@ -58,7 +58,7 @@ for i, release in enumerate(reversed(releases)):
         )
         with mkdocs_gen_files.open(f"{page_path}.md", "w") as file_handle:
             file_contents = page_template.format(
-                release=release,
+                edition=edition,
                 partial=partial,
                 outdated_notice=outdated_notice,
             )

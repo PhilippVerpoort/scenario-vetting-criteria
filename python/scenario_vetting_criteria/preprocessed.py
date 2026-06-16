@@ -1,7 +1,7 @@
 """Preprocess criteria definitions for use with IAMC nomenclature package."""
 import pandas as pd
 
-from . import releases, load_criteria
+from . import editions, load_criteria
 
 try:
     import pycountry
@@ -9,14 +9,14 @@ except ImportError as ex:
     raise Exception("The `pycountry` package must be installed.")
 
 
-def load_criteria_for_validator(release: str | None = None) -> list[dict]:
+def load_criteria_for_validator(edition: str | None = None) -> list[dict]:
     """Load criteria definitions for use with IAMC nomenclature validator.
 
     Parameters
     ----------
-    release : str, optional
-        Define the release of the criteria definition to load. If not
-        provided, the latest release will be used.
+    edition : str, optional
+        Define the edition of the criteria definition to load. If not
+        provided, the latest edition will be used.
 
     Returns
     -------
@@ -24,12 +24,12 @@ def load_criteria_for_validator(release: str | None = None) -> list[dict]:
         Criteria definitions for use with IAMC nomenclature validator.
 
     """
-    if release is None:
-        release = list(releases)[-1]
+    if edition is None:
+        edition = list(editions)[-1]
 
     # Step 0: Load the raw criteria definitions.
-    criteria_thrsh = load_criteria("criteria-thresholds", release=release)
-    reference_data = load_criteria("reference-data", release=release)
+    criteria_thrsh = load_criteria("criteria-thresholds", edition=edition)
+    reference_data = load_criteria("reference-data", edition=edition)
 
     # Step 1: Melt threshold types (upper, lower) into column.
     criteria_step1 = (

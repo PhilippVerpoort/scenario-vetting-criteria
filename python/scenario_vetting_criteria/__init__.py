@@ -13,13 +13,13 @@ if not DATA_DIR.is_dir():
     raise Exception("Could not find data directory.")
 
 
-# Get list of releases.
-releases: dict[str, Path] = {
-    release_path.name.removeprefix("release-"): release_path
-    for release_path in DATA_DIR.glob("release-*")
+# Get list of editions.
+editions: dict[str, Path] = {
+    edition_path.name.removeprefix("edition-"): edition_path
+    for edition_path in DATA_DIR.glob("edition-*")
 }
-if not releases:
-    raise Exception("Could not find releases.")
+if not editions:
+    raise Exception("Could not find editions.")
 
 
 # Component options that can be loaded.
@@ -102,7 +102,7 @@ def _load_criteria_file(
     csv_engine: Literal["pandas", "python"],
     criteria_types: list[str],
     reference_subset: list[str],
-    release_path: Path,
+    edition_path: Path,
 ):
     match component:
         # Load and combine all criteria definitions. Load threshold CSV files
@@ -110,7 +110,7 @@ def _load_criteria_file(
         case "criteria-thresholds" | "criteria-metadata":
             criteria_dirs = {
                 criteria_dir.name: criteria_dir
-                for criteria_dir in (release_path / "criteria").glob("*")
+                for criteria_dir in (edition_path / "criteria").glob("*")
                 if criteria_dir.is_dir()
             }
             if criteria_types is not None:
@@ -215,7 +215,7 @@ def _load_criteria_file(
                 csv_engine=csv_engine,
                 criteria_types=criteria_types,
                 reference_subset=reference_subset,
-                release_path=release_path,
+                edition_path=edition_path,
             )
             if csv_engine == "pandas":
                 return (
@@ -244,13 +244,13 @@ def _load_criteria_file(
                 raise Exception(
                     f"Loading '{component}' requires pyyaml to be installed."
                 )
-            with (release_path / "criteria-types.yaml").open() as file_handle:
+            with (edition_path / "criteria-types.yaml").open() as file_handle:
                 return yaml.safe_load(file_handle)
 
         # Load and combine the reference data CSV files into a dataframe.
         case "reference-data" | "reference-metadata":
             # Get list of reference data to load.
-            file_paths = (release_path / "reference-data").glob("*.csv")
+            file_paths = (edition_path / "reference-data").glob("*.csv")
             reference_data = {
                 file_path.stem: file_path for file_path in file_paths
             }
@@ -338,7 +338,7 @@ def _load_criteria_file(
                 raise Exception(
                     f"Loading '{component}' requires pybtex to be installed."
                 )
-            with (release_path / "sources.bib").open("r") as file_stream:
+            with (edition_path / "sources.bib").open("r") as file_stream:
                 return bibtex.Parser().parse_file(file_stream)
         case c:
             raise Exception(f"Unknown component: {c}")
@@ -351,7 +351,7 @@ def load_criteria(
     csv_engine: Literal["pandas", "python"] = "pandas",
     criteria_types: str | list[str] | None = None,
     reference_subset: str | list[str] | tuple[str] | None = None,
-    release: str | None = None,
+    edition: str | None = None,
 ):
     """Load and return the criteria definitions contained in the package.
 
@@ -378,9 +378,9 @@ def load_criteria(
         are loaded. Alternatively, a single string or a list or tuple of
         strings can be provided as argument `reference_subset` to load only
         a subset of sources.
-    release : str, optional
-        Define the release of the criteria definition to load. If not
-        provided, the latest release will be used.
+    edition : str, optional
+        Define the edition of the criteria definition to load. If not
+        provided, the latest edition will be used.
 
     Returns
     -------
@@ -401,14 +401,14 @@ def load_criteria(
         )
     if load_all:
         components = COMPONENTS
-    if release is None:
-        release = sorted(list(releases))[-1]
-    elif release not in releases:
+    if edition is None:
+        edition = sorted(list(editions))[-1]
+    elif edition not in editions:
         raise Exception(
-            f"Release '{release}' not known. Choose from: "
-            f"{', '.join(releases)}"
+            f"Edition '{edition}' not known. Choose from: "
+            f"{', '.join(editions)}"
         )
-    release_path = releases[release]
+    edition_path = editions[edition]
     if criteria_types is not None:
         if isinstance(criteria_types, str):
             criteria_types = [criteria_types]
@@ -425,7 +425,7 @@ def load_criteria(
             csv_engine=csv_engine,
             criteria_types=criteria_types,
             reference_subset=reference_subset,
-            release_path=release_path,
+            edition_path=edition_path,
         )
     elif (
         isinstance(components, list) and
@@ -437,7 +437,7 @@ def load_criteria(
                 csv_engine=csv_engine,
                 criteria_types=criteria_types,
                 reference_subset=reference_subset,
-                release_path=release_path,
+                edition_path=edition_path,
             )
             for component in components
         }
@@ -448,6 +448,6 @@ def load_criteria(
 
 
 __all__ = [
-    "releases",
+    "editions",
     "load_criteria",
 ]

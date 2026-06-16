@@ -4,7 +4,7 @@ The following types of validation criteria are defined.
 import pandas as pd
 from scenario_vetting_criteria import load_criteria
 
-criteria_types = load_criteria("criteria-types", release="{{ release }}")
+criteria_types = load_criteria("criteria-types", edition="{{ edition }}")
 
 print(
     pd.DataFrame.from_dict(criteria_types, orient="index")

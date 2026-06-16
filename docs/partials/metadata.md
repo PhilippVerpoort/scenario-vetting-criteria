@@ -14,7 +14,7 @@ for crit_type in load_criteria("criteria-types"):
     criteria_meta, criteria_types, sources = load_criteria(
         ["criteria-metadata", "criteria-types", "sources"],
         criteria_types=crit_type,
-        release="{{ release }}",
+        edition="{{ edition }}",
     ).values()
     sources_formatted = format_sources(sources)
     

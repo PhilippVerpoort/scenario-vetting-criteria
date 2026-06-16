@@ -22,7 +22,7 @@ def _load_metadata(crit_dir):
 # Column structure
 # ---------------------------------------------------------------------------
 
-def test_threshold_column_names(release_path, criteria_dirs):
+def test_threshold_column_names(edition_path, criteria_dirs):
     errors = []
     for name, path in criteria_dirs.items():
         rows = load_csv_rows(path / "thresholds.csv")
@@ -46,7 +46,7 @@ def test_threshold_column_names(release_path, criteria_dirs):
 # Criterion-name consistency between thresholds and metadata
 # ---------------------------------------------------------------------------
 
-def test_every_threshold_criterion_has_metadata(release_path, criteria_dirs):
+def test_every_threshold_criterion_has_metadata(edition_path, criteria_dirs):
     errors = []
     for name, path in criteria_dirs.items():
         threshold_ids = {row["criterion"] for row in load_csv_rows(path / "thresholds.csv")}
@@ -59,7 +59,7 @@ def test_every_threshold_criterion_has_metadata(release_path, criteria_dirs):
     assert not errors, "\n".join(errors)
 
 
-def test_every_metadata_criterion_has_threshold(release_path, criteria_dirs):
+def test_every_metadata_criterion_has_threshold(edition_path, criteria_dirs):
     errors = []
     for name, path in criteria_dirs.items():
         threshold_ids = {row["criterion"] for row in load_csv_rows(path / "thresholds.csv")}
@@ -76,7 +76,7 @@ def test_every_metadata_criterion_has_threshold(release_path, criteria_dirs):
 # Metadata content
 # ---------------------------------------------------------------------------
 
-def test_metadata_required_keys(release_path, criteria_dirs):
+def test_metadata_required_keys(edition_path, criteria_dirs):
     errors = []
     for name, path in criteria_dirs.items():
         for criterion, spec in _load_metadata(path).items():
@@ -92,7 +92,7 @@ def test_metadata_required_keys(release_path, criteria_dirs):
 # Threshold row values
 # ---------------------------------------------------------------------------
 
-def test_threshold_required_string_columns_non_empty(release_path, criteria_dirs):
+def test_threshold_required_string_columns_non_empty(edition_path, criteria_dirs):
     errors = []
     for name, path in criteria_dirs.items():
         for i, row in enumerate(load_csv_rows(path / "thresholds.csv"), 1):
@@ -102,7 +102,7 @@ def test_threshold_required_string_columns_non_empty(release_path, criteria_dirs
     assert not errors, "\n".join(errors)
 
 
-def test_threshold_region_values(release_path, criteria_dirs):
+def test_threshold_region_values(edition_path, criteria_dirs):
     errors = []
     for name, path in criteria_dirs.items():
         for i, row in enumerate(load_csv_rows(path / "thresholds.csv"), 1):
@@ -115,7 +115,7 @@ def test_threshold_region_values(release_path, criteria_dirs):
     assert not errors, "\n".join(errors)
 
 
-def test_threshold_level_of_concern(release_path, criteria_dirs):
+def test_threshold_level_of_concern(edition_path, criteria_dirs):
     errors = []
     for name, path in criteria_dirs.items():
         for i, row in enumerate(load_csv_rows(path / "thresholds.csv"), 1):
@@ -129,7 +129,7 @@ def test_threshold_level_of_concern(release_path, criteria_dirs):
     assert not errors, "\n".join(errors)
 
 
-def test_threshold_year_values(release_path, criteria_dirs):
+def test_threshold_year_values(edition_path, criteria_dirs):
     """Non-empty year values (after comma-split) must be integers."""
     errors = []
     for name, path in criteria_dirs.items():
@@ -148,7 +148,7 @@ def test_threshold_year_values(release_path, criteria_dirs):
     assert not errors, "\n".join(errors)
 
 
-def test_threshold_lower_or_upper_set(release_path, criteria_dirs):
+def test_threshold_lower_or_upper_set(edition_path, criteria_dirs):
     errors = []
     for name, path in criteria_dirs.items():
         for i, row in enumerate(load_csv_rows(path / "thresholds.csv"), 1):
@@ -167,7 +167,7 @@ def test_threshold_lower_or_upper_set(release_path, criteria_dirs):
 # reference_data column
 # ---------------------------------------------------------------------------
 
-def test_threshold_reference_data_format(release_path, criteria_dirs):
+def test_threshold_reference_data_format(edition_path, criteria_dirs):
     errors = []
     for name, path in criteria_dirs.items():
         for i, row in enumerate(load_csv_rows(path / "thresholds.csv"), 1):
@@ -188,7 +188,7 @@ def test_threshold_reference_data_format(release_path, criteria_dirs):
     assert not errors, "\n".join(errors)
 
 
-def test_threshold_reference_datasets_exist(release_path, criteria_dirs, reference_datasets):
+def test_threshold_reference_datasets_exist(edition_path, criteria_dirs, reference_datasets):
     errors = []
     for name, path in criteria_dirs.items():
         for i, row in enumerate(load_csv_rows(path / "thresholds.csv"), 1):
@@ -209,7 +209,7 @@ def test_threshold_reference_datasets_exist(release_path, criteria_dirs, referen
 
 
 def test_threshold_variables_present_in_reference_data(
-    release_path, criteria_dirs, reference_datasets
+    edition_path, criteria_dirs, reference_datasets
 ):
     # Cache variable sets per dataset to avoid re-reading.
     ref_vars: dict[str, set[str]] = {}

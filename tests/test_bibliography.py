@@ -14,7 +14,7 @@ def _load_metadata(crit_dir):
 # Citations in metadata YAML must resolve to valid BibTeX keys
 # ---------------------------------------------------------------------------
 
-def test_metadata_citations_are_valid(release_path, criteria_dirs, bib_keys):
+def test_metadata_citations_are_valid(edition_path, criteria_dirs, bib_keys):
     errors = []
     for name, path in criteria_dirs.items():
         metadata = _load_metadata(path)
@@ -30,11 +30,11 @@ def test_metadata_citations_are_valid(release_path, criteria_dirs, bib_keys):
 
 
 # ---------------------------------------------------------------------------
-# Every BibTeX entry must be cited at least once within its release
+# Every BibTeX entry must be cited at least once within its edition
 # ---------------------------------------------------------------------------
 
 def test_all_bib_entries_are_cited(
-    release_path, criteria_dirs, reference_datasets, bib_keys
+    edition_path, criteria_dirs, reference_datasets, bib_keys
 ):
     all_cited: set[str] = set()
 
@@ -55,5 +55,5 @@ def test_all_bib_entries_are_cited(
 
     uncited = bib_keys - all_cited
     assert not uncited, (
-        f"{release_path.name}/sources.bib: entries never cited: {sorted(uncited)}"
+        f"{edition_path.name}/sources.bib: entries never cited: {sorted(uncited)}"
     )

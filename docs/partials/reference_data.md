@@ -7,13 +7,13 @@ from itables import to_html_datatable
 from scenario_vetting_criteria import load_criteria
 from scenario_vetting_criteria.formatting import format_sources
 
-release = "{{ release }}"
+edition = "{{ edition }}"
 
-sources = load_criteria("sources", release=release)
+sources = load_criteria("sources", edition=edition)
 sources_formatted = format_sources(sources)
 reference_data_all, reference_metadata = load_criteria(
     ["reference-data", "reference-metadata"],
-    release=release,
+    edition=edition,
 ).values()
 
 all_datasets = sorted(reference_data_all["reference_data"].unique())

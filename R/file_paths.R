@@ -4,20 +4,20 @@ if (!dir.exists(DATA_DIR)) {
     stop("Could not find data directory.")
 }
 
-# Get list of releases.
-release_dirs <- list.dirs(path = DATA_DIR, full.names = TRUE, recursive = FALSE)
-release_dirs <- release_dirs[grepl("/release-", release_dirs)]
-if (length(release_dirs) == 0) {
-    stop("Could not find releases.")
+# Get list of editions.
+edition_dirs <- list.dirs(path = DATA_DIR, full.names = TRUE, recursive = FALSE)
+edition_dirs <- edition_dirs[grepl("/edition-", edition_dirs)]
+if (length(edition_dirs) == 0) {
+    stop("Could not find editions.")
 }
 
-#' Available releases of the criteria definitions.
+#' Available editions of the criteria definitions.
 #'
-#' A named list mapping release date strings to their directory paths within
+#' A named list mapping edition date strings to their directory paths within
 #' the installed package.
 #'
 #' @export
-releases <- setNames(
-    as.list(release_dirs),
-    sub("^release-", "", basename(release_dirs))
+editions <- setNames(
+    as.list(edition_dirs),
+    sub("^edition-", "", basename(edition_dirs))
 )

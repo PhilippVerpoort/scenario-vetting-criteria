@@ -30,15 +30,15 @@
 # ```
 
 # %% [markdown]
-# ## Releases
+# ## Editions
 
 # %% [markdown]
-# The package contains definition files for the criteria for different releases. You can import the `releases` set from the root of the package to see what releases are available.
+# The package contains definition files for the criteria for different editions. You can import the `editions` dict from the root of the package to see what editions are available.
 
 # %%
-from scenario_vetting_criteria import releases
+from scenario_vetting_criteria import editions
 
-print("\n".join(releases))
+print("\n".join(editions))
 
 # %% [markdown]
 # ## Load functions
