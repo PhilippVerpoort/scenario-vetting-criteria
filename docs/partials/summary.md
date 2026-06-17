@@ -4,6 +4,7 @@ combining the scientific justifications with the computed threshold values.
 ```python exec="true" session="summary" showcode="false"
 import re
 import pandas as pd
+from sigfig import round as sf_round
 from itables import to_html_datatable
 from scenario_vetting_criteria import load_criteria
 from scenario_vetting_criteria.preprocessed import load_criteria_combined
@@ -21,6 +22,16 @@ sources_formatted = format_sources(sources)
 
 def _fmt(text):
     return insert_citations(text, sources_formatted, "").replace("\n", "<br>")
+
+
+def _fmt_num(v):
+    if pd.isna(v):
+        return v
+    if v == 0:
+        return 0.0
+    if abs(v) >= 100:
+        return round(v, 0)
+    return float(sf_round(str(v), sigfigs=3))
 
 
 def _pivot(df):
@@ -60,7 +71,7 @@ def _pivot(df):
             )
         for col in ["Lower (ref)", "Upper (ref)"]:
             pivoted[col] = pivoted[col].apply(
-                lambda v: f"{v:.4g}" if pd.notna(v) else ""
+                _fmt_num
             )
         pivoted["reference_data_expr"] = pivoted["reference_data_expr"].apply(
             lambda v: re.sub(r"^range\((.+)\)$", r"Most permissive value of: \1", v)
@@ -70,7 +81,7 @@ def _pivot(df):
     for col in ["Lower (abs)", "Upper (abs)"]:
         if col in pivoted.columns:
             pivoted[col] = pivoted[col].apply(
-                lambda v: f"{v:.4g}" if pd.notna(v) else ""
+                _fmt_num
             )
 
     col_order = [
