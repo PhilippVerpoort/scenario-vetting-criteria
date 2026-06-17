@@ -75,16 +75,18 @@ def load_criteria_combined(edition: str | None = None) -> pd.DataFrame:
         .reset_index(drop=True)
     )
 
-    # Step 4: Explode sources.
+    # Step 4: Explode sources; preserve the original full expression for display.
     criteria_step4 = (
         pd.concat([
-            # Extract operator and sources from column `reference_sources`.
+            # Extract operator and individual source names from reference_data.
             criteria_step3["reference_data"].str.extract(
                 r"(?P<reference_multi_operator>[a-z]+)?"
                 r"\(?(?P<reference_data>[^\)]+)\)?"
             ),
-            # Combine with existing data.
-            criteria_step3.drop(columns="reference_data"),
+            # Carry the original expression alongside the rest of the data.
+            criteria_step3.drop(columns="reference_data").assign(
+                reference_data_expr=criteria_step3["reference_data"].values
+            ),
         ], axis=1)
         # Insert value `range` if operator is empty.
         .fillna({"reference_multi_operator": "range"})
@@ -97,6 +99,8 @@ def load_criteria_combined(edition: str | None = None) -> pd.DataFrame:
     )
 
     # Step 5: Merge with references list and compute absolute values.
+    # Keep value_rel (the threshold multiplier) and reference_value (the
+    # dataset value) so they can be surfaced by load_criteria_combined.
     criteria_step5 = (
         criteria_step4
         # Merge with reference data.
@@ -104,10 +108,12 @@ def load_criteria_combined(edition: str | None = None) -> pd.DataFrame:
             reference_data,
             on=["reference_data", "variable", "region", "year"],
         )
-        # Assign new value and unit.
+        # Assign new value and unit; retain relative and reference columns.
         .assign(
-            value=lambda df: df.value_x * df.value_y,
+            value=lambda df: df.value_y + (df.value_x - 1.0) * df.value_y.abs(),
             unit=lambda df: df.unit_y.fillna(df.unit_x),
+            value_rel=lambda df: df.value_x,
+            reference_value=lambda df: df.value_y,
         )
         # Combine with data that does not use a reference.
         .pipe(
@@ -116,16 +122,14 @@ def load_criteria_combined(edition: str | None = None) -> pd.DataFrame:
                 criteria_step4.loc[criteria_step4["reference_data"].isnull()],
             ])
         )
-        # Drop columns that are no longer needed.
-        .drop(columns=[
-            "value_x", "value_y",
-            "unit_x", "unit_y",
-            "reference_data",
-        ])
+        # Drop intermediate merge columns.
+        .drop(columns=["value_x", "value_y", "unit_x", "unit_y"])
         .reset_index(drop=True)
     )
 
     # Step 6: Apply operator for multiple sources.
+    # Track which source won (idxmin/idxmax) so value_rel and reference_value
+    # reflect the actual source used for the aggregated absolute value.
     def combine(group):
         assert group["unit"].nunique() == 1, \
             "Unit must be the same across combined references."
@@ -142,10 +146,16 @@ def load_criteria_combined(edition: str | None = None) -> pd.DataFrame:
                 .split("-")[["lower", "upper"]
                 .index(threshold_type)]
             )
-        # Apply operator and return.
+        # Find the winning row (min or max of the absolute value).
+        agg_value = getattr(group["value"], operator)()
+        winning_row = group.loc[getattr(group["value"], f"idx{operator}")()]
         return pd.Series({
-            "value": getattr(group["value"], operator)(),
+            "value": agg_value,
             "unit": group["unit"].iloc[0],
+            "value_rel": winning_row["value_rel"],
+            "reference_value": winning_row["reference_value"],
+            "reference_data": winning_row["reference_data"],
+            "reference_data_expr": winning_row["reference_data_expr"],
         })
 
     return (
@@ -155,7 +165,8 @@ def load_criteria_combined(edition: str | None = None) -> pd.DataFrame:
             "variable", "level_of_concern",
             "threshold_type",
         ], dropna=False)
-        [["reference_multi_operator", "unit", "value"]]
+        [["reference_multi_operator", "unit", "value",
+          "value_rel", "reference_value", "reference_data", "reference_data_expr"]]
         .apply(combine)
         .reset_index()
     )
