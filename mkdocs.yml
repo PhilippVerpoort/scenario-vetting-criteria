@@ -11,6 +11,7 @@ theme:
   - navigation.path
   - navigation.indexes
   - navigation.expand
+  - toc.integrate
   logo: assets/logo_white.svg
   favicon: assets/favicon.ico
   name: material
