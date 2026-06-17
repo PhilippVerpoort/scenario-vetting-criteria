@@ -9,8 +9,13 @@ except ImportError as ex:
     raise Exception("The `pycountry` package must be installed.")
 
 
-def load_criteria_for_validator(edition: str | None = None) -> list[dict]:
-    """Load criteria definitions for use with IAMC nomenclature validator.
+def load_criteria_combined(edition: str | None = None) -> pd.DataFrame:
+    """Load and combine criteria thresholds with reference data.
+
+    Processes raw criteria definitions through six steps:
+    melting bound types, exploding comma-separated fields, expanding
+    ``All Countries``, resolving reference-data multipliers, and applying
+    range/min/max operators across multiple sources.
 
     Parameters
     ----------
@@ -20,8 +25,9 @@ def load_criteria_for_validator(edition: str | None = None) -> list[dict]:
 
     Returns
     -------
-    list[dict]
-        Criteria definitions for use with IAMC nomenclature validator.
+    pd.DataFrame
+        One row per (criterion, variable, region, year, level_of_concern,
+        threshold_type) combination with columns ``value`` and ``unit``.
 
     """
     if edition is None:
@@ -90,7 +96,7 @@ def load_criteria_for_validator(edition: str | None = None) -> list[dict]:
         .reset_index(drop=True)
     )
 
-    # Step 5: Merge with references list and copute absolute values.
+    # Step 5: Merge with references list and compute absolute values.
     criteria_step5 = (
         criteria_step4
         # Merge with reference data.
@@ -142,7 +148,7 @@ def load_criteria_for_validator(edition: str | None = None) -> list[dict]:
             "unit": group["unit"].iloc[0],
         })
 
-    criteria_step6 = (
+    return (
         criteria_step5
         .groupby([
             "criterion", "region", "year",
@@ -154,9 +160,27 @@ def load_criteria_for_validator(edition: str | None = None) -> list[dict]:
         .reset_index()
     )
 
+
+def load_criteria_for_validator(edition: str | None = None) -> list[dict]:
+    """Load criteria definitions for use with IAMC nomenclature validator.
+
+    Parameters
+    ----------
+    edition : str, optional
+        Define the edition of the criteria definition to load. If not
+        provided, the latest edition will be used.
+
+    Returns
+    -------
+    list[dict]
+        Criteria definitions for use with IAMC nomenclature validator.
+
+    """
+    criteria_combined = load_criteria_combined(edition=edition)
+
     # Convert dataframe to list of nested dictionaries and return.
     return (
-        criteria_step6
+        criteria_combined
         .query("region=='World'")
         .rename(columns={
             "criterion": "name",

@@ -11,13 +11,15 @@ if not partials_dir.is_dir():
     raise Exception("Partials directory not found!")
 
 
-partials = [
+summary_partial = "summary"
+component_partials = [
     "types",
     "metadata",
     "thresholds",
     "reference_data",
     "sources",
 ]
+all_partials = [summary_partial] + component_partials
 
 
 page_template = """---
@@ -38,10 +40,22 @@ outdated_template = """
 """
 
 
-nav_entries = []
+summary_nav_entries = []
+component_nav_entries = []
+
 for i, edition in enumerate(reversed(editions)):
-    nav_entries += f"    - Edition {edition}\n"
-    for partial in partials:
+    summary_nav_entries.append(
+        f"    - [Edition {edition}](edition-{edition}/summary.md)\n"
+    )
+
+    component_nav_entries.append(f"    - Edition {edition}\n")
+    for partial in component_partials:
+        component_nav_entries.append(
+            f"        - [{partial.capitalize().replace('_', ' ')}]"
+            f"(edition-{edition}/{partial}.md)\n"
+        )
+
+    for partial in all_partials:
         outdated_notice = (
             outdated_template.format(
                 latest_edition=list(editions)[-1],
@@ -51,23 +65,25 @@ for i, edition in enumerate(reversed(editions)):
             else ""
         )
         page_path = f"edition-{edition}/{partial}"
-        nav_entries += (
-            f"        - "
-            f"[{partial.capitalize().replace('_', ' ')}]"
-            f"({page_path}.md)\n"
-        )
         with mkdocs_gen_files.open(f"{page_path}.md", "w") as file_handle:
-            file_contents = page_template.format(
+            file_handle.write(page_template.format(
                 edition=edition,
                 partial=partial,
                 outdated_notice=outdated_notice,
-            )
-            file_handle.write(file_contents)
+            ))
 
+
+summary_nav = (
+    ["- Summary\n", "    - [Overview](index.md)\n"]
+    + summary_nav_entries
+)
+component_nav = (
+    ["- Components\n", "    - [Overview](components/index.md)\n"]
+    + component_nav_entries
+)
 
 with open(partials_dir.parent / "nav.md") as file_handle:
-    lines = file_handle.readlines()
+    static_nav_lines = file_handle.readlines()
 
 with mkdocs_gen_files.open("nav.md", "w") as file_handle:
-    print("".join(lines[0:2] + nav_entries + lines[2:]))
-    file_handle.writelines(lines[0:2] + nav_entries + lines[2:])
+    file_handle.writelines(summary_nav + component_nav + static_nav_lines)

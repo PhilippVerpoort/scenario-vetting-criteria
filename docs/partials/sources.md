@@ -1,6 +1,6 @@
 This page contains bibliographic information for the sources used for providing
 the [reference data](../reference_data/) and in the justifications given in
-the [criteria metadata](../criteria_meta/).
+the [criteria metadata](../metadata/).
 
 ```python exec="true" session="index" showcode="false"
 import pandas as pd

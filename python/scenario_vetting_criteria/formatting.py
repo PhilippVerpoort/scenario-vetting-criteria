@@ -133,7 +133,7 @@ def format_sources(
 def insert_citations(
     text: str,
     citations: dict[str, dict[str, str]],
-    link: str = "",
+    link: str | None = None,
 ) -> str:
     """Insert citations into placeholders in a text.
 
@@ -155,9 +155,9 @@ def insert_citations(
     return re.sub(
         r"{{(cite|citep):([^}]+)}}",
         lambda m: (
-            (f'<a href="{link}#{m.group(2)}">' if link else "")
+            (f'<a href="{link}#{m.group(2)}">' if link is not None else "")
             + citations.get(m.group(2), {}).get(m.group(1), m.group(0))
-            + ("</a>" if link else "")
+            + ("</a>" if link is not None else "")
         ),
         text,
     )
