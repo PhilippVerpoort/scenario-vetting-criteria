@@ -85,12 +85,20 @@ def _expand_metadata_templates(metadata: dict) -> dict:
                 subs.update(text_subs or {})
             new_key = key
             for sub_var, sub_val in subs.items():
-                new_key = new_key.replace(f"{{{sub_var}}}", sub_val)
+                if sub_val is None:
+                    # Tilde (~) entry: strip the placeholder and its adjacent pipe.
+                    new_key = (new_key
+                        .replace(f"|{{{sub_var}}}", "")
+                        .replace(f"{{{sub_var}}}|", "")
+                        .replace(f"{{{sub_var}}}", ""))
+                else:
+                    new_key = new_key.replace(f"{{{sub_var}}}", sub_val)
             new_spec = {}
             for field_k, field_v in base_spec.items():
                 if isinstance(field_v, str):
                     for sub_var, sub_val in subs.items():
-                        field_v = field_v.replace(f"{{{sub_var}}}", sub_val)
+                        if sub_val is not None:
+                            field_v = field_v.replace(f"{{{sub_var}}}", sub_val)
                 new_spec[field_k] = field_v
             result[new_key] = new_spec
     return result

@@ -34,18 +34,26 @@
             }
             new_key <- key
             for (sub_var in names(subs)) {
-                new_key <- gsub(
-                    paste0("\\{", sub_var, "\\}"),
-                    subs[[sub_var]], new_key
-                )
+                sub_val <- subs[[sub_var]]
+                if (identical(sub_val, "~")) {
+                    # Tilde (~) entry: strip the placeholder and its adjacent pipe.
+                    new_key <- gsub(paste0("\\|\\{", sub_var, "\\}"), "", new_key)
+                    new_key <- gsub(paste0("\\{", sub_var, "\\}\\|"), "", new_key)
+                    new_key <- gsub(paste0("\\{", sub_var, "\\}"), "", new_key)
+                } else {
+                    new_key <- gsub(paste0("\\{", sub_var, "\\}"), sub_val, new_key)
+                }
             }
             new_spec <- lapply(base_spec, function(field_val) {
                 if (is.character(field_val)) {
                     for (sub_var in names(subs)) {
-                        field_val <- gsub(
-                            paste0("\\{", sub_var, "\\}"),
-                            subs[[sub_var]], field_val
-                        )
+                        sub_val <- subs[[sub_var]]
+                        if (!identical(sub_val, "~")) {
+                            field_val <- gsub(
+                                paste0("\\{", sub_var, "\\}"),
+                                sub_val, field_val
+                            )
+                        }
                     }
                 }
                 field_val
