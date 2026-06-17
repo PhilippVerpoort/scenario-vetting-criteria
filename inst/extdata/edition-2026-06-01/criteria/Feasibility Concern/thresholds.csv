@@ -1,6 +1,6 @@
 criterion,variable,region,year,reference_data,unit,level_of_concern,lower,upper
 Biodiversity,"Terrestrial Biodiversity|BII, Terrestrial Biodiversity|Biodiversity Intactness Index",World,2030,,%/yr,medium,-0.11,
-Deforestations,Forest Area Change|Deforestation,World,2030,,million ha/yr,medium,,16
+Deforestation,Forest Area Change|Deforestation,World,2030,,million ha/yr,medium,,16
 Deforestation,Forest Area Change|Deforestation|Primary,World,2030,,million ha/yr,medium,,12
 Forest Expansion,Forest Area Change|Forest Expansion,World,2030,,million ha/yr,medium,,10
 Forest Expansion,Forest Area Change|Forest Expansion|Planted,World,2030,,million ha/yr,medium,,5
