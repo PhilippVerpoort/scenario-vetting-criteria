@@ -85,3 +85,20 @@ Unsustainable Hydropower Use:
         no more than 1500 GW hydropower globally combined with strategic 
         planning of the siting of new hydropower could reduce impacts on 
         free-flowing rivers by 90%.
+Exceeding Prudent Limit For Geological Carbon Storage:
+    justification_criterion: >-
+        Some scenarios rely strongly on the use of carbon capture and
+        sequestration (CCS). We use geological carbon storage volumes that
+        exceed prudent technical and sustainability limits as upper bounds as
+        quantified by Gidden et al (2025).
+    justification_threshold: >-
+        Estimates are provided by {{cite:Gidden-2025}}.
+
+
+        • Upper threshold, major concern: exceeding cumulative CCS of
+        1,460 Gt CO2 until the end of the century, which was identified as the
+        median of the range when combining spatial risk layers.
+
+        • Upper threshold, medium concern: exceeding cumulative CCS of
+        1,290 Gt CO2 until the end of the century, which was identified as the
+        lower bound of the range when combining spatial risk layers.

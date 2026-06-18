@@ -1,8 +1,16 @@
 criterion,variable,region,year,reference_data,unit,level_of_concern,lower,upper
-Population,Population,World,"2010, 2015, 2020, 2025","range(WDI-2025, WDI-2025-extrapol25)",dimensionless,strong,0.75,1.25
-Population,Population,All Countries,"2010, 2015, 2020, 2025","range(WDI-2025, WDI-2025-extrapol25)",dimensionless,strong,0.65,1.35
-GDP|PPP,GDP|PPP,World,"2010, 2015, 2020, 2025","range(WDI-2025, WDI-2025-extrapol25, WDI-2025-COVIDaveraged)",dimensionless,strong,0.75,1.25
-GDP|PPP,GDP|PPP,All Countries,"2010, 2015, 2020, 2025","range(WDI-2025, WDI-2025-extrapol25, WDI-2025-COVIDaveraged)",dimensionless,strong,0.65,1.35
+Population,Population,World,"2010, 2015",WDI-2025,dimensionless,strong,0.75,1.25
+Population,Population,All Countries,"2010, 2015",WDI-2025,dimensionless,strong,0.65,1.35
+Population,Population,World,2020,WDI-2025,dimensionless,strong,0.75,1.25
+Population,Population,All Countries,2020,WDI-2025,dimensionless,strong,0.65,1.35
+Population,Population,World,2025,WDI-2025-extrapol25,dimensionless,strong,0.75,1.25
+Population,Population,All Countries,2025,WDI-2025-extrapol25,dimensionless,strong,0.65,1.35
+GDP|PPP,GDP|PPP,World,"2010, 2015",WDI-2025,dimensionless,strong,0.75,1.25
+GDP|PPP,GDP|PPP,All Countries,"2010, 2015",WDI-2025,dimensionless,strong,0.65,1.35
+GDP|PPP,GDP|PPP,World,2020,"range(WDI-2025, WDI-2025-COVIDaveraged)",dimensionless,strong,0.75,1.25
+GDP|PPP,GDP|PPP,All Countries,2020,"range(WDI-2025, WDI-2025-COVIDaveraged)",dimensionless,strong,0.65,1.35
+GDP|PPP,GDP|PPP,World,2025,WDI-2025-extrapol25,dimensionless,strong,0.75,1.25
+GDP|PPP,GDP|PPP,All Countries,2025,WDI-2025-extrapol25,dimensionless,strong,0.65,1.35
 Emissions|CO2|AFOLU,Emissions|CO2|AFOLU,World,"2010, 2015, 2020","range(EDGAR-2025, FAOSTAT-2026, GCB-2025, Hansis-2015, Houghton-2023, OSCAR-GCB-2023, PRIMAP-2025-v2p7-HISTTP, Qin-2024)",dimensionless,strong,0.8,1.2
 Emissions|CO2|AFOLU,Emissions|CO2|AFOLU,World,2025,"range(EDGAR-2025-extrapol25, FAOSTAT-2026, GCB-2025-extrapol25, Hansis-2015-extrapol25, Houghton-2023-extrapol25, OSCAR-GCB-2023-extrapol25, PRIMAP-2025-v2p7-HISTTP-extrapol25, Qin-2024-extrapol25)",dimensionless,strong,0.7,1.3
 Emissions|CO2|AFOLU,Emissions|CO2|AFOLU,All Countries,"2010, 2015, 2020","range(EDGAR-2025, FAOSTAT-2026, GCB-2025, Hansis-2015, Houghton-2023, OSCAR-GCB-2023, PRIMAP-2025-v2p7-HISTTP, Qin-2024)",dimensionless,strong,0.75,1.25
@@ -13,8 +21,12 @@ Emissions|CH4|AFOLU|Agriculture,Emissions|CH4|AFOLU|Agriculture,"World, All Coun
 Emissions|CH4|AFOLU|Agriculture,Emissions|CH4|AFOLU|Agriculture,"World, All Countries",2025,"range(EDGAR-2025-extrapol25, FAOSTAT-2026-extrapol25, PRIMAP-2025-v2p7-HISTCR-extrapol25, PRIMAP-2025-v2p7-HISTTP-extrapol25)",dimensionless,strong,0.7,1.3
 Emissions|N2O|AFOLU|Agriculture,Emissions|N2O|AFOLU|Agriculture,"World, All Countries","2010, 2015, 2020","range(EDGAR-2025, FAOSTAT-2026, PRIMAP-2025-v2p7-HISTCR, PRIMAP-2025-v2p7-HISTTP)",dimensionless,strong,0.8,1.2
 Emissions|N2O|AFOLU|Agriculture,Emissions|N2O|AFOLU|Agriculture,"World, All Countries",2025,"range(EDGAR-2025-extrapol25, FAOSTAT-2026-extrapol25, PRIMAP-2025-v2p7-HISTCR-extrapol25, PRIMAP-2025-v2p7-HISTTP-extrapol25)",dimensionless,strong,0.7,1.3
-Emissions|CO2|Energy and Industrial Processes,Emissions|CO2|Energy and Industrial Processes,World,"2010, 2015, 2020, 2025","range(CEDS-2025, CEDS-2025-extrapol25,CEDS-2025-COVIDaveraged)",dimensionless,strong,0.75,1.25
-Emissions|CO2|Energy and Industrial Processes,Emissions|CO2|Energy and Industrial Processes,All Countries,"2010, 2015, 2020, 2025","range(CEDS-2025, CEDS-2025-extrapol25,CEDS-2025-COVIDaveraged)",dimensionless,strong,0.65,1.35
+Emissions|CO2|Energy and Industrial Processes,Emissions|CO2|Energy and Industrial Processes,World,"2010, 2015",CEDS-2025,dimensionless,strong,0.75,1.25
+Emissions|CO2|Energy and Industrial Processes,Emissions|CO2|Energy and Industrial Processes,World,2020,"range(CEDS-2025, CEDS-2025-COVIDaveraged)",dimensionless,strong,0.75,1.25
+Emissions|CO2|Energy and Industrial Processes,Emissions|CO2|Energy and Industrial Processes,World,2025,CEDS-2025-extrapol25,dimensionless,strong,0.75,1.25
+Emissions|CO2|Energy and Industrial Processes,Emissions|CO2|Energy and Industrial Processes,All Countries,"2010, 2015",CEDS-2025,dimensionless,strong,0.65,1.35
+Emissions|CO2|Energy and Industrial Processes,Emissions|CO2|Energy and Industrial Processes,All Countries,2020,"range(CEDS-2025, CEDS-2025-COVIDaveraged)",dimensionless,strong,0.55,1.45
+Emissions|CO2|Energy and Industrial Processes,Emissions|CO2|Energy and Industrial Processes,All Countries,2025,CEDS-2025-extrapol25,dimensionless,strong,0.65,1.35
 Cropland Yields,Yield|Cropland|Cereals,"World, All Countries","2010, 2015, 2020",FAOSTAT-2026,dimensionless,strong,0.8,1.2
 Cropland Yields,Yield|Cropland|Cereals,"World, All Countries",2025,FAOSTAT-2026-extrapol25,dimensionless,strong,0.7,1.3
 Food Availability,Food Availability [per capita],"World, All Countries","2010, 2015, 2020",FAOSTAT-2026,dimensionless,strong,0.8,1.2
@@ -27,6 +39,18 @@ Land Cover|Forest,Land Cover|Forest,"World, All Countries","2010, 2015, 2020","r
 Land Cover|Forest,Land Cover|Forest,"World, All Countries",2025,"range(FAOSTAT-2026, LUH2-GCB-2025-extrapol25, LUH3-2026-extrapol25)",dimensionless,strong,0.7,1.3
 Land Cover|Pasture,Land Cover|Pasture,"World, All Countries","2010, 2015, 2020","range(FAOSTAT-2026, LUH2-2020, LUH2-GCB-2025, LUH3-2026)",dimensionless,strong,0.8,1.2
 Land Cover|Pasture,Land Cover|Pasture,"World, All Countries",2025,"range(FAOSTAT-2026-extrapol25, LUH2-GCB-2025-extrapol25, LUH3-2026-extrapol25)",dimensionless,strong,0.7,1.3
-Primary Energy,"Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas",World,"2010, 2015, 2020, 2025","range(IEA-EB-2024, IEA-EB-2024-extrapol25, IEA-EB-2024-COVIDaveraged, EI-2023, EI-2023-extrapol25)",dimensionless,strong,0.75,1.25
-Primary Energy,"Primary Energy|Coal, Primary Energy|Oil, Primary Energy|Gas",All Countries,"2010, 2015, 2020, 2025","range(EI-2023, EI-2023-extrapol25)",dimensionless,strong,0.65,1.35
-Final Energy,Final Energy,World,"2010, 2015, 2020, 2025","range(IEA-EB-2024, IEA-EB-2024-extrapol25, IEA-EB-2024-COVIDaveraged)",dimensionless,strong,0.75,1.25
+Primary Energy|Coal,Primary Energy|Coal,World,"2010, 2015","range(IEA-EB-2025, EI-2023)",dimensionless,strong,0.75,1.25
+Primary Energy|Coal,Primary Energy|Coal,World,2020,"range(IEA-EB-2025, IEA-EB-2025-COVIDaveraged)",dimensionless,strong,0.6,1.4
+Primary Energy|Coal,Primary Energy|Coal,World,2025,"range(IEA-EB-2025-extrapol25, EI-2023-extrapol25)",dimensionless,strong,0.75,1.25
+Primary Energy|Gas,Primary Energy|Gas,World,"2010, 2015","range(IEA-EB-2025, EI-2023)",dimensionless,strong,0.75,1.25
+Primary Energy|Gas,Primary Energy|Gas,World,2020,"range(IEA-EB-2025, IEA-EB-2025-COVIDaveraged)",dimensionless,strong,0.6,1.4
+Primary Energy|Gas,Primary Energy|Gas,World,2025,"range(IEA-EB-2025-extrapol25, EI-2023-extrapol25)",dimensionless,strong,0.75,1.25
+Primary Energy|Oil,Primary Energy|Oil,World,"2010, 2015","range(IEA-EB-2025, EI-2023)",dimensionless,strong,0.75,1.25
+Primary Energy|Oil,Primary Energy|Oil,World,2020,"range(IEA-EB-2025, IEA-EB-2025-COVIDaveraged)",dimensionless,strong,0.6,1.4
+Primary Energy|Oil,Primary Energy|Oil,World,2025,"range(IEA-EB-2025-extrapol25, EI-2023-extrapol25)",dimensionless,strong,0.75,1.25
+Primary Energy|Nuclear,Primary Energy|Nuclear,World,"2010, 2015",IEA-EB-2025,dimensionless,strong,0.75,1.25
+Primary Energy|Nuclear,Primary Energy|Nuclear,World,2020,IEA-EB-2025,dimensionless,strong,0.6,1.4
+Primary Energy|Nuclear,Primary Energy|Nuclear,World,2025,IEA-EB-2025-extrapol25,dimensionless,strong,0.75,1.25
+Final Energy,Final Energy,World,"2010, 2015",IEA-EB-2025,dimensionless,strong,0.75,1.25
+Final Energy,Final Energy,World,2020,"range(IEA-EB-2025, IEA-EB-2025-COVIDaveraged)",dimensionless,strong,0.6,1.4
+Final Energy,Final Energy,World,2025,IEA-EB-2025-extrapol25,dimensionless,strong,0.75,1.25

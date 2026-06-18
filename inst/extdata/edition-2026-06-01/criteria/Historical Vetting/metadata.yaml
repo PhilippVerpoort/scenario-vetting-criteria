@@ -223,18 +223,28 @@ Land Cover|{Component}:
 
 
         The threshold for 2025 is set to the value reported for 2020.
-Primary Energy:
+"Primary Energy|{Primary Fossil Fuel}":
+    replacements:
+        Primary Fossil Fuel:
+            Coal:
+                fuel_name: coal
+            Gas:
+                fuel_name: gas
+            Oil:
+                fuel_name: oil
+            Nuclear:
+                fuel_name: nuclear
     justification_criterion: >-
-        This scenario reports fossil primary energy production (coal, oil, and
-        gas) that is inconsistent with historical values. This is a concern
-        because the underlying modelling likely makes false assumptions on the
-        mitigation effort required to reach net-zero emissions.
+        This scenario reports {fuel_name} primary energy production that is
+        inconsistent with historical values. This is a concern because the
+        underlying modelling likely makes false assumptions on the mitigation
+        effort required to reach net-zero emissions.
     justification_threshold: >-
-        Historical values are provided by the International Energy Agency 
-        {{citep:IEA-EB-2024}}.
+        Historical values are provided by the International Energy Agency
+        {{citep:IEA-EB-2025}}.
 
 
-        The thresholds are derived from these sources for years 2010, 2015, 
+        The thresholds are derived from these sources for years 2010, 2015,
         2020, and 2025 as follows:
 
         • Single region: ±35% deviation will lead to exclusion, ±25% will lead
@@ -244,18 +254,19 @@ Primary Energy:
         to a red flag.
 
 
-        Note that these ranges not only give models some leeway to deviate, but 
-        also account for uncertainty in the underlying data sources. To further 
-        account for uncertainty in the historical values, the most permissible 
-        source of all sources for each variable, region, and period is used to 
+        Note that these ranges not only give models some leeway to deviate, but
+        also account for uncertainty in the underlying data sources. To further
+        account for uncertainty in the historical values, the most permissible
+        source of all sources for each variable, region, and period is used to
         set the threshold.
 
 
-        The threshold for 2025 is derived from data in 2022 and 2023 through 
-        linear extrapolation. Due to the COVID-19 shock in 2020, the threshold 
-        value can be either the exact value in 2020 or the value averaged over 
-        the period Jan 2018 till Dec 2022, whichever is more permissible for 
-        the scenario in question.
+        The threshold for 2025 is derived from data in 2022 and 2023 through
+        linear extrapolation. Due to the COVID-19 shock in 2020, a wider
+        tolerance of ±40% is applied for that year instead of ±25%. The
+        threshold for 2020 is derived using both the exact value in 2020 and
+        the value averaged over the period Jan 2018 till Dec 2022, taking
+        whichever is more permissive for the scenario in question.
 Final Energy:
     justification_criterion: >-
         This scenario reports final energy demand that is inconsistent with
@@ -265,11 +276,11 @@ Final Energy:
 
         Note that final energy includes non-energy use.
     justification_threshold: >-
-        Historical values are provided by the International Energy Agency 
-        {{citep:IEA-EB-2024}}.
+        Historical values are provided by the International Energy Agency
+        {{citep:IEA-EB-2025}}.
 
-        
-        The thresholds are derived from these sources for years 2010, 2015, 
+
+        The thresholds are derived from these sources for years 2010, 2015,
         2020, and 2025 as follows:
 
         • Single region: ±35% deviation will lead to exclusion.
@@ -278,15 +289,16 @@ Final Energy:
         to a red flag.
 
 
-        Note that these ranges not only give models some leeway to deviate, but 
-        also account for uncertainty in the underlying data sources. To further 
-        account for uncertainty in the historical values, the most permissible 
-        source of all sources for each variable, region, and period is used to 
+        Note that these ranges not only give models some leeway to deviate, but
+        also account for uncertainty in the underlying data sources. To further
+        account for uncertainty in the historical values, the most permissible
+        source of all sources for each variable, region, and period is used to
         set the threshold.
 
 
-        The threshold for 2025 is derived from data in 2022 and 2023 through 
-        linear extrapolation. Due to the COVID-19 shock in 2020, the threshold 
-        value can be either the exact value in 2020 or the value averaged over 
-        the period Jan 2018 till Dec 2022, whichever is more permissible for 
-        the scenario in question.
+        The threshold for 2025 is derived from data in 2022 and 2023 through
+        linear extrapolation. Due to the COVID-19 shock in 2020, a wider
+        tolerance of ±40% is applied for that year instead of ±25%. The
+        threshold for 2020 is derived using both the exact value in 2020 and
+        the value averaged over the period Jan 2018 till Dec 2022, taking
+        whichever is more permissive for the scenario in question.
