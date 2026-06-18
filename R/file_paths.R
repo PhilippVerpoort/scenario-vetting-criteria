@@ -1,15 +1,23 @@
-# define path to data directory and check if it exists
+# Define path to data directory and check if it exists.
 DATA_DIR <- paste0(system.file(package = "scenariovettingcriteria"), "/extdata")
 if (!dir.exists(DATA_DIR)) {
-  stop("Could not find data directory.")
+    stop("Could not find data directory.")
 }
 
+# Get list of editions.
+edition_dirs <- list.dirs(path = DATA_DIR, full.names = TRUE, recursive = FALSE)
+edition_dirs <- edition_dirs[grepl("/edition-", edition_dirs)]
+if (length(edition_dirs) == 0) {
+    stop("Could not find editions.")
+}
 
-# define file paths to individual criteria files
-component_paths <- list.files(path = DATA_DIR, recursive = FALSE, full.names = TRUE)
-file_paths_list <- lapply(component_paths, function(component_path) {
-  component <- sub("\\..*", "", basename(component_path))
-  list(name = component, path = component_path)
-})
+#' Available editions of the criteria definitions.
+#'
+#' A named list mapping edition date strings to their directory paths within
+#' the installed package.
+#'
 #' @export
-file_paths <- setNames(lapply(file_paths_list, function(x) x$path), sapply(file_paths_list, function(x) x$name))
+editions <- setNames(
+    as.list(edition_dirs),
+    sub("^edition-", "", basename(edition_dirs))
+)

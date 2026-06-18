@@ -1,10 +1,11 @@
-{% include-markdown "../README.md" %}
+{{ readme_section('## Background', '## Repository structure') }}
 
-Criteria are defined through multiple components:
+Currently, the following editions are available:
 
-* [Criteria types](criteria_types/)
-* [Criteria metadata](criteria_meta/)
-* [Criteria thresholds](criteria_thrsh/)
-* [Operations](operations/)
-* [Reference data](reference_data/)
-* [Sources](sources/)
+```python exec="true" session="index" showcode="false"
+from scenario_vetting_criteria import editions
+for i, edition in enumerate(reversed(editions)):
+    suffix = " (latest)" if not i else ""
+    print(f"* [Edition {edition}](edition-{edition}/summary/){suffix}")
+```
+

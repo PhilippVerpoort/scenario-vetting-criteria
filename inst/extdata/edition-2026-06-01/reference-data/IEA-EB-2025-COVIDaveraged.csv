@@ -1,0 +1,8 @@
+# source: IEA-EB-2025
+# description: Data from {{source}} averaged over period Jan 2018 till Dec 2022 (to account for the idiosyncratic COVID-19 dip in 2020).
+variable,year,region,unit,value
+Final Energy,2020,World,EJ/yr,415.66
+Primary Energy|Coal,2020,World,EJ/yr,169.67
+Primary Energy|Gas,2020,World,EJ/yr,158.92
+Primary Energy|Oil,2020,World,EJ/yr,183.15
+Primary Energy|Nuclear,2020,World,EJ/yr,9.89
