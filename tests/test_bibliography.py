@@ -6,7 +6,7 @@ from utils import extract_citations, read_ref_data_header, load_csv_rows
 
 
 def _load_metadata(crit_dir):
-    raw = yaml.safe_load((crit_dir / "metadata.yaml").read_text())
+    raw = yaml.safe_load((crit_dir / "descriptions.yaml").read_text())
     return _expand_metadata_templates(raw)
 
 

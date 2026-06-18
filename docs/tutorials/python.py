@@ -81,7 +81,7 @@ display(sources_formatted["Creutzig-2014"])
 # %%
 from scenario_vetting_criteria.formatting import insert_citations
 
-text = load_criteria("criteria-metadata")["Sustainability Concern|Unsustainable Bioenergy Use"]["justification_threshold"]
+text = load_criteria("criteria-descriptions")["Sustainability Concern|Unsustainable Bioenergy Use"]["justification_threshold"]
 text_inserted = insert_citations(text, sources_formatted)
 
 print(text[:50], "...   →  ", text_inserted[:43], "...")

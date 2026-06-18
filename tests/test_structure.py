@@ -43,7 +43,7 @@ def test_criteria_dirs_match_types(edition_path, criteria_types_dict, criteria_d
 def test_each_criteria_type_has_required_files(edition_path, criteria_dirs):
     errors = []
     for name, path in criteria_dirs.items():
-        for fname in ("metadata.yaml", "thresholds.csv"):
+        for fname in ("descriptions.yaml", "thresholds.csv"):
             if not (path / fname).exists():
                 errors.append(f"{name}/{fname}")
     assert not errors, (

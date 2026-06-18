@@ -26,7 +26,7 @@ if not editions:
 COMPONENTS: set[str] = {
     "criteria-thresholds",
     "criteria-variables",
-    "critiera-metadata",
+    "criteria-descriptions",
     "criteria-types",
     "reference-data",
     "reference-metadata",
@@ -115,7 +115,7 @@ def _load_criteria_file(
     match component:
         # Load and combine all criteria definitions. Load threshold CSV files
         # into a dataframe or metadata YAML files into a dict.
-        case "criteria-thresholds" | "criteria-metadata":
+        case "criteria-thresholds" | "criteria-descriptions":
             criteria_dirs = {
                 criteria_dir.name: criteria_dir
                 for criteria_dir in (edition_path / "criteria").glob("*")
@@ -193,7 +193,7 @@ def _load_criteria_file(
                         f"Unknown CSV engine: {csv_engine}. Please choose one "
                         f"from: {', '.join(CSV_ENGINES)}"
                     )
-            elif component == "criteria-metadata":
+            elif component == "criteria-descriptions":
                 try:
                     import yaml
                 except ModuleNotFoundError:
@@ -205,7 +205,7 @@ def _load_criteria_file(
                 ret = {}
                 for criteria_type, criteria_dir in criteria_dirs.items():
                     with (
-                        criteria_dir / "metadata.yaml"
+                        criteria_dir / "descriptions.yaml"
                     ).open() as file_handle:
                         crit_defs = yaml.safe_load(file_handle)
                         crit_defs = _expand_metadata_templates(crit_defs)
@@ -377,7 +377,7 @@ def load_criteria(
         Must be one of `pandas` or `python`. Defaults to `pandas`. The output
         changes accordingly.
     criteria_types : str | list[str] | tuple[str], optional
-        When loading the components `thresholds` and `metadata`, by default
+        When loading the components `thresholds` and `descriptions`, by default
         all criteria types are loaded. Alternatively, a single string or a
         list or tuple of strings can be provided as argument `criteria_types`
         to load only a subset of criteria of corresponding type(s).

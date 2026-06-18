@@ -19,7 +19,7 @@ for crit_type in load_criteria("criteria-types"):
     print(f"## {crit_type}")
     
     criteria_thrsh, criteria_meta = load_criteria(
-        ["criteria-thresholds", "criteria-metadata"],
+        ["criteria-thresholds", "criteria-descriptions"],
         criteria_types=crit_type,
         edition="{{ edition }}",
     ).values()

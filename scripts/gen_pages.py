@@ -14,7 +14,7 @@ if not partials_dir.is_dir():
 summary_partial = "summary"
 component_partials = [
     "types",
-    "metadata",
+    "descriptions",
     "thresholds",
     "reference_data",
     "sources",

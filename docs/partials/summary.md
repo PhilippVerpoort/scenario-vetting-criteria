@@ -14,7 +14,7 @@ edition = "{{ edition }}"
 
 criteria_combined = load_criteria_combined(edition=edition).query("region == 'World'")
 criteria_types, criteria_meta, sources = load_criteria(
-    ["criteria-types", "criteria-metadata", "sources"],
+    ["criteria-types", "criteria-descriptions", "sources"],
     edition=edition,
 ).values()
 sources_formatted = format_sources(sources)

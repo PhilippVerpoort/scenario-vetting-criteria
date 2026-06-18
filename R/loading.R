@@ -99,7 +99,7 @@
     reference_subset,
     edition_path
 ) {
-    if (component %in% c("criteria-thresholds", "criteria-metadata")) {
+    if (component %in% c("criteria-thresholds", "criteria-descriptions")) {
         # Build list of criteria-type directories.
         criteria_dirs <- list.dirs(
             file.path(edition_path, "criteria"),
@@ -127,12 +127,12 @@
             do.call(rbind, dfs)
         } else {
             if (!requireNamespace("yaml", quietly = TRUE)) {
-                stop("Loading 'criteria-metadata' requires the 'yaml' package to be installed.")
+                stop("Loading 'criteria-descriptions' requires the 'yaml' package to be installed.")
             }
             ret <- list()
             for (criteria_type in names(criteria_dirs)) {
                 crit_defs <- yaml::yaml.load_file(
-                    file.path(criteria_dirs[[criteria_type]], "metadata.yaml")
+                    file.path(criteria_dirs[[criteria_type]], "descriptions.yaml")
                 )
                 crit_defs <- .expand_metadata_templates(crit_defs)
                 names(crit_defs) <- paste0(criteria_type, "|", names(crit_defs))
@@ -213,14 +213,14 @@
 #' @param components A string or character vector of component names. The
 #'   return type changes depending on whether a single string or a vector is
 #'   provided. Available components: `"criteria-thresholds"`,
-#'   `"criteria-metadata"`, `"criteria-variables"`, `"criteria-types"`,
+#'   `"criteria-descriptions"`, `"criteria-variables"`, `"criteria-types"`,
 #'   `"reference-data"`, `"reference-metadata"`, `"sources"`.
 #' @param load_all Logical. Load all available components. Cannot be combined
 #'   with `components`.
 #' @param csv_engine The method for loading CSV files. One of `"read.csv"`
 #'   (default), `"readr"`, or `"data.table"`.
 #' @param criteria_types Character string or vector. When loading
-#'   `"criteria-thresholds"` or `"criteria-metadata"`, restrict to these
+#'   `"criteria-thresholds"` or `"criteria-descriptions"`, restrict to these
 #'   criteria types only. Defaults to all types.
 #' @param reference_subset Character string or vector. When loading
 #'   `"reference-data"` or `"reference-metadata"`, restrict to these datasets
@@ -235,11 +235,11 @@
 #' df_thresholds <- load_criteria("criteria-thresholds")
 #' print(df_thresholds)
 #'
-#' list_metadata <- load_criteria("criteria-metadata")
+#' list_metadata <- load_criteria("criteria-descriptions")
 #' print(list_metadata)
 #'
-#' criteria <- load_criteria(c("criteria-thresholds", "criteria-metadata"))
-#' print(criteria[["criteria-metadata"]])
+#' criteria <- load_criteria(c("criteria-thresholds", "criteria-descriptions"))
+#' print(criteria[["criteria-descriptions"]])
 #'
 #' @export
 load_criteria <- function(
@@ -253,7 +253,7 @@ load_criteria <- function(
     all_components <- c(
         "criteria-thresholds",
         "criteria-variables",
-        "criteria-metadata",
+        "criteria-descriptions",
         "criteria-types",
         "reference-data",
         "reference-metadata",

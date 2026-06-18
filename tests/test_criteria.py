@@ -14,7 +14,7 @@ VALID_THRESHOLD_REGIONS = {"World", "All Countries"} | _COUNTRY_CODES
 
 
 def _load_metadata(crit_dir):
-    raw = yaml.safe_load((crit_dir / "metadata.yaml").read_text())
+    raw = yaml.safe_load((crit_dir / "descriptions.yaml").read_text())
     return _expand_metadata_templates(raw)
 
 

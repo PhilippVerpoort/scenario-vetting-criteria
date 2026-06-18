@@ -1,4 +1,4 @@
-The metadata contains contextual information about why a criterion is
+The descriptions contain contextual information about why a criterion is
 necessary/relevant and how its threshold values were chosen.
 
 ```python exec="true" session="index" showcode="false"
@@ -12,7 +12,7 @@ for crit_type in load_criteria("criteria-types"):
     print(f"## {crit_type}")
 
     criteria_meta, criteria_types, sources = load_criteria(
-        ["criteria-metadata", "criteria-types", "sources"],
+        ["criteria-descriptions", "criteria-types", "sources"],
         criteria_types=crit_type,
         edition="{{ edition }}",
     ).values()
