@@ -1,3 +1,5 @@
+# source: EI-2023
+# description: Data from {{source}} linearly extrapolated to 2025.
 variable,year,region,unit,value
 Primary Energy|Coal,2025,ABW,EJ/yr,0.0002
 Primary Energy|Coal,2025,AFG,EJ/yr,0.15209999999999996
