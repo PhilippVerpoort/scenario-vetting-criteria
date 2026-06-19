@@ -12,8 +12,8 @@ theme:
   - navigation.indexes
   - navigation.expand
   - toc.integrate
-  logo: assets/logo_white.svg
-  favicon: assets/favicon.ico
+  logo: assets/logos/logo-dark.svg
+  favicon: assets/logos/favicon.ico
   name: material
   palette:
   - scheme: default
