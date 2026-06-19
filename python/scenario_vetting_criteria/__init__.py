@@ -16,7 +16,7 @@ if not DATA_DIR.is_dir():
 # Get list of editions.
 editions: dict[str, Path] = {
     edition_path.name.removeprefix("edition-"): edition_path
-    for edition_path in DATA_DIR.glob("edition-*")
+    for edition_path in sorted(DATA_DIR.glob("edition-*"))
 }
 if not editions:
     raise Exception("Could not find editions.")
