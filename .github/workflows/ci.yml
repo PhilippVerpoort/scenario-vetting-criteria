@@ -57,11 +57,21 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends r-base libzmq3-dev
-          sudo Rscript -e "install.packages('IRkernel', repos='https://cloud.r-project.org')"
+          sudo Rscript -e "install.packages(c('IRkernel', 'Rd2md'), repos='https://packagemanager.posit.co/cran/__linux__/noble/latest')"
           mkdir -p /tmp/ir_kernel
           printf '{"argv":["/usr/bin/R","--slave","-e","IRkernel::main()","--args","{connection_file}"],"display_name":"R","language":"R"}' \
             > /tmp/ir_kernel/kernel.json
           poetry run jupyter kernelspec install /tmp/ir_kernel --name ir --user
+
+      - name: Generate R documentation
+        run: |
+          Rscript -e "
+          library(Rd2md)
+          fns <- list.files('./man/', pattern='[.]Rd$', full.names=TRUE)
+          out <- file('./docs/code/R.md', 'w')
+          for (f in fns) { writeLines(as_markdown(read_rdfile(f)), out); writeLines('\n\n---\n\n', out) }
+          close(out)
+          "
 
       - name: Build documentation
         env:
