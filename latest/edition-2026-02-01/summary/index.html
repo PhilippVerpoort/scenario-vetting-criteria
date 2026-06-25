@@ -515,51 +515,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#exec-5--final-energy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Final Energy
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exec-5--primary-energycoal" class="md-nav__link">
-    <span class="md-ellipsis">
-      Primary Energy|Coal
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exec-5--primary-energygas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Primary Energy|Gas
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exec-5--primary-energynuclear" class="md-nav__link">
-    <span class="md-ellipsis">
-      Primary Energy|Nuclear
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exec-5--primary-energyoil" class="md-nav__link">
-    <span class="md-ellipsis">
-      Primary Energy|Oil
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1387,7 +1342,7 @@ combining the scientific justifications with the computed threshold values.</p>
 <p><strong>Why this threshold?</strong> Historical values are provided by the Community Emissions Data System  <a href="#CEDS-2025">(Hoesly, 2025)</a>.<br><br>The thresholds are derived from these sources as follows:<br>• Whole world: ±25% deviation will lead to exclusion.<br><br>Note that these ranges not only give models some leeway to deviate, but  also account for uncertainty in the underlying data sources. To further  account for uncertainty in the historical values, the most permissible  source of all sources for each variable, region, and period is used to  set the threshold.<br><br>The threshold for 2025 is derived from data in 2022 and 2023 through linear extrapolation. Due to the COVID-19 shock in 2020, a wider tolerance of ±40% is applied for that year instead of ±25%. The threshold for 2020 is derived using both the exact value in 2020 and the value averaged over the period Jan 2018 till Dec 2022, taking whichever is more permissive for the scenario in question.</p>
 <div>
 <!--| quarto-html-table-processing: none -->
-<table id="itables_1a6db931_a50c_4b1e_8f23_4c8da072b735"><tbody><tr>
+<table id="itables_1306783c_0613_4e50_a2ba_b15258d1c344"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     <a href=https://mwouts.github.io/itables/><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
@@ -1486,586 +1441,11 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.js';
 
-    document.querySelectorAll("#itables_1a6db931_a50c_4b1e_8f23_4c8da072b735:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_1306783c_0613_4e50_a2ba_b15258d1c344:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
         let dt_args = {"style": {"width": "100%"}, "layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "text_in_header_can_be_selected": true, "classes": ["display", "nowrap"], "order": [], "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      \n      <th>Variable</th>\n      <th>Region</th>\n      <th>Year</th>\n      <th>Unit</th>\n      <th>Level of concern</th>\n      <th>Lower (abs)</th>\n      <th>Lower (rel)</th>\n      <th>Lower (ref)</th>\n      <th>Upper (abs)</th>\n      <th>Upper (rel)</th>\n      <th>Upper (ref)</th>\n      <th>Reference data</th>\n    </tr>\n  </thead></table>", "data_json": "[[\"Emissions|CO2|Energy and Industrial Processes\", \"World\", 2010, \"Mt CO2/yr\", \"strong\", 25095.0, \"-25%\", 33460.0, 41825.0, \"+25%\", 33460.0, \"CEDS-2025\"], [\"Emissions|CO2|Energy and Industrial Processes\", \"World\", 2015, \"Mt CO2/yr\", \"strong\", 26720.0, \"-25%\", 35627.0, 44534.0, \"+25%\", 35627.0, \"CEDS-2025\"], [\"Emissions|CO2|Energy and Industrial Processes\", \"World\", 2020, \"Mt CO2/yr\", \"strong\", 26540.0, \"-25%\", 35387.0, 46093.0, \"+25%\", 36874.0, \"Most permissive value of: CEDS-2025,CEDS-2025-COVIDaveraged\"], [\"Emissions|CO2|Energy and Industrial Processes\", \"World\", 2025, \"Mt CO2/yr\", \"strong\", 29538.0, \"-25%\", 39383.0, 49229.0, \"+25%\", 39383.0, \"CEDS-2025-extrapol25\"]]"};
-        new ITable(table, dt_args);
-    });
-</script>
-
-</div>
-
-<h3 id="exec-5--final-energy">Final Energy</h3>
-<p><strong>Why this criterion?</strong> This scenario reports final energy demand that is inconsistent with historical values. This is a concern because the underlying modelling likely makes false assumptions on the mitigation effort required to reach net-zero emissions.<br>Note that final energy includes non-energy use.</p>
-<p><strong>Why this threshold?</strong> Historical values are provided by the International Energy Agency <a href="#IEA-EB-2025">(IEA, 2025)</a>.<br><br>The thresholds are derived from these sources for years 2010, 2015, 2020, and 2025 as follows:<br>• Whole world: ±25% deviation will lead to exclusion, ±15% will lead to a red flag.<br><br>Note that these ranges not only give models some leeway to deviate, but also account for uncertainty in the underlying data sources. To further account for uncertainty in the historical values, the most permissible source of all sources for each variable, region, and period is used to set the threshold.<br><br>The threshold for 2025 is derived from data in 2022 and 2023 through linear extrapolation. Due to the COVID-19 shock in 2020, a wider tolerance of ±40% is applied for that year instead of ±25%. The threshold for 2020 is derived using both the exact value in 2020 and the value averaged over the period Jan 2018 till Dec 2022, taking whichever is more permissive for the scenario in question.</p>
-<div>
-<!--| quarto-html-table-processing: none -->
-<table id="itables_90a5ea88_95ab_4c07_b546_5e4903df3752"><tbody><tr>
-    <td style="vertical-align:middle; text-align:left">
-    <a href=https://mwouts.github.io/itables/><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
-    <g style="fill:#d9d7fc">
-        <path d="M100,400H500V357H100Z" />
-        <path d="M100,300H400V257H100Z" />
-        <path d="M0,200H400V157H0Z" />
-        <path d="M100,100H500V57H100Z" />
-        <path d="M100,350H500V307H100Z" />
-        <path d="M100,250H400V207H100Z" />
-        <path d="M0,150H400V107H0Z" />
-        <path d="M100,50H500V7H100Z" />
-    </g>
-    <g style="fill:#1a1366;stroke:#1a1366;">
-   <rect x="100" y="7" width="400" height="43">
-    <animate
-      attributeName="width"
-      values="0;400;0"
-      dur="5s"
-      repeatCount="indefinite" />
-      <animate
-      attributeName="x"
-      values="100;100;500"
-      dur="5s"
-      repeatCount="indefinite" />
-  </rect>
-        <rect x="0" y="107" width="400" height="43">
-    <animate
-      attributeName="width"
-      values="0;400;0"
-      dur="3.5s"
-      repeatCount="indefinite" />
-    <animate
-      attributeName="x"
-      values="0;0;400"
-      dur="3.5s"
-      repeatCount="indefinite" />
-  </rect>
-        <rect x="100" y="207" width="300" height="43">
-    <animate
-      attributeName="width"
-      values="0;300;0"
-      dur="3s"
-      repeatCount="indefinite" />
-    <animate
-      attributeName="x"
-      values="100;100;400"
-      dur="3s"
-      repeatCount="indefinite" />
-  </rect>
-        <rect x="100" y="307" width="400" height="43">
-    <animate
-      attributeName="width"
-      values="0;400;0"
-      dur="4s"
-      repeatCount="indefinite" />
-      <animate
-      attributeName="x"
-      values="100;100;500"
-      dur="4s"
-      repeatCount="indefinite" />
-  </rect>
-        <g style="fill:transparent;stroke-width:8; stroke-linejoin:round" rx="5">
-            <g transform="translate(45 50) rotate(-45)">
-                <circle r="33" cx="0" cy="0" />
-                <rect x="-8" y="32" width="16" height="30" />
-            </g>
-
-            <g transform="translate(450 152)">
-                <polyline points="-15,-20 -35,-20 -35,40 25,40 25,20" />
-                <rect x="-15" y="-40" width="60" height="60" />
-            </g>
-
-            <g transform="translate(50 352)">
-                <polygon points="-35,-5 0,-40 35,-5" />
-                <polygon points="-35,10 0,45 35,10" />
-            </g>
-
-            <g transform="translate(75 250)">
-                <polyline points="-30,30 -60,0 -30,-30" />
-                <polyline points="0,30 -30,0 0,-30" />
-            </g>
-
-            <g transform="translate(425 250) rotate(180)">
-                <polyline points="-30,30 -60,0 -30,-30" />
-                <polyline points="0,30 -30,0 0,-30" />
-            </g>
-        </g>
-    </g>
-</svg>
-</a>
-    Loading ITables v2.4.3 from the internet...
-    (need <a href=https://mwouts.github.io/itables/troubleshooting.html>help</a>?)</td>
-    </tr></tbody></table>
-<link href="https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.css" rel="stylesheet">
-<script type="module">
-    import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.js';
-
-    document.querySelectorAll("#itables_90a5ea88_95ab_4c07_b546_5e4903df3752:not(.dataTable)").forEach(table => {
-        if (!(table instanceof HTMLTableElement))
-            return;
-
-        let dt_args = {"style": {"width": "100%"}, "layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "text_in_header_can_be_selected": true, "classes": ["display", "nowrap"], "order": [], "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      \n      <th>Variable</th>\n      <th>Region</th>\n      <th>Year</th>\n      <th>Unit</th>\n      <th>Level of concern</th>\n      <th>Lower (abs)</th>\n      <th>Lower (rel)</th>\n      <th>Lower (ref)</th>\n      <th>Upper (abs)</th>\n      <th>Upper (rel)</th>\n      <th>Upper (ref)</th>\n      <th>Reference data</th>\n    </tr>\n  </thead></table>", "data_json": "[[\"Final Energy\", \"World\", 2010, \"EJ/yr\", \"strong\", 274.0, \"-25%\", 365.0, 456.0, \"+25%\", 365.0, \"IEA-EB-2025\"], [\"Final Energy\", \"World\", 2015, \"EJ/yr\", \"strong\", 292.0, \"-25%\", 390.0, 487.0, \"+25%\", 390.0, \"IEA-EB-2025\"], [\"Final Energy\", \"World\", 2020, \"EJ/yr\", \"strong\", 237.0, \"-40%\", 396.0, 582.0, \"+40%\", 416.0, \"Most permissive value of: IEA-EB-2025,IEA-EB-2025-COVIDaveraged\"], [\"Final Energy\", \"World\", 2025, \"EJ/yr\", \"strong\", 332.0, \"-25%\", 443.0, 554.0, \"+25%\", 443.0, \"IEA-EB-2025-extrapol25\"]]"};
-        new ITable(table, dt_args);
-    });
-</script>
-
-</div>
-
-<h3 id="exec-5--primary-energycoal">Primary Energy|Coal</h3>
-<p><strong>Why this criterion?</strong> This scenario reports coal primary energy production that is inconsistent with historical values. This is a concern because the underlying modelling likely makes false assumptions on the mitigation effort required to reach net-zero emissions.</p>
-<p><strong>Why this threshold?</strong> Historical values are provided by the International Energy Agency <a href="#IEA-EB-2025">(IEA, 2025)</a>.<br><br>The thresholds are derived from these sources for years 2010, 2015, 2020, and 2025 as follows:<br>• Whole world: ±25% deviation will lead to exclusion, ±15% will lead to a red flag.<br><br>Note that these ranges not only give models some leeway to deviate, but also account for uncertainty in the underlying data sources. To further account for uncertainty in the historical values, the most permissible source of all sources for each variable, region, and period is used to set the threshold.<br><br>The threshold for 2025 is derived from data in 2022 and 2023 through linear extrapolation. Due to the COVID-19 shock in 2020, a wider tolerance of ±40% is applied for that year instead of ±25%. The threshold for 2020 is derived using both the exact value in 2020 and the value averaged over the period Jan 2018 till Dec 2022, taking whichever is more permissive for the scenario in question.</p>
-<div>
-<!--| quarto-html-table-processing: none -->
-<table id="itables_1a4b515e_b45c_474a_9826_db2375eb2a00"><tbody><tr>
-    <td style="vertical-align:middle; text-align:left">
-    <a href=https://mwouts.github.io/itables/><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
-    <g style="fill:#d9d7fc">
-        <path d="M100,400H500V357H100Z" />
-        <path d="M100,300H400V257H100Z" />
-        <path d="M0,200H400V157H0Z" />
-        <path d="M100,100H500V57H100Z" />
-        <path d="M100,350H500V307H100Z" />
-        <path d="M100,250H400V207H100Z" />
-        <path d="M0,150H400V107H0Z" />
-        <path d="M100,50H500V7H100Z" />
-    </g>
-    <g style="fill:#1a1366;stroke:#1a1366;">
-   <rect x="100" y="7" width="400" height="43">
-    <animate
-      attributeName="width"
-      values="0;400;0"
-      dur="5s"
-      repeatCount="indefinite" />
-      <animate
-      attributeName="x"
-      values="100;100;500"
-      dur="5s"
-      repeatCount="indefinite" />
-  </rect>
-        <rect x="0" y="107" width="400" height="43">
-    <animate
-      attributeName="width"
-      values="0;400;0"
-      dur="3.5s"
-      repeatCount="indefinite" />
-    <animate
-      attributeName="x"
-      values="0;0;400"
-      dur="3.5s"
-      repeatCount="indefinite" />
-  </rect>
-        <rect x="100" y="207" width="300" height="43">
-    <animate
-      attributeName="width"
-      values="0;300;0"
-      dur="3s"
-      repeatCount="indefinite" />
-    <animate
-      attributeName="x"
-      values="100;100;400"
-      dur="3s"
-      repeatCount="indefinite" />
-  </rect>
-        <rect x="100" y="307" width="400" height="43">
-    <animate
-      attributeName="width"
-      values="0;400;0"
-      dur="4s"
-      repeatCount="indefinite" />
-      <animate
-      attributeName="x"
-      values="100;100;500"
-      dur="4s"
-      repeatCount="indefinite" />
-  </rect>
-        <g style="fill:transparent;stroke-width:8; stroke-linejoin:round" rx="5">
-            <g transform="translate(45 50) rotate(-45)">
-                <circle r="33" cx="0" cy="0" />
-                <rect x="-8" y="32" width="16" height="30" />
-            </g>
-
-            <g transform="translate(450 152)">
-                <polyline points="-15,-20 -35,-20 -35,40 25,40 25,20" />
-                <rect x="-15" y="-40" width="60" height="60" />
-            </g>
-
-            <g transform="translate(50 352)">
-                <polygon points="-35,-5 0,-40 35,-5" />
-                <polygon points="-35,10 0,45 35,10" />
-            </g>
-
-            <g transform="translate(75 250)">
-                <polyline points="-30,30 -60,0 -30,-30" />
-                <polyline points="0,30 -30,0 0,-30" />
-            </g>
-
-            <g transform="translate(425 250) rotate(180)">
-                <polyline points="-30,30 -60,0 -30,-30" />
-                <polyline points="0,30 -30,0 0,-30" />
-            </g>
-        </g>
-    </g>
-</svg>
-</a>
-    Loading ITables v2.4.3 from the internet...
-    (need <a href=https://mwouts.github.io/itables/troubleshooting.html>help</a>?)</td>
-    </tr></tbody></table>
-<link href="https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.css" rel="stylesheet">
-<script type="module">
-    import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.js';
-
-    document.querySelectorAll("#itables_1a4b515e_b45c_474a_9826_db2375eb2a00:not(.dataTable)").forEach(table => {
-        if (!(table instanceof HTMLTableElement))
-            return;
-
-        let dt_args = {"style": {"width": "100%"}, "layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "text_in_header_can_be_selected": true, "classes": ["display", "nowrap"], "order": [], "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      \n      <th>Variable</th>\n      <th>Region</th>\n      <th>Year</th>\n      <th>Unit</th>\n      <th>Level of concern</th>\n      <th>Lower (abs)</th>\n      <th>Lower (rel)</th>\n      <th>Lower (ref)</th>\n      <th>Upper (abs)</th>\n      <th>Upper (rel)</th>\n      <th>Upper (ref)</th>\n      <th>Reference data</th>\n    </tr>\n  </thead></table>", "data_json": "[[\"Primary Energy|Coal\", \"World\", 2010, \"EJ/yr\", \"strong\", 115.0, \"-25%\", 154.0, 192.0, \"+25%\", 154.0, \"IEA-EB-2025\"], [\"Primary Energy|Coal\", \"World\", 2015, \"EJ/yr\", \"strong\", 121.0, \"-25%\", 162.0, 202.0, \"+25%\", 162.0, \"IEA-EB-2025\"], [\"Primary Energy|Coal\", \"World\", 2020, \"EJ/yr\", \"strong\", 96.0, \"-40%\", 160.0, 238.0, \"+40%\", 170.0, \"Most permissive value of: IEA-EB-2025,IEA-EB-2025-COVIDaveraged\"], [\"Primary Energy|Coal\", \"World\", 2025, \"EJ/yr\", \"strong\", 150.0, \"-25%\", 200.0, 251.0, \"+25%\", 200.0, \"IEA-EB-2025-extrapol25\"]]"};
-        new ITable(table, dt_args);
-    });
-</script>
-
-</div>
-
-<h3 id="exec-5--primary-energygas">Primary Energy|Gas</h3>
-<p><strong>Why this criterion?</strong> This scenario reports gas primary energy production that is inconsistent with historical values. This is a concern because the underlying modelling likely makes false assumptions on the mitigation effort required to reach net-zero emissions.</p>
-<p><strong>Why this threshold?</strong> Historical values are provided by the International Energy Agency <a href="#IEA-EB-2025">(IEA, 2025)</a>.<br><br>The thresholds are derived from these sources for years 2010, 2015, 2020, and 2025 as follows:<br>• Whole world: ±25% deviation will lead to exclusion, ±15% will lead to a red flag.<br><br>Note that these ranges not only give models some leeway to deviate, but also account for uncertainty in the underlying data sources. To further account for uncertainty in the historical values, the most permissible source of all sources for each variable, region, and period is used to set the threshold.<br><br>The threshold for 2025 is derived from data in 2022 and 2023 through linear extrapolation. Due to the COVID-19 shock in 2020, a wider tolerance of ±40% is applied for that year instead of ±25%. The threshold for 2020 is derived using both the exact value in 2020 and the value averaged over the period Jan 2018 till Dec 2022, taking whichever is more permissive for the scenario in question.</p>
-<div>
-<!--| quarto-html-table-processing: none -->
-<table id="itables_0e158d8e_73b8_45d3_9e85_88543cf0370c"><tbody><tr>
-    <td style="vertical-align:middle; text-align:left">
-    <a href=https://mwouts.github.io/itables/><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
-    <g style="fill:#d9d7fc">
-        <path d="M100,400H500V357H100Z" />
-        <path d="M100,300H400V257H100Z" />
-        <path d="M0,200H400V157H0Z" />
-        <path d="M100,100H500V57H100Z" />
-        <path d="M100,350H500V307H100Z" />
-        <path d="M100,250H400V207H100Z" />
-        <path d="M0,150H400V107H0Z" />
-        <path d="M100,50H500V7H100Z" />
-    </g>
-    <g style="fill:#1a1366;stroke:#1a1366;">
-   <rect x="100" y="7" width="400" height="43">
-    <animate
-      attributeName="width"
-      values="0;400;0"
-      dur="5s"
-      repeatCount="indefinite" />
-      <animate
-      attributeName="x"
-      values="100;100;500"
-      dur="5s"
-      repeatCount="indefinite" />
-  </rect>
-        <rect x="0" y="107" width="400" height="43">
-    <animate
-      attributeName="width"
-      values="0;400;0"
-      dur="3.5s"
-      repeatCount="indefinite" />
-    <animate
-      attributeName="x"
-      values="0;0;400"
-      dur="3.5s"
-      repeatCount="indefinite" />
-  </rect>
-        <rect x="100" y="207" width="300" height="43">
-    <animate
-      attributeName="width"
-      values="0;300;0"
-      dur="3s"
-      repeatCount="indefinite" />
-    <animate
-      attributeName="x"
-      values="100;100;400"
-      dur="3s"
-      repeatCount="indefinite" />
-  </rect>
-        <rect x="100" y="307" width="400" height="43">
-    <animate
-      attributeName="width"
-      values="0;400;0"
-      dur="4s"
-      repeatCount="indefinite" />
-      <animate
-      attributeName="x"
-      values="100;100;500"
-      dur="4s"
-      repeatCount="indefinite" />
-  </rect>
-        <g style="fill:transparent;stroke-width:8; stroke-linejoin:round" rx="5">
-            <g transform="translate(45 50) rotate(-45)">
-                <circle r="33" cx="0" cy="0" />
-                <rect x="-8" y="32" width="16" height="30" />
-            </g>
-
-            <g transform="translate(450 152)">
-                <polyline points="-15,-20 -35,-20 -35,40 25,40 25,20" />
-                <rect x="-15" y="-40" width="60" height="60" />
-            </g>
-
-            <g transform="translate(50 352)">
-                <polygon points="-35,-5 0,-40 35,-5" />
-                <polygon points="-35,10 0,45 35,10" />
-            </g>
-
-            <g transform="translate(75 250)">
-                <polyline points="-30,30 -60,0 -30,-30" />
-                <polyline points="0,30 -30,0 0,-30" />
-            </g>
-
-            <g transform="translate(425 250) rotate(180)">
-                <polyline points="-30,30 -60,0 -30,-30" />
-                <polyline points="0,30 -30,0 0,-30" />
-            </g>
-        </g>
-    </g>
-</svg>
-</a>
-    Loading ITables v2.4.3 from the internet...
-    (need <a href=https://mwouts.github.io/itables/troubleshooting.html>help</a>?)</td>
-    </tr></tbody></table>
-<link href="https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.css" rel="stylesheet">
-<script type="module">
-    import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.js';
-
-    document.querySelectorAll("#itables_0e158d8e_73b8_45d3_9e85_88543cf0370c:not(.dataTable)").forEach(table => {
-        if (!(table instanceof HTMLTableElement))
-            return;
-
-        let dt_args = {"style": {"width": "100%"}, "layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "text_in_header_can_be_selected": true, "classes": ["display", "nowrap"], "order": [], "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      \n      <th>Variable</th>\n      <th>Region</th>\n      <th>Year</th>\n      <th>Unit</th>\n      <th>Level of concern</th>\n      <th>Lower (abs)</th>\n      <th>Lower (rel)</th>\n      <th>Lower (ref)</th>\n      <th>Upper (abs)</th>\n      <th>Upper (rel)</th>\n      <th>Upper (ref)</th>\n      <th>Reference data</th>\n    </tr>\n  </thead></table>", "data_json": "[[\"Primary Energy|Gas\", \"World\", 2010, \"EJ/yr\", \"strong\", 94.7, \"-25%\", 126.0, 158.0, \"+25%\", 126.0, \"IEA-EB-2025\"], [\"Primary Energy|Gas\", \"World\", 2015, \"EJ/yr\", \"strong\", 104.0, \"-25%\", 138.0, 173.0, \"+25%\", 138.0, \"IEA-EB-2025\"], [\"Primary Energy|Gas\", \"World\", 2020, \"EJ/yr\", \"strong\", 93.1, \"-40%\", 155.0, 222.0, \"+40%\", 159.0, \"Most permissive value of: IEA-EB-2025,IEA-EB-2025-COVIDaveraged\"], [\"Primary Energy|Gas\", \"World\", 2025, \"EJ/yr\", \"strong\", 123.0, \"-25%\", 165.0, 206.0, \"+25%\", 165.0, \"IEA-EB-2025-extrapol25\"]]"};
-        new ITable(table, dt_args);
-    });
-</script>
-
-</div>
-
-<h3 id="exec-5--primary-energynuclear">Primary Energy|Nuclear</h3>
-<p><strong>Why this criterion?</strong> This scenario reports nuclear primary energy production that is inconsistent with historical values. This is a concern because the underlying modelling likely makes false assumptions on the mitigation effort required to reach net-zero emissions.</p>
-<p><strong>Why this threshold?</strong> Historical values are provided by the International Energy Agency <a href="#IEA-EB-2025">(IEA, 2025)</a>.<br><br>The thresholds are derived from these sources for years 2010, 2015, 2020, and 2025 as follows:<br>• Whole world: ±25% deviation will lead to exclusion, ±15% will lead to a red flag.<br><br>Note that these ranges not only give models some leeway to deviate, but also account for uncertainty in the underlying data sources. To further account for uncertainty in the historical values, the most permissible source of all sources for each variable, region, and period is used to set the threshold.<br><br>The threshold for 2025 is derived from data in 2022 and 2023 through linear extrapolation. Due to the COVID-19 shock in 2020, a wider tolerance of ±40% is applied for that year instead of ±25%. The threshold for 2020 is derived using both the exact value in 2020 and the value averaged over the period Jan 2018 till Dec 2022, taking whichever is more permissive for the scenario in question.</p>
-<div>
-<!--| quarto-html-table-processing: none -->
-<table id="itables_ed4f8cf0_b693_453d_a915_4e2aced2f4f0"><tbody><tr>
-    <td style="vertical-align:middle; text-align:left">
-    <a href=https://mwouts.github.io/itables/><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
-    <g style="fill:#d9d7fc">
-        <path d="M100,400H500V357H100Z" />
-        <path d="M100,300H400V257H100Z" />
-        <path d="M0,200H400V157H0Z" />
-        <path d="M100,100H500V57H100Z" />
-        <path d="M100,350H500V307H100Z" />
-        <path d="M100,250H400V207H100Z" />
-        <path d="M0,150H400V107H0Z" />
-        <path d="M100,50H500V7H100Z" />
-    </g>
-    <g style="fill:#1a1366;stroke:#1a1366;">
-   <rect x="100" y="7" width="400" height="43">
-    <animate
-      attributeName="width"
-      values="0;400;0"
-      dur="5s"
-      repeatCount="indefinite" />
-      <animate
-      attributeName="x"
-      values="100;100;500"
-      dur="5s"
-      repeatCount="indefinite" />
-  </rect>
-        <rect x="0" y="107" width="400" height="43">
-    <animate
-      attributeName="width"
-      values="0;400;0"
-      dur="3.5s"
-      repeatCount="indefinite" />
-    <animate
-      attributeName="x"
-      values="0;0;400"
-      dur="3.5s"
-      repeatCount="indefinite" />
-  </rect>
-        <rect x="100" y="207" width="300" height="43">
-    <animate
-      attributeName="width"
-      values="0;300;0"
-      dur="3s"
-      repeatCount="indefinite" />
-    <animate
-      attributeName="x"
-      values="100;100;400"
-      dur="3s"
-      repeatCount="indefinite" />
-  </rect>
-        <rect x="100" y="307" width="400" height="43">
-    <animate
-      attributeName="width"
-      values="0;400;0"
-      dur="4s"
-      repeatCount="indefinite" />
-      <animate
-      attributeName="x"
-      values="100;100;500"
-      dur="4s"
-      repeatCount="indefinite" />
-  </rect>
-        <g style="fill:transparent;stroke-width:8; stroke-linejoin:round" rx="5">
-            <g transform="translate(45 50) rotate(-45)">
-                <circle r="33" cx="0" cy="0" />
-                <rect x="-8" y="32" width="16" height="30" />
-            </g>
-
-            <g transform="translate(450 152)">
-                <polyline points="-15,-20 -35,-20 -35,40 25,40 25,20" />
-                <rect x="-15" y="-40" width="60" height="60" />
-            </g>
-
-            <g transform="translate(50 352)">
-                <polygon points="-35,-5 0,-40 35,-5" />
-                <polygon points="-35,10 0,45 35,10" />
-            </g>
-
-            <g transform="translate(75 250)">
-                <polyline points="-30,30 -60,0 -30,-30" />
-                <polyline points="0,30 -30,0 0,-30" />
-            </g>
-
-            <g transform="translate(425 250) rotate(180)">
-                <polyline points="-30,30 -60,0 -30,-30" />
-                <polyline points="0,30 -30,0 0,-30" />
-            </g>
-        </g>
-    </g>
-</svg>
-</a>
-    Loading ITables v2.4.3 from the internet...
-    (need <a href=https://mwouts.github.io/itables/troubleshooting.html>help</a>?)</td>
-    </tr></tbody></table>
-<link href="https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.css" rel="stylesheet">
-<script type="module">
-    import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.js';
-
-    document.querySelectorAll("#itables_ed4f8cf0_b693_453d_a915_4e2aced2f4f0:not(.dataTable)").forEach(table => {
-        if (!(table instanceof HTMLTableElement))
-            return;
-
-        let dt_args = {"style": {"width": "100%"}, "layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "text_in_header_can_be_selected": true, "classes": ["display", "nowrap"], "order": [], "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      \n      <th>Variable</th>\n      <th>Region</th>\n      <th>Year</th>\n      <th>Unit</th>\n      <th>Level of concern</th>\n      <th>Lower (abs)</th>\n      <th>Lower (rel)</th>\n      <th>Lower (ref)</th>\n      <th>Upper (abs)</th>\n      <th>Upper (rel)</th>\n      <th>Upper (ref)</th>\n      <th>Reference data</th>\n    </tr>\n  </thead></table>", "data_json": "[[\"Primary Energy|Nuclear\", \"World\", 2010, \"EJ/yr\", \"strong\", 7.44, \"-25%\", 9.92, 12.4, \"+25%\", 9.92, \"IEA-EB-2025\"], [\"Primary Energy|Nuclear\", \"World\", 2015, \"EJ/yr\", \"strong\", 6.94, \"-25%\", 9.25, 11.6, \"+25%\", 9.25, \"IEA-EB-2025\"], [\"Primary Energy|Nuclear\", \"World\", 2020, \"EJ/yr\", \"strong\", 5.78, \"-40%\", 9.63, 13.8, \"+40%\", 9.89, \"Most permissive value of: IEA-EB-2025,IEA-EB-2025-COVIDaveraged\"], [\"Primary Energy|Nuclear\", \"World\", 2025, \"EJ/yr\", \"strong\", 6.73, \"-25%\", 8.97, 11.2, \"+25%\", 8.97, \"IEA-EB-2025-extrapol25\"]]"};
-        new ITable(table, dt_args);
-    });
-</script>
-
-</div>
-
-<h3 id="exec-5--primary-energyoil">Primary Energy|Oil</h3>
-<p><strong>Why this criterion?</strong> This scenario reports oil primary energy production that is inconsistent with historical values. This is a concern because the underlying modelling likely makes false assumptions on the mitigation effort required to reach net-zero emissions.</p>
-<p><strong>Why this threshold?</strong> Historical values are provided by the International Energy Agency <a href="#IEA-EB-2025">(IEA, 2025)</a>.<br><br>The thresholds are derived from these sources for years 2010, 2015, 2020, and 2025 as follows:<br>• Whole world: ±25% deviation will lead to exclusion, ±15% will lead to a red flag.<br><br>Note that these ranges not only give models some leeway to deviate, but also account for uncertainty in the underlying data sources. To further account for uncertainty in the historical values, the most permissible source of all sources for each variable, region, and period is used to set the threshold.<br><br>The threshold for 2025 is derived from data in 2022 and 2023 through linear extrapolation. Due to the COVID-19 shock in 2020, a wider tolerance of ±40% is applied for that year instead of ±25%. The threshold for 2020 is derived using both the exact value in 2020 and the value averaged over the period Jan 2018 till Dec 2022, taking whichever is more permissive for the scenario in question.</p>
-<div>
-<!--| quarto-html-table-processing: none -->
-<table id="itables_cef2cad0_0a3b_4416_bf16_d6ffae0f70fc"><tbody><tr>
-    <td style="vertical-align:middle; text-align:left">
-    <a href=https://mwouts.github.io/itables/><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
-    <g style="fill:#d9d7fc">
-        <path d="M100,400H500V357H100Z" />
-        <path d="M100,300H400V257H100Z" />
-        <path d="M0,200H400V157H0Z" />
-        <path d="M100,100H500V57H100Z" />
-        <path d="M100,350H500V307H100Z" />
-        <path d="M100,250H400V207H100Z" />
-        <path d="M0,150H400V107H0Z" />
-        <path d="M100,50H500V7H100Z" />
-    </g>
-    <g style="fill:#1a1366;stroke:#1a1366;">
-   <rect x="100" y="7" width="400" height="43">
-    <animate
-      attributeName="width"
-      values="0;400;0"
-      dur="5s"
-      repeatCount="indefinite" />
-      <animate
-      attributeName="x"
-      values="100;100;500"
-      dur="5s"
-      repeatCount="indefinite" />
-  </rect>
-        <rect x="0" y="107" width="400" height="43">
-    <animate
-      attributeName="width"
-      values="0;400;0"
-      dur="3.5s"
-      repeatCount="indefinite" />
-    <animate
-      attributeName="x"
-      values="0;0;400"
-      dur="3.5s"
-      repeatCount="indefinite" />
-  </rect>
-        <rect x="100" y="207" width="300" height="43">
-    <animate
-      attributeName="width"
-      values="0;300;0"
-      dur="3s"
-      repeatCount="indefinite" />
-    <animate
-      attributeName="x"
-      values="100;100;400"
-      dur="3s"
-      repeatCount="indefinite" />
-  </rect>
-        <rect x="100" y="307" width="400" height="43">
-    <animate
-      attributeName="width"
-      values="0;400;0"
-      dur="4s"
-      repeatCount="indefinite" />
-      <animate
-      attributeName="x"
-      values="100;100;500"
-      dur="4s"
-      repeatCount="indefinite" />
-  </rect>
-        <g style="fill:transparent;stroke-width:8; stroke-linejoin:round" rx="5">
-            <g transform="translate(45 50) rotate(-45)">
-                <circle r="33" cx="0" cy="0" />
-                <rect x="-8" y="32" width="16" height="30" />
-            </g>
-
-            <g transform="translate(450 152)">
-                <polyline points="-15,-20 -35,-20 -35,40 25,40 25,20" />
-                <rect x="-15" y="-40" width="60" height="60" />
-            </g>
-
-            <g transform="translate(50 352)">
-                <polygon points="-35,-5 0,-40 35,-5" />
-                <polygon points="-35,10 0,45 35,10" />
-            </g>
-
-            <g transform="translate(75 250)">
-                <polyline points="-30,30 -60,0 -30,-30" />
-                <polyline points="0,30 -30,0 0,-30" />
-            </g>
-
-            <g transform="translate(425 250) rotate(180)">
-                <polyline points="-30,30 -60,0 -30,-30" />
-                <polyline points="0,30 -30,0 0,-30" />
-            </g>
-        </g>
-    </g>
-</svg>
-</a>
-    Loading ITables v2.4.3 from the internet...
-    (need <a href=https://mwouts.github.io/itables/troubleshooting.html>help</a>?)</td>
-    </tr></tbody></table>
-<link href="https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.css" rel="stylesheet">
-<script type="module">
-    import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.js';
-
-    document.querySelectorAll("#itables_cef2cad0_0a3b_4416_bf16_d6ffae0f70fc:not(.dataTable)").forEach(table => {
-        if (!(table instanceof HTMLTableElement))
-            return;
-
-        let dt_args = {"style": {"width": "100%"}, "layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "text_in_header_can_be_selected": true, "classes": ["display", "nowrap"], "order": [], "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      \n      <th>Variable</th>\n      <th>Region</th>\n      <th>Year</th>\n      <th>Unit</th>\n      <th>Level of concern</th>\n      <th>Lower (abs)</th>\n      <th>Lower (rel)</th>\n      <th>Lower (ref)</th>\n      <th>Upper (abs)</th>\n      <th>Upper (rel)</th>\n      <th>Upper (ref)</th>\n      <th>Reference data</th>\n    </tr>\n  </thead></table>", "data_json": "[[\"Primary Energy|Oil\", \"World\", 2010, \"EJ/yr\", \"strong\", 126.0, \"-25%\", 168.0, 210.0, \"+25%\", 168.0, \"IEA-EB-2025\"], [\"Primary Energy|Oil\", \"World\", 2015, \"EJ/yr\", \"strong\", 135.0, \"-25%\", 181.0, 226.0, \"+25%\", 181.0, \"IEA-EB-2025\"], [\"Primary Energy|Oil\", \"World\", 2020, \"EJ/yr\", \"strong\", 104.0, \"-40%\", 173.0, 256.0, \"+40%\", 183.0, \"Most permissive value of: IEA-EB-2025,IEA-EB-2025-COVIDaveraged\"], [\"Primary Energy|Oil\", \"World\", 2025, \"EJ/yr\", \"strong\", 148.0, \"-25%\", 198.0, 247.0, \"+25%\", 198.0, \"IEA-EB-2025-extrapol25\"]]"};
         new ITable(table, dt_args);
     });
 </script>
@@ -2078,7 +1458,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <p><strong>Why this threshold?</strong> Near-term (2030): CCU/S projects are tracked by the IEA and published annually in its CCUS Database. Details can be found here: https://www.iea.org/data-and-statistics/data-product/ccus-projects-database<br><br>Projects in the CCUS database have one of the following statuses:<br>• Operational: in operation in 2024<br>• Construction: currently under construction<br>• Planned: announced but without final investment decision in 2024. Projects that were decommissioned or suspended are not counted.<br><br>We assume the following thresholds for 2030 based on data provided by the IEA CCUS database:<br>• Lower, red:  10% less than currently operational capacities.<br>• Lower, yellow:  5% less than currently operational capacities and 50% of projects under construction.<br>• Upper, yellow:  5% more than plants operational today plus all projects under construction plus 20% of projects planned without FID.<br>• Upper, red:  10% more than all projects operational, under construction, and announced.<br><br>Long-term (2035–2040): this scenario assumes capacity deployment of CCS in 2035 and 2040 that would require unlikely growth rates (compare <a href="#Kazlou-2024">Kazlou (2024)</a>).</p>
 <div>
 <!--| quarto-html-table-processing: none -->
-<table id="itables_c9d55121_24d0_4645_8a61_fa6f80e3125f"><tbody><tr>
+<table id="itables_7e0a4841_0c12_4d54_8bdf_1e81f5ef6c9f"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     <a href=https://mwouts.github.io/itables/><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
@@ -2177,7 +1557,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.js';
 
-    document.querySelectorAll("#itables_c9d55121_24d0_4645_8a61_fa6f80e3125f:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_7e0a4841_0c12_4d54_8bdf_1e81f5ef6c9f:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -2193,7 +1573,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <p><strong>Why this threshold?</strong> Data on hydro power plant projects was published by the IEA in 2021.  Details can be found here: https://www.iea.org/data-and-statistics/data-tools/hydropower-data-explorer<br><br>The IEA publishes capacities in three categories:<br>• Operational: in operation in 2021<br>• Expected: expected to come online by 2030<br>• Accelerated: capacity that could come online by 2030 given an acceleration in efforts.<br><br>We assume the following thresholds for 2030 based on data provided by  the IEA:<br>• Lower, red:  10% less than currently operational capacities.<br>• Lower, yellow: 5% less than what is expected to come online according to the IEA by 2030.<br>• Upper, yellow: 5% more than what is expected to come online assuming accelerated efforts according to the IEA by 2030.<br>• Upper, red: 45% more than what is expected to come online assuming accelerated efforts according to the IEA by 2030.</p>
 <div>
 <!--| quarto-html-table-processing: none -->
-<table id="itables_ddc3e712_5d6b_4c63_a968_e12f2cbdab6a"><tbody><tr>
+<table id="itables_ebe1d11d_587e_4cf3_aa46_1003f08601af"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     <a href=https://mwouts.github.io/itables/><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
@@ -2292,7 +1672,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.js';
 
-    document.querySelectorAll("#itables_ddc3e712_5d6b_4c63_a968_e12f2cbdab6a:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_ebe1d11d_587e_4cf3_aa46_1003f08601af:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -2308,7 +1688,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <p><strong>Why this threshold?</strong> Data on nuclear power plants is published by the International Atomic Energy Agency and, including plant-level data <a href="#IAEA-PRIS-2024">(IAEA, 2024b)</a> and estimates until 2050 <a href="#IAEA-E50-2024">(IAEA, 2024a)</a>.<br><br>The IAEA publishes capacities in three categories:<br>• Operational: in operation in 2024<br>• Construction: currently under construction<br>• Retired: inactive capacity that has been retired<br><br>We assume the following thresholds for 2030 based on the plant-level data:<br>• Lower, red:  30% less than currently operational capacities <a href="#IAEA-PRIS-2024">(IAEA, 2024b)</a>.<br>• Lower, yellow:  15% less than currently operational capacities <a href="#IAEA-PRIS-2024">(IAEA, 2024b)</a>.<br>• Upper, yellow:  5% more than plants operational today plus bringing retired plants in Japan back online plus 75% of plants under construction <a href="#IAEA-PRIS-2024">(IAEA, 2024b)</a>.<br>• Upper, red:  10% more than the highest estimate (461 GW) published by the <a href="#IAEA-E50-2024">IAEA (2024a)</a>.</p>
 <div>
 <!--| quarto-html-table-processing: none -->
-<table id="itables_d3988884_f41e_4021_9412_0788f3eab844"><tbody><tr>
+<table id="itables_3d914f7d_6c7b_4555_a3a8_82144075e574"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     <a href=https://mwouts.github.io/itables/><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
@@ -2407,7 +1787,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.js';
 
-    document.querySelectorAll("#itables_d3988884_f41e_4021_9412_0788f3eab844:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_3d914f7d_6c7b_4555_a3a8_82144075e574:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -2423,7 +1803,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <p><strong>Why this threshold?</strong> Existing capacities in 2022 are reported by <a href="#Ember-2024">Ember (2024)</a>. Yearly  additions for 2023–2028 are estimated in a market outlook by the  <a href="#GWEC-2024">GWEC (2024)</a>.<br><br>This outlook is based on input from regional wind associations,  government targets, tender results, announced auction plans, available  project pipeline, and input from industry experts.<br><br>We assume the following thresholds for 2030:<br>• Lower, red: 10% less than existing capacities plus 37.5% of market outlook.<br>• Lower, yellow: 5% less than existing capacities plus 75% of market outlook.<br>• Upper, yellow: 5% more than existing capacities plus 150% of market outlook.<br>• Upper, red: 10% more than existing capacities plus 200% of market outlook.</p>
 <div>
 <!--| quarto-html-table-processing: none -->
-<table id="itables_ed3f2d63_5aa6_4cca_a5a4_2784111b5b54"><tbody><tr>
+<table id="itables_eb02f51b_3506_474f_ac98_4e5e0843aa5c"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     <a href=https://mwouts.github.io/itables/><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
@@ -2522,7 +1902,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.js';
 
-    document.querySelectorAll("#itables_ed3f2d63_5aa6_4cca_a5a4_2784111b5b54:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_eb02f51b_3506_474f_ac98_4e5e0843aa5c:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -2538,7 +1918,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <p><strong>Why this threshold?</strong> Existing capacities in 2023 are reported by <a href="#Ember-2024">Ember (2024)</a>. Yearly  additions for 2024–2030 are estimated in a market outlook by  <a href="#BNEF-2024">BNEF (2024)</a>.<br><br>We assume the following thresholds for 2030:<br>• Lower, red: 10% less than existing capacities plus 37.5% of market outlook.<br>• Lower, yellow: 5% less than existing capacities plus 75% of market outlook.<br>• Upper, yellow: 5% more than existing capacities plus 150% of market outlook.<br>• Upper, red: 10% more than existing capacities plus 200% of market outlook.</p>
 <div>
 <!--| quarto-html-table-processing: none -->
-<table id="itables_b0256450_99fb_40f3_8260_1db369c5442f"><tbody><tr>
+<table id="itables_0aeb811f_3368_4984_bc04_99345578f036"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     <a href=https://mwouts.github.io/itables/><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
@@ -2637,7 +2017,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.js';
 
-    document.querySelectorAll("#itables_b0256450_99fb_40f3_8260_1db369c5442f:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_0aeb811f_3368_4984_bc04_99345578f036:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -2653,7 +2033,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <p><strong>Why this threshold?</strong> The lower bounds are derived from the same sources as the Onshore Wind Capacity criterion. Existing capacities in 2022 are reported by <a href="#Ember-2024">Ember (2024)</a>. Yearly additions for 2023–2028 are estimated in a market outlook by the <a href="#GWEC-2024">GWEC (2024)</a>.<br><br>This outlook is based on input from regional wind associations, government targets, tender results, announced auction plans, available project pipeline, and input from industry experts.<br><br>The same lower bounds as for Onshore Wind Capacity are applied to total wind capacity, reflecting the assumption that onshore wind alone provides a sufficient lower bound for total deployment:<br>• Lower, red: 10% less than existing capacities plus 37.5% of market outlook.<br>• Lower, yellow: 5% less than existing capacities plus 75% of market outlook.</p>
 <div>
 <!--| quarto-html-table-processing: none -->
-<table id="itables_76d64165_c4a3_48a7_b795_0fe2c5c01b9e"><tbody><tr>
+<table id="itables_5016eda9_c4ba_4172_8897_7e1d185ec66a"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     <a href=https://mwouts.github.io/itables/><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
@@ -2752,7 +2132,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.js';
 
-    document.querySelectorAll("#itables_76d64165_c4a3_48a7_b795_0fe2c5c01b9e:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_5016eda9_c4ba_4172_8897_7e1d185ec66a:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -2769,7 +2149,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <p><strong>Why this threshold?</strong> Estimates are provided by <a href="#Gidden-2025">Gidden (2025)</a>.<br><br>• Upper threshold, major concern: exceeding cumulative CCS of  1,460 Gt CO2 until the end of the century, which was identified as the  median of the range when combining spatial risk layers.<br>• Upper threshold, medium concern: exceeding cumulative CCS of 1,290 Gt CO2 until the end of the century, which was identified as the  lower bound of the range when combining spatial risk layers.</p>
 <div>
 <!--| quarto-html-table-processing: none -->
-<table id="itables_6512d142_c88e_41fc_bdf8_652e59372696"><tbody><tr>
+<table id="itables_d78ad66a_d024_4e67_ac45_9616b30cb6e7"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     <a href=https://mwouts.github.io/itables/><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
@@ -2868,7 +2248,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.js';
 
-    document.querySelectorAll("#itables_6512d142_c88e_41fc_bdf8_652e59372696:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_d78ad66a_d024_4e67_ac45_9616b30cb6e7:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -2884,7 +2264,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <p><strong>Why this threshold?</strong> According to the <a href="#FRA-2020">Food and Agriculture Organization of the United Nations (FAO) (2020)</a>, the Minimum Dietary Energy  Requirement is 2,100 kilo calories per person per day, which is used as  the lower threshold. Meanwhile, the highest historical level of food  availability is 4,000 kilo calories per person per day, so that the  threshold is set at 5,000 kilo calories per person per day.</p>
 <div>
 <!--| quarto-html-table-processing: none -->
-<table id="itables_16bbd7a4_fc72_45d4_bee4_d58e0fc14751"><tbody><tr>
+<table id="itables_0387f590_a78a_402e_b519_0024258b2a9c"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     <a href=https://mwouts.github.io/itables/><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
@@ -2983,7 +2363,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.js';
 
-    document.querySelectorAll("#itables_16bbd7a4_fc72_45d4_bee4_d58e0fc14751:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_0387f590_a78a_402e_b519_0024258b2a9c:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -2999,7 +2379,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <p><strong>Why this threshold?</strong> <a href="#Creutzig-2014">Creutzig (2014)</a> have derived an upper limit for sustainable  biomass use of 100–300 EJ/yr. In the 6th Assessment Report of Working  Group 3 of the Intergovernmental Panel on Climate Change (IPCC), a  value of 100 EJ/yr is defined as the threshold for the onset of  medium concern and 245 EJ/yr a threshold for the onset of high concern  <a href="#IPCC-AR6-WG3-ANX3-2022">(IPCC, 2022)</a>. Another study by <a href="#Deprez-2024">Deprez (2024)</a>  suggests that medium sustainablity risks arise at 50 EJ/yr and high  risks at 120 EJ/yr. Based on those studies the threshold for this  sustainablity concern flag is set at 100 EJ/yr.</p>
 <div>
 <!--| quarto-html-table-processing: none -->
-<table id="itables_402ef09f_d5b0_42d0_89ad_079fa66917f9"><tbody><tr>
+<table id="itables_55551d69_6b0c_4200_b250_d3455a68c8da"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     <a href=https://mwouts.github.io/itables/><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
@@ -3098,7 +2478,7 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <script type="module">
     import { ITable, jQuery as $ } from 'https://www.unpkg.com/dt_for_itables@2.3.3/dt_bundle.js';
 
-    document.querySelectorAll("#itables_402ef09f_d5b0_42d0_89ad_079fa66917f9:not(.dataTable)").forEach(table => {
+    document.querySelectorAll("#itables_55551d69_6b0c_4200_b250_d3455a68c8da:not(.dataTable)").forEach(table => {
         if (!(table instanceof HTMLTableElement))
             return;
 
@@ -3141,8 +2521,8 @@ width="64" viewBox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
 <td style="text-align: left;"><a class="sm-button" href="https://doi.org/10.1126/science.adj6171"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12c0 6.633-5.367 12-12 12S0 18.633 0 12 5.367 0 12 0s12 5.367 12 12M7.588 6.097v4.471c-.663-.925-1.403-1.373-2.406-1.373-2.046 0-3.244 1.441-3.244 3.847 0 2.357 1.325 3.848 3.166 3.848 1.12 0 1.88-.4 2.445-1.325l-.039 1.042h2.045V6.097Zm-1.763 8.942c-1.12 0-1.802-.76-1.802-2.045 0-1.325.682-2.085 1.802-2.085 1.081 0 1.802.76 1.802 2.085 0 1.285-.672 2.045-1.802 2.045m12.253-1.948c0-2.172-1.578-3.789-3.906-3.789s-3.945 1.695-3.945 3.789c0 2.133 1.578 3.789 3.945 3.789 2.289 0 3.906-1.656 3.906-3.789m-2.094-.01c0 1.14-.711 1.89-1.851 1.89-1.139 0-1.851-.75-1.851-1.89s.712-1.89 1.851-1.89c1.149 0 1.861.751 1.851 1.89m2.6-5.795c0 .633.517 1.227 1.189 1.227.633 0 1.188-.555 1.188-1.227a1.17 1.17 0 0 0-1.188-1.189c-.672 0-1.179.556-1.189 1.189m.166 9.341h2.055V9.604H18.75Z"/></svg></span> DOI </a> <br><a class="sm-button" href="https://www.science.org/doi/reader/10.1126/science.adj6171"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v144H176c-35.3 0-64 28.7-64 64v144H64c-35.3 0-64-28.7-64-64zm384 64H256V0zM176 352h32c30.9 0 56 25.1 56 56s-25.1 56-56 56h-16v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V368c0-8.8 7.2-16 16-16m32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-16v48zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-32c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16m32 128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-16v96zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V368"/></svg></span> PDF </a></td>
 </tr>
 <tr>
-<td style="text-align: left;"><p id="IEA-EB-2025"><code>IEA-EB-2025</code></p></td>
-<td style="text-align: left;">IEA. World Energy Balances. August 2025.</td>
+<td style="text-align: left;"><p id="IEA-ESDB-20250610"><code>IEA-ESDB-20250610</code></p></td>
+<td style="text-align: left;">IEA. Energy Statistics Data Browser. June 2025.</td>
 <td style="text-align: left;"><a class="sm-button" href="https://www.iea.org/data-and-statistics/data-product/world-energy-balances"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-8 13h-1c-1.61 0-4-1.06-4-4 0-2.93 2.39-4 4-4h1v2h-1c-.46 0-2 .17-2 2 0 1.9 1.67 2 2 2h1zm4-5v2H9v-2zm-1 5h-1v-2h1c.46 0 2-.17 2-2 0-1.9-1.67-2-2-2h-1V8h1c1.61 0 4 1.07 4 4 0 2.94-2.39 4-4 4"/></svg></span> URL </a></td>
 </tr>
 <tr>
